@@ -1,0 +1,180 @@
+\documentclass[a4paper]{book}
+
+\usepackage{missing}
+
+\date{\today}
+
+\begin{document}
+
+\pagenumbering{Alph}
+\maketitle
+
+\frontmatter
+
+\thispagestyle{empty}
+\begin{center}
+  \vspace*{2.5cm}
+  \fontsize{42pt}{54pt}\selectfont{}\textsf{你缺失的那门}\par
+  \fontsize{18pt}{18pt}\selectfont{}\textsf{Your Missing Semester of Using Computer}\par
+  \fontsize{54pt}{8pt}\selectfont{}\textbf{\textsf{计算机课}}\par
+  \vspace*{3.6cm}
+\end{center}
+
+\begin{note}
+  本教程在持续更新之中，因此十分期望得到读者的建议和意见。
+  无论是对编写方向有好的建议，还是发现了叙述不正确或不严谨的地方，亦或是找到了一个错别字，都请将反馈发送到邮箱 \href{mailto:missing@criwits.top}{missing@criwits.top}。
+\end{note}
+
+这是一份适合「电脑小白」的电脑使用技巧手册。
+它以近乎「手把手教」的语言，介绍了从基本的文件管理到软件的寻找安装，从简要的硬件组成到电脑的安全防护，从小的使用技巧到优良软件推荐的许多内容，旨在帮助对电脑操作不甚了解的所谓「小白」逐渐上手电脑的使用。
+
+\begin{center}
+  \vspace*{1cm}
+  \includegraphics[width=5cm]{src/QR_CODE.png}\par
+  扫码获取最近更新！
+\end{center}  
+
+\renewcommand\thefootnote{\fnsymbol{footnote}}
+\tableofcontents
+\renewcommand\thefootnote{\arabic{footnote}}
+
+\chapter{序}
+
+按理来说，对于所谓「Z 世代」的年轻人，熟练地使用电脑应该是他们的生活必备技能。
+
+但事实却并非如此。据我们观察，许多同学对电脑的使用也并不熟悉，甚至可以说是陌生：
+
+\begin{itemize}
+  \item 让他们去下载软件，有的同学可能会下载到各种「\textbf{P2P 高速下载器}」，弄得满机器流氓软件\CJKsout{（堪称下崽器）；}
+  \item 给他们一个 \texttt{zip} 或 \texttt{7z} 文件，一些同学可能压根不知道什么是「\textbf{压缩文件}」，什么是「\textbf{解压缩}」；
+  \item 一些同学电脑上\textbf{装了四五个浏览器、三四个杀毒软件}，「QQ 浏览器」「360 浏览器」相互掐架、「360 安全卫士」「2345 电脑管家」互相攻击\CJKsout{（养蛊）；}
+  \item 问他们自己电脑是什么\textbf{系统}、什么 \textbf{CPU}，他们中一些甚至答不出「Windows」「macOS」，更别说「酷睿」「锐龙」这样的词语了；
+  \item 甚至有一些同学会对着下图感慨「电脑\textbf{内存}又不够了」……
+\end{itemize}
+
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[width=6cm]{src/Storage_Shortage.png}
+\end{figure}
+
+这或许是由于智能手机的普及造成的。
+显然，使用电脑与使用手机相比，「复杂」了不止一个数量级。
+然而，尽管几年前就有人说「电脑现在已经是夕阳产业了」，但事实却是：
+至少在当下，我们仍然得学会去用电脑，不说多么「精通」，但至少要能知道\textit{软件怎么装、出现小问题怎么办、XX 文件怎么打开、怎么把文件打包}等等这些「21 世纪的常识」。
+
+中小学的《信息技术》课堂、大学的《大学计算机基础》课程本应起到教授这些知识的作用。
+可惜，事与愿违——很多时候，我们在这些课堂上学到的东西，可能一辈子都用不到；
+真正需要学的东西，却缺失了：
+
+我们一辈子可能也不会再尝试用 Excel 排出张三李四不及格的科目有哪些，不会再折腾复杂到毫无意义的页眉和页脚，不会再碰和动画制作和网页相关的任何内容。
+但我们未来必然有无数次会需要去网上下载一个新的软件，会无数次遇到各种各样的软件错误、闪退或者崩溃，会无数次因为 Windows 更新导致这样或那样的问题，会无数次遇到电脑沾上垃圾软件而奇慢无比无法使用……
+
+这份《Your Missing Semester of Using Computer》是一份为「电脑小白」准备的电脑操作指南。
+它直译过来就是《你缺失的那门计算机课》，也可以叫做《你本应学过的计算机课》。
+我们会假定读者基本不了解电脑的操作，换言之就是所谓「电脑小白」，告诉读者「电脑最好怎么用」。
+
+这份教程会在文中简称自己为《Missing》。
+《Missing》的得名参考了 MIT 的《\href{https://missing.csail.mit.edu/}{The Missing Semester of Your CS Education}》。
+
+\mainmatter
+
+\setcounter{chapter}{-1}
+
+\chapter{一些约定与预备知识}
+
+尽管《Missing》自认为受众是「电脑小白」，但我们依然不得不要求读者有一些最最基本的知识和操作经验。
+此外，为了便于后续的讲述，我们会进行一些约定。
+
+\section{容量与容量单位}
+
+我们约定存储在电脑中的数据的容量单位「GB」「MB」「KB」等的关系如下：
+\[1\,\mathrm{TB}=1024\,\mathrm{GB}=1024\times1024\,\mathrm{MB}=1024^3\,\mathrm{KB}=1024^4\,\text{字节}\]
+即，我们统一使用「1024 进位」而不是「1000 进位」作为单位换算的系数。
+此外，我们有时会略去这些单位最后的字母 B，即文中可能用「1 T」来表示「1 TB」。
+
+你可能会问为什么要特别说明这里是「1024 进位」而不是「1000 进位」。
+如果你有买过 U 盘，你会发现标称「128 GB」的 U 盘实际可用的容量只有 119 GB 左右。
+这是因为生产 U 盘的厂家是用「1000 进位」来计算容量，而电脑自身是用「1024 进位」来计算容量的。
+在这里我们进行容量单位的约定，是为了避免这种争议。
+
+\section{文中的标记符号}
+
+在《Missing》中，我们使用方头括号「【】」来标记所有屏幕上字面显示的选项。
+例如，当我们希望你右键桌面上的图标
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[width=2cm]{src/This_PC.png}
+\end{figure}
+
+\noindent 时，我们会称「右键【此电脑】」。
+
+我们使用右箭头「→」来表示下一步操作。
+例如，「右键【此电脑】→【属性】」的意思是，右键桌面上的【此电脑】图标，然后在弹出的菜单中点击【属性】。
+
+\section{快捷键的操作说明}
+
+如果你按快捷键（多个键盘按键的组合键）后，电脑并没有行使理想中的功能，可能是你的按法不对。
+快捷键的按法并不是「同时按下所有的键」，而是「依次序按下各键不松手，最后一起松开」。
+例如，若要按快捷键「\keys{ + Shift + S}」：
+
+\begin{itemize}
+  \item 先按住 \keys{} 键（\keys{} 键上印有Window 徽标「」，一般来说这个键在 \keys{Ctrl} 和 \keys{Alt} 之间）不要松手；
+  \item 再按住 \keys{Shift} 键，同样不要松手；
+  \item 接着按一下 \keys{S} 键，然后松开全部按键。
+\end{itemize}
+
+\section{\keys{F1} -- \keys{F12} 功能键的使用说明}
+
+对于笔记本电脑，其键盘最上方一排按键（`F1` — `F12` 功能键）往往具有两重功能：
+「它们本身的功能」和「它们的拓展功能」。
+
+所谓「它们本身的功能」，指的就是 app 中规定的这些键的功能。
+例如，在浏览器中，\keys{F5} 通常用来刷新页面，那么 \keys{F5} 键的「本身的功能」在浏览器中就是刷新页面。
+
+所谓「它们的拓展功能」，指的是这些键上面画的图标所规定的额外功能。
+例如，笔者的笔记本中 \keys{F5} 键上画有亮度降低的符号，因此 \keys{F5} 键的「拓展功能」就是降低屏幕亮度。
+
+利用键盘左下角的 \keys{Fn} 键可以在这两种功能中切换。
+具体地，对于一台电脑具有 \keys{Fn} 键设计的电脑，它可能是下列两种情况中的一种：
+
+\begin{itemize}
+  \item 直接按 \keys{F1} -- \keys{F12} 功能键可以行使它们本来的功能，按住 \keys{Fn} 的同时再按 \keys{F1} -- \keys{F12} 则行使它们的拓展功能。\\
+    例如：如果 \keys{F5} 功能如上，那么，在这种情况下，按 \keys{F5} 可以在浏览器中刷新页面，按 \keys{Fn + F5} 可以降低屏幕亮度。
+  \item 直接按 \keys{F1} -- \keys{F12} 功能键可以行使它们的拓展功能，按住 \keys{Fn} 的同时再按 \keys{F1} -- \keys{F12} 则行使它们本来的功能。\\
+    例如：如果 \keys{F5} 功能如上，那么，在这种情况下，按 \keys{F5} 可以降低屏幕亮度，按 \keys{Fn + F5} 可以在浏览器中刷新页面。
+\end{itemize}
+
+你可以通过打开浏览器，打开某个页面，然后按 \keys{F5} 来测试你的电脑属于上面两种情况中的哪一种。
+更一般地，用其他带有 \keys{F1} -- \keys{F12} 快捷键的软件来测试也是可以的。
+
+很多笔记本电脑提供了一种快捷的方法在这两种模式中切换。
+对于 ThinkPad 笔记本，你可以通过按 \keys{Fn + Esc} 来切换这两种模式。
+另一些笔记本可能需要使用专门的软件（例如，Lenovo Vantage）或进入 BIOS 设置。
+具体请查阅你设备的操作指南或自行上网搜索。
+
+\section{有关「重启」的说明}
+
+由于自 Windows 8 以来的 Windows 系统引入了「快速启动」的机制，现在「重启」这个过程并不等价于「先关机再开机」的过程。
+
+故，若在文中提及「重启」这样的操作，请一定是选择开始菜单中的「重启」选项，而非点选「关机」后再手动打开电脑。
+
+\practice
+
+\begin{enumerate}
+  \item 计算 1 GB 等于多少 KB？等于多少字节？假设一个汉字占两个字节，1 GB 大约可以记录多少个汉字？
+  \item 尝试计算，一只按「1000 进位」计算得到容量为 64 GB 的 U 盘，它按「1024 进位」得到的容量是多少？
+  \item 在自己电脑上尝试这些快捷键：
+    \begin{enumerate}
+      \item \keys{ + Shift + S} （仅限 Windows 10 / 11）
+      \item \keys{Ctrl + Shift + Esc}
+      \item \keys{ + D}
+    \end{enumerate}
+  \item 了解并试验自己笔记本电脑的 \keys{F1} -- \keys{F12} 功能键的拓展功能。
+\end{enumerate}
+
+\part{基础篇}
+\addtocontents{toc}{\protect\footnotetext[2]{标有「*」的为选读内容}}
+
+\chapter{电脑以及电脑的组成}
+
+\end{document}

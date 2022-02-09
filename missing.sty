@@ -1,0 +1,141 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{missing}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%引入宏包
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage[inner=1.5in,outer=1.25in,vmargin=1in]{geometry}
+\RequirePackage{cmbright}
+\RequirePackage{fontspec}
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{graphicx}
+\RequirePackage[linkcolor=red!80!black]{hyperref}
+\RequirePackage[x11names]{xcolor}
+\RequirePackage{wrapfig,tikz,pdfpages}
+\RequirePackage{tcolorbox}
+\RequirePackage[fontset=none,zihao=false,scheme=chinese,heading=true]{ctex}
+\RequirePackage{xeCJKfntef}
+\RequirePackage[os=win]{menukeys}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%格式
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hypersetup{colorlinks,%
+  bookmarksnumbered=true
+}
+
+%字体
+\setmainfont{Inter}
+\setsansfont{Inter}
+\setmonofont{等距更纱黑体 Slab SC}
+
+\xeCJKsetup{
+  underline/skip  = false,
+  AutoFakeSlant   = true
+}
+
+\xeCJKDeclareSubCJKBlock{WinSym}{"E311 -> "F7C2}
+
+\setCJKmainfont{思源黑体}[BoldFont=思源黑体 Bold, WinSym=Office Support MDL2 Assets, Mapping=quote]
+\setCJKsansfont{思源黑体}[BoldFont=思源黑体 Bold, WinSym=Office Support MDL2 Assets, Mapping=quote]
+\setCJKmonofont{等距更纱黑体 Slab SC}
+
+%tcolorbox包
+\tcbuselibrary{skins, raster, theorems, breakable}
+
+%menukeys包
+\renewmenumacro{\keys}[+]{roundedkeys}
+
+%页眉页脚
+\RequirePackage{fancyhdr}
+
+\fancyhf{}
+\fancyhead[OR]{\bfseries\thepage}
+\fancyhead[OL]{\bfseries\rightmark}
+\fancyhead[ER]{\bfseries\leftmark}
+\fancyhead[EL]{\bfseries\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\pagestyle{fancy}
+
+%目录
+\renewcommand\tableofcontents%
+  {\chapter{\contentsname%
+    \protect\@mkboth{\contentsname}{\contentsname}}%
+    \@starttoc{toc}%
+}
+
+%列表
+\renewcommand{\theenumii}{\Alph{enumii}}
+
+%禁止随意断词
+\hyphenation{macOS}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%空白双数页
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\cleardoublepage}
+  {\clearpage
+  \if@twoside
+    \ifodd
+      \c@page
+    \else
+      \hbox{}
+      \thispagestyle{empty}
+      \newpage
+      \if@twocolumn
+        \hbox{}
+        \newpage
+      \fi
+    \fi
+  \fi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%自定义命令
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%强调文字
+\newcommand{\regcolor}[1]{\textbf{{\color{DodgerBlue2} #1}}}
+
+%标题页
+\renewcommand{\maketitle}{%
+  \begin{titlepage}
+    \thispagestyle{empty}
+    \includepdf[pages=1]{missing-cover.pdf}
+    \clearpage
+    本文档排版于 \@date 。\par
+    Git提交编号：？\par
+    [这里的条码放什么呢？]
+    \vfill
+    \includegraphics[width=4cm]{src/by-nc-sa.png}\par
+    \textcopyright 2022 Hans Wan \& Windy Deng\par
+    本作品采用知识共享\ 署名-非商业性使用-相同方式共享 4.0 国际\ 许可协议进行许可。
+    要查看该许可协议，可访问 \url{http://creativecommons.org/licenses/by-nc-sa/4.0/}
+    或者写信到 Creative Commons, PO Box 1866, Mountain View, CA 94042, USA。\par
+    为便于进行教学，文中引用了一些来自互联网公开资源的图片及其他非我们原创的内容。
+    这些内容的著作权归属它们的原作者和 / 或版权所有方所有。
+    若有侵权请联系我们删除。
+    我们对这些内容的作者表示感谢。\par
+    文中出现的所有商标，无论是否标注有 ® 或 ™，其所有权都归属它们各自的持有者所有。
+    \clearpage
+  \end{titlepage}
+}%
+
+%自定义盒子
+\newtcolorbox{note}{
+  enhanced,
+  frame hidden,
+  breakable=true,
+  arc=0mm,
+  detach title,
+  borderline west={.5mm}{0mm}{RoyalBlue4},
+  colback=white,
+  colbacktitle=RoyalBlue4,
+  colframe=RoyalBlue4
+}
+
+%练习
+\newcommand{\practice}{\section*{练习 \thechapter}\addcontentsline{toc}{section}{练习 \thechapter}}

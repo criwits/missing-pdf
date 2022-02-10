@@ -10,7 +10,6 @@
 \RequirePackage{fontspec}
 \RequirePackage{amsmath,amssymb}
 \RequirePackage{graphicx}
-\RequirePackage[linkcolor=red!80!black]{hyperref}
 \RequirePackage[x11names]{xcolor}
 \RequirePackage{wrapfig,tikz,pdfpages}
 \RequirePackage{tcolorbox}
@@ -24,8 +23,11 @@
 % 格式
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\hypersetup{colorlinks,%
-  bookmarksnumbered=true
+\RequirePackage{hyperref}
+\hypersetup{
+  colorlinks,%
+  linkcolor=red!80!black,%
+  bookmarksnumbered=true%
 }
 
 % 字体

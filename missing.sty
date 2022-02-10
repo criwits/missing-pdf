@@ -2,7 +2,7 @@
 \ProvidesPackage{missing}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%引入宏包
+% 引入宏包
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage[inner=1.5in,outer=1.25in,vmargin=1in]{geometry}
@@ -11,22 +11,27 @@
 \RequirePackage{amsmath,amssymb}
 \RequirePackage{graphicx}
 \RequirePackage[linkcolor=red!80!black]{hyperref}
-\RequirePackage[x11names]{xcolor}
+% \RequirePackage[x11names]{xcolor}
+\RequirePackage{xcolor}
+\RequirePackage{pst-barcode}
+% 修正 pst-barcode 造成的的 \clipbox 冲突问题
+\let\clipbox\relax
 \RequirePackage{wrapfig,tikz,pdfpages}
 \RequirePackage{tcolorbox}
 \RequirePackage[fontset=none,zihao=false,scheme=chinese,heading=true]{ctex}
 \RequirePackage{xeCJKfntef}
 \RequirePackage[os=win]{menukeys}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%格式
+% 格式
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \hypersetup{colorlinks,%
   bookmarksnumbered=true
 }
 
-%字体
+% 字体
 \setmainfont{Inter}
 \setsansfont{Inter}
 \setmonofont{等距更纱黑体 Slab SC}
@@ -42,13 +47,13 @@
 \setCJKsansfont{思源黑体}[BoldFont=思源黑体 Bold, WinSym=Office Support MDL2 Assets, Mapping=quote]
 \setCJKmonofont{等距更纱黑体 Slab SC}
 
-%tcolorbox包
+% tcolorbox包
 \tcbuselibrary{skins, raster, theorems, breakable}
 
-%menukeys包
+% menukeys包
 \renewmenumacro{\keys}[+]{roundedkeys}
 
-%页眉页脚
+% 页眉页脚
 \RequirePackage{fancyhdr}
 
 \fancyhf{}
@@ -60,21 +65,21 @@
 
 \pagestyle{fancy}
 
-%目录
+% 目录
 \renewcommand\tableofcontents%
   {\chapter{\contentsname%
     \protect\@mkboth{\contentsname}{\contentsname}}%
     \@starttoc{toc}%
 }
 
-%列表
+% 列表
 \renewcommand{\theenumii}{\Alph{enumii}}
 
-%禁止随意断词
+% 禁止随意断词
 \hyphenation{macOS}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%空白双数页
+% 空白双数页
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \renewcommand{\cleardoublepage}
@@ -94,37 +99,46 @@
   \fi}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%自定义命令
+% 自定义命令
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%强调文字
+% 强调文字
 \newcommand{\regcolor}[1]{\textbf{{\color{DodgerBlue2} #1}}}
 
-%标题页
+% 标题页
 \renewcommand{\maketitle}{%
   \begin{titlepage}
     \thispagestyle{empty}
     \includepdf[pages=1]{missing-cover.pdf}
     \clearpage
-    本文档排版于 \@date 。\par
-    Git提交编号：？\par
-    [这里的条码放什么呢？]
+    \setlength{\parskip}{0.3cm}
+    \setlength{\parindent}{0em}
+    本文档排版于 \@date 。\\
+    Git提交编号：\texttt{\input{.git/refs/heads/main}} \\
+    \begin{pspicture}(2in,0.6in)
+      \psbarcode[file]{.git/refs/heads/main}{}{pdf417}
+    \end{pspicture}
     \vfill
     \includegraphics[width=4cm]{src/by-nc-sa.png}\par
     \textcopyright 2022 Hans Wan \& Windy Deng\par
-    本作品采用知识共享\ 署名-非商业性使用-相同方式共享 4.0 国际\ 许可协议进行许可。
+    本作品采用「知识共享\ 署名-非商业性使用-相同方式共享 4.0 国际」许可协议进行许可。
     要查看该许可协议，可访问 \url{http://creativecommons.org/licenses/by-nc-sa/4.0/}
     或者写信到 Creative Commons, PO Box 1866, Mountain View, CA 94042, USA。\par
     为便于进行教学，文中引用了一些来自互联网公开资源的图片及其他非我们原创的内容。
     这些内容的著作权归属它们的原作者和 / 或版权所有方所有。
     若有侵权请联系我们删除。
     我们对这些内容的作者表示感谢。\par
-    文中出现的所有商标，无论是否标注有 ® 或 ™，其所有权都归属它们各自的持有者所有。
+    文中出现的所有商标，无论是否标注有 ® 或 ™，其所有权都归属它们各自的持有者所有。\par
+    \vspace{2ex}
+    \small
+    Segoe Fluent Icons, Office Support MDL2 Assets \textcopyright Microsoft Corporation. All Rights Reserved.\par
     \clearpage
+    \setlength{\parskip}{0ex}
+    \setlength{\parindent}{2em}
   \end{titlepage}
 }%
 
-%自定义盒子
+% 自定义盒子
 \newtcolorbox{note}{
   enhanced,
   frame hidden,

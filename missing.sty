@@ -66,9 +66,11 @@
 
 % 目录
 \renewcommand\tableofcontents%
-  {\chapter{\contentsname%
+  {\renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \chapter{\contentsname%
     \protect\@mkboth{\contentsname}{\contentsname}}%
     \@starttoc{toc}%
+    \renewcommand\thefootnote{\arabic{footnote}}%
 }
 
 % 列表
@@ -107,6 +109,7 @@
 % 标题页
 \renewcommand{\maketitle}{%
   \begin{titlepage}
+    \pdfbookmark{标题页}{title}
     \thispagestyle{empty}
     \includepdf[pages=1]{assets/missing-cover.pdf}
     \clearpage

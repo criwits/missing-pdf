@@ -11,16 +11,13 @@
 \RequirePackage{amsmath,amssymb}
 \RequirePackage{graphicx}
 \RequirePackage[linkcolor=red!80!black]{hyperref}
-% \RequirePackage[x11names]{xcolor}
-\RequirePackage{xcolor}
-\RequirePackage{pst-barcode}
-% 修正 pst-barcode 造成的的 \clipbox 冲突问题
-\let\clipbox\relax
+\RequirePackage[x11names]{xcolor}
 \RequirePackage{wrapfig,tikz,pdfpages}
 \RequirePackage{tcolorbox}
 \RequirePackage[fontset=none,zihao=false,scheme=chinese,heading=true]{ctex}
 \RequirePackage{xeCJKfntef}
 \RequirePackage[os=win]{menukeys}
+\RequirePackage{pst-barcode}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -133,7 +130,7 @@
     \small
     Segoe Fluent Icons, Office Support MDL2 Assets \textcopyright Microsoft Corporation. All Rights Reserved.\par
     \clearpage
-    \setlength{\parskip}{0ex}
+    \setlength{\parskip}{0pt plus 1pt}
     \setlength{\parindent}{2em}
   \end{titlepage}
 }%

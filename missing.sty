@@ -109,7 +109,7 @@
 \renewcommand{\maketitle}{%
   \begin{titlepage}
     \thispagestyle{empty}
-    \includepdf[pages=1]{missing-cover.pdf}
+    \includepdf[pages=1]{assets/missing-cover.pdf}
     \clearpage
     \setlength{\parskip}{0.3cm}
     \setlength{\parindent}{0em}
@@ -119,7 +119,7 @@
       \psbarcode[file]{.git/refs/heads/main}{}{pdf417}
     \end{pspicture}
     \vfill
-    \includegraphics[width=4cm]{src/by-nc-sa.png}\par
+    \includegraphics[width=4cm]{assets/by-nc-sa.png}\par
     \textcopyright 2022 Hans Wan \& Windy Deng\par
     本作品采用「知识共享\ 署名-非商业性使用-相同方式共享 4.0 国际」许可协议进行许可。
     要查看该许可协议，可访问 \url{http://creativecommons.org/licenses/by-nc-sa/4.0/}
@@ -151,5 +151,5 @@
   colframe=RoyalBlue4
 }
 
-%练习
+% 练习
 \newcommand{\practice}{\section*{练习 \thechapter}\addcontentsline{toc}{section}{练习 \thechapter}}

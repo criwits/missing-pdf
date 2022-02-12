@@ -40,10 +40,11 @@
   AutoFakeSlant   = true
 }
 
-\xeCJKDeclareSubCJKBlock{WinSym}{"E311 -> "F7C2}
+\xeCJKDeclareSubCJKBlock{Windows}{"E782 , "EC6A}
+\xeCJKDeclareSubCJKBlock{Icons}{"E001 -> "E781, "E782 -> "EC64, "EC6C -> "F8B3}
 
-\setCJKmainfont{思源黑体}[BoldFont=思源黑体 Bold, WinSym=Office Support MDL2 Assets, Mapping=quote]
-\setCJKsansfont{思源黑体}[BoldFont=思源黑体 Bold, WinSym=Office Support MDL2 Assets, Mapping=quote]
+\setCJKmainfont{思源黑体}[BoldFont=思源黑体 Bold, Windows=Office Support MDL2 Assets, Icons=Segoe Fluent Icons, Mapping=quote]
+\setCJKsansfont{思源黑体}[BoldFont=思源黑体 Bold, Windows=Office Support MDL2 Assets, Icons=Segoe Fluent Icons, Mapping=quote]
 \setCJKmonofont{等距更纱黑体 Slab SC}
 
 % tcolorbox包
@@ -71,6 +72,57 @@
     \protect\@mkboth{\contentsname}{\contentsname}}%
     \@starttoc{toc}%
     \renewcommand\thefootnote{\arabic{footnote}}%
+}
+
+% 部分、章节的标题
+\newcommand{\partformat}[1]{
+  \raggedright
+  \tikz[remember picture,overlay] \node at (current page.center) {\includegraphics{assets/missing-parts-bg.pdf}};
+  \hspace*{6cm}\parbox[t]{28em}{\vspace*{1.5cm}#1}
+}
+
+\newcommand{\partaftertitle}{%
+  \par\vskip22pt%
+  {\fontsize{14.2pt}{14pt}\selectfont\color{DeepSkyBlue3}
+    YOUR MISSING SEMESTER\par
+    \fontsize{17pt}{13pt}\selectfont
+    OF USING COMPUTER\par
+  }
+}
+
+\def\chaptersymb#1{\expandafter\@chaptersymb\csname c@#1\endcsname}
+\def\@chaptersymb#1{%
+  \ifcase#1%
+    \or \or \or \or \or%
+    \or \or \or \or \or%
+    \or \or \or \or %
+    \else\@ctrerr
+  \fi
+}
+
+\newcommand{\chapteraftername}{\hspace*{1cm}
+  \renewcommand{\thechapter}{\chaptersymb{chapter}}
+  {\Huge\color{DeepSkyBlue3}\parbox[t][.3ex][b]{6em}{\thechapter}\par}
+  \renewcommand{\thechapter}{\chinese{chapter}}
+  {\fontsize{5pt}{5pt}\color{DeepSkyBlue3}\rule[3pt]{13em}{1.5pt}\par}
+}
+
+\ctexset{
+  part = {
+    pagestyle   = empty,
+    format      = \partformat,
+    nameformat  = \bfseries\fontsize{32pt}{38pt}\selectfont\noindent\color{DeepSkyBlue3},
+    aftername   = \par\vskip10pt{\fontsize{24pt}{24pt}\selectfont\color{DeepSkyBlue3}PART \thepart}\par\vskip20pt,
+    titleformat = \fontsize{64pt}{72pt}\selectfont,
+    aftertitle  = \partaftertitle
+  },
+  chapter = {
+    format      = \bfseries\raggedright,
+    nameformat  = \huge\noindent\color{DeepSkyBlue3},
+    aftername   = \chapteraftername,
+    titleformat = \Huge,
+    beforeskip  = 18pt
+  }
 }
 
 % 列表

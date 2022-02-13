@@ -223,19 +223,19 @@
     排版时间：\@date \\
     排版环境：
     \ifwindows
-      Windows \\
+      Windows NT\\
     \fi
     \iflinux
       Linux \\
     \fi
-    \ifmacos
+    \ifmacosx
       macOS \\
     \fi
     \ifcygwin
-      Cygwin on Windows \\
+      Cygwin \\
     \fi
-    内容 Git 提交编号：\texttt{1145141919810abcdef} \\
-    小样 Git 提交编号：\texttt{\input{.git/refs/heads/main}} \\
+    内容提交哈希：\texttt{1145141919810abcdef} \\
+    小样提交哈希：\texttt{\input{.git/refs/heads/main}} \\
     \begin{pspicture}(2in,0.6in)
       \psbarcode[file]{.git/refs/heads/main}{height=0.4}{pdf417}
     \end{pspicture}

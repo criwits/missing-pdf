@@ -23,6 +23,9 @@
 % 格式
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% 图片浮动
+\RequirePackage{float}
+
 \RequirePackage{hyperref}
 \hypersetup{
   colorlinks,%
@@ -223,7 +226,7 @@
     排版时间：\@date \\
     排版环境：
     \ifwindows
-      Windows NT\\
+      Windows NT \\
     \fi
     \iflinux
       Linux \\
@@ -270,6 +273,12 @@
   colback=white,
   colbacktitle=RoyalBlue4,
   colframe=RoyalBlue4
+}
+
+\newtcolorbox{intro}{
+  colback=LightBlue1,
+  colframe=DeepSkyBlue3,
+  title=在开始之前……
 }
 
 % 练习

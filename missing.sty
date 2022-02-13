@@ -13,7 +13,7 @@
 \RequirePackage[x11names]{xcolor}
 \RequirePackage{wrapfig,tikz,pdfpages}
 \RequirePackage{tcolorbox}
-\RequirePackage[fontset=none,zihao=false,scheme=chinese,heading=true]{ctex}
+\RequirePackage[fontset=none,zihao=false,scheme=chinese,heading=true,punct=kaiming]{ctex}
 \RequirePackage{xeCJKfntef}
 \RequirePackage[os=win]{menukeys}
 \RequirePackage{pst-barcode}
@@ -46,6 +46,10 @@
 \setCJKmainfont{思源黑体}[BoldFont=思源黑体 Bold, Windows=Office Support MDL2 Assets, Icons=Segoe Fluent Icons, Mapping=quote]
 \setCJKsansfont{思源黑体}[BoldFont=思源黑体 Bold, Windows=Office Support MDL2 Assets, Icons=Segoe Fluent Icons, Mapping=quote]
 \setCJKmonofont{等距更纱黑体 Slab SC}
+
+% 如果单纯用 punct=kaiming，实际上部分句末点号的宽度还是撑不到 1em。
+% 所以手动指派这三个句末点号的宽度好了。
+\xeCJKsetwidth{。？！}{1em}
 
 % tcolorbox包
 \tcbuselibrary{skins, raster, theorems, breakable}

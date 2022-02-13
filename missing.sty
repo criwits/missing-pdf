@@ -17,7 +17,7 @@
 \RequirePackage{xeCJKfntef}
 \RequirePackage[os=win]{menukeys}
 \RequirePackage{pst-barcode}
-
+\RequirePackage{ifplatform}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 格式
@@ -220,10 +220,24 @@
     \pdfbookmark{版权信息页}{copyright}
     \setlength{\parskip}{0.3cm}
     \setlength{\parindent}{0em}
-    本文档排版于 \@date 。\\
-    Git提交编号：\texttt{\input{.git/refs/heads/main}} \\
+    排版时间：\@date \\
+    排版环境：
+    \ifwindows
+      Windows \\
+    \fi
+    \iflinux
+      Linux \\
+    \fi
+    \ifmacos
+      macOS \\
+    \fi
+    \ifcygwin
+      Cygwin on Windows \\
+    \fi
+    内容 Git 提交编号：\texttt{1145141919810abcdef} \\
+    小样 Git 提交编号：\texttt{\input{.git/refs/heads/main}} \\
     \begin{pspicture}(2in,0.6in)
-      \psbarcode[file]{.git/refs/heads/main}{}{pdf417}
+      \psbarcode[file]{.git/refs/heads/main}{height=0.4}{pdf417}
     \end{pspicture}
     \vfill
     \includegraphics[width=4cm]{assets/by-nc-sa.png}\par

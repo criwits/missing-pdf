@@ -4,7 +4,7 @@ REQUIRE = $(MISSING).tex $(MISSING).sty
 TEMP    = missing.aux chapters/*.aux missing.log missing.out missing.toc missing.xdv missing.synctex.gz
 
 LATEX   = xelatex
-OPTIONS = -interaction=nonstopmode -synctex=1 -output-driver="xdvipdfmx -i dvipdfmx-unsafe.cfg -q -E"
+OPTIONS = -interaction=nonstopmode -synctex=1 -output-driver="xdvipdfmx -i dvipdfmx-unsafe.cfg -q -E" --shell-escape
 NOPDF   = --no-pdf
 
 all: $(PDF)

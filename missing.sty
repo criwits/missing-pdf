@@ -9,7 +9,7 @@
 \RequirePackage{cmbright}
 \RequirePackage{fontspec}
 \RequirePackage{amsmath,amssymb}
-\RequirePackage{graphicx,float}
+\RequirePackage{graphicx,float,booktabs,array}
 \RequirePackage[x11names]{xcolor}
 \RequirePackage{wrapfig,tikz,pdfpages}
 \RequirePackage{tcolorbox}
@@ -212,6 +212,16 @@
 
 % 强调文字
 \newcommand{\regcolor}[1]{\textbf{{\color{DodgerBlue2} #1}}}
+
+% 禁止乱加空格
+\let\oldtexttt\texttt
+\def\clearglue{\xeCJKsetup{CJKecglue = {}}}
+\def\restoreglue{\xeCJKsetup{CJKecglue = { }}}
+\renewcommand{\texttt}[1]{
+  \protect\clearglue
+  \oldtexttt{#1}
+  \protect\restoreglue
+}
 
 % 标题页
 \renewcommand{\maketitle}{%

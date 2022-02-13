@@ -9,7 +9,7 @@
 \RequirePackage{cmbright}
 \RequirePackage{fontspec}
 \RequirePackage{amsmath,amssymb}
-\RequirePackage{graphicx}
+\RequirePackage{graphicx,float}
 \RequirePackage[x11names]{xcolor}
 \RequirePackage{wrapfig,tikz,pdfpages}
 \RequirePackage{tcolorbox}
@@ -22,9 +22,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 格式
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% 图片浮动
-\RequirePackage{float}
 
 \RequirePackage{hyperref}
 \hypersetup{
@@ -53,6 +50,7 @@
 % 如果单纯用 punct=kaiming，实际上部分句末点号的宽度还是撑不到 1em。
 % 所以手动指派这三个句末点号的宽度好了。
 \xeCJKsetwidth{。？！}{1em}
+\xeCJKsetkern{」}{？}{1pt}
 
 % tcolorbox包
 \tcbuselibrary{skins, raster, theorems, breakable}
@@ -69,6 +67,7 @@
 \fancyhead[ER]{\bfseries\leftmark}
 \fancyhead[EL]{\bfseries\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{12.5pt}
 
 \pagestyle{fancy}
 

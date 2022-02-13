@@ -22,14 +22,14 @@
 
 我们先不谈硬件那些抽象的东西，我们假设这样一个场景：老师收了一个班的一摞作业，现在需要批改这些作业。
 
-\begin{figure}[H]
+\begin{figure}[htb!]
   \centering
   \includegraphics[width=7cm]{assets/Teacher_and_homework.png}
   \caption{老师和她需要批改的作业}
   \label{teacher-and-homework}
 \end{figure}
 
-老师批改作业的过程，可以简单地分解为下面这样几个步骤：
+就如图 \ref{teacher-and-homework} 所绘的那样，老师批改作业的过程，可以简单地分解为下面这样几个步骤：
 
 \begin{enumerate}
   \item 老师将这一摞作业堆在办公桌的一边，腾出办公桌的中央和另一边。
@@ -56,20 +56,26 @@
 处理器是电脑工作的核心芯片，\regcolor{因此，处理器的性能就很大程度上决定了电脑的性能，决定了我们使用这台电脑流不流畅、玩游戏卡不卡、工作效率高不高}。在今天，全世界电脑芯片基本上是由两家美国公司设计制造\footnote{事实上，芯片的「设计」和「制造」两件事是不一样的，就像能设计出房屋的建筑师不一定会到工地上去砌墙。英特尔能够自行完成从设计到制造整条流水线，而 AMD 只能完成设计，它的处理器是由专门负责制造芯片的厂商（例如台积电）生产的。}的，其中一家叫做「英特尔」（Intel），另一家叫做「AMD」。
 
 \begin{itemize}
-  \item 英特尔公司现在主要的 CPU 产品线称作「酷睿」（Core），而「酷睿」系列又分成了 4 个档次——「i3」「i5」「i7」和「i9」。如果你现在在用笔记本电脑，不妨瞄一眼键盘下方是否有这样一个蓝色（也有可能是灰色，这里没有列出）的贴纸：
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=6cm]{assets/Stickers_Intel.png}
-    \caption{英特尔的贴纸}
-    \label{stickers-of-intel}
-  \end{figure}
-  \item AMD 公司现在主要的 CPU 产品线称作「锐龙」（Ryzen），而「锐龙」系列也分成了 3 个档次——「R5」「R7」和「R9」\footnote{其实还有 R3，但是很少在消费市场见到。}。如果你现在用笔记本电脑，不妨瞄一眼键盘下方是否有这样一个红色的贴纸：
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=2cm]{assets/Sticker_AMD.png}
-    \caption{AMD 的贴纸}
-    \label{sticker-of-amd}
-  \end{figure}
+  \item 英特尔公司现在主要的 CPU 产品线称作「酷睿」（Core），而「酷睿」系列又分成了 4 个档次——「i3」「i5」「i7」和「i9」。
+    如果你现在在用笔记本电脑，不妨瞄一眼键盘下方是否有如图 \ref{stickers-of-intel} 那样一个蓝色（也有可能是灰色，这里没有列出）的贴纸。
+    \begin{figure}[htb!]
+      \centering
+      \begin{minipage}{8cm}
+        \centering
+        \includegraphics[width=6cm]{assets/Stickers_Intel.png}
+        \caption{英特尔的贴纸}
+        \label{stickers-of-intel}
+      \end{minipage}
+      \qquad
+      \begin{minipage}{5cm}
+        \centering
+        \includegraphics[width=2cm]{assets/Sticker_AMD.png}
+        \caption{AMD 的贴纸}
+        \label{sticker-of-amd}
+      \end{minipage}
+    \end{figure}
+  \item AMD 公司现在主要的 CPU 产品线称作「锐龙」（Ryzen），而「锐龙」系列也分成了 3 个档次——「R5」「R7」和「R9」\footnote{其实还有 R3，但是很少在消费市场见到。}。
+    如果你现在用笔记本电脑，不妨瞄一眼键盘下方是否有如图 \ref{sticker-of-amd} 那样一个红色的贴纸。
 \end{itemize}
 
 我们常常说一个电脑是「双核」「四核」的，这里的「双核」「四核」也是处理器中的概念。这些处理器在一片芯片放了多个「核心」，相当于一个个协同起来的独立的小处理器。例如「双核」处理器，意味着在一枚处理器芯片上集成了两个核心，相当于两个大脑协同工作，当我们需要用电脑同时做很多事情的时候就有所裨益。同理，「四核」「八核」就是在一个芯片上集成了四个甚至是八个核心。
@@ -121,7 +127,7 @@
 \begin{figure}[H]
   \centering
   \includegraphics[width=10cm]{assets/Partition.png}
-  \caption{打开【此电脑】，你就能看到硬盘的几个分区}
+  \caption{一些分区}
   \label{partitions}
 \end{figure}
 
@@ -136,12 +142,15 @@
 
 对于喜欢玩游戏的同学来说，「显卡」是他们在选购电脑时会着重考虑的一个因素。
 
-最开始，「显卡」就是电脑里面的一个独立的芯片，像内存那样有自己的独立的电路板并插接在主板上。这个芯片的功能是专门进行画面的绘制和图像的处理，因而得名「显」卡。所有显示在屏幕上的画面，都是由显卡进行「绘制」的。因而\regcolor{显卡的性能主要是对游戏以及一些图形相关的工作（比如三维制图、视频剪辑）有较大影响}。下图是近 20 年前的电脑显卡的照片。
+最开始，「显卡」就是电脑里面的一个独立的芯片，像内存那样有自己的独立的电路板并插接在主板上。
+这个芯片的功能是专门进行画面的绘制和图像的处理，因而得名「显」卡。
+所有显示在屏幕上的画面，都是由显卡进行「绘制」的。
+因而\regcolor{显卡的性能主要是对游戏以及一些图形相关的工作（比如三维制图、视频剪辑）有较大影响}。
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=8cm]{assets/Old_GPU.png}
-  \caption{以前电脑上的显卡}
+  \caption{近 20 年前电脑上的显卡}
   \label{old-gpu}
 \end{figure}
 
@@ -154,7 +163,7 @@
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=8cm]{assets/3090.png}
+  \includegraphics[width=6cm]{assets/3090.png}
   \caption{英伟达目前的顶级游戏显卡「RTX 3090」}
   \label{3090-gpu}
 \end{figure}
@@ -182,21 +191,25 @@
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=10cm]{assets/Computer_Structure.png}
+  \includegraphics[width=13cm]{assets/Computer_Structure.png}
   \caption{App、操作系统和硬件的关系}
   \label{computer-structure}
 \end{figure}
 
 由于上层的软件（也就是 app）需要依赖操作系统来实现功能，而每个操作系统留给 app 的接口细节上有不同，因此，针对不同操作系统开发的软件是不能直接通用的。App 厂商一般会为不同的操作系统开发同一款 app，这样就能照顾到使用不同系统的用户。
 
-今天主流的手机操作系统有「安卓」（Android）和「iOS」。后者只能使用在 Apple 的硬件上，前者则被各个手机厂商使用\footnote{华为开发的「鸿蒙」（Harmony OS）由于以某种方式兼容安卓软件，在这里我们暂且作为前者对待。}。而到了电脑上，「Windows」和「macOS」是最常见的两种操作系统。后者只能使用在 Apple 的硬件上。由于我们认为 macOS 的使用者不会依靠《Missing》来学习电脑知识，因而《Missing》中的所有操作都是认定读者使用 Windows 系统的。
+今天主流的手机操作系统有「安卓」（Android）和「iOS」。
+后者只能使用在 Apple 的硬件上，前者则被各个手机厂商使用\footnote{华为开发的「鸿蒙」（Harmony OS）由于以某种方式兼容安卓软件，在这里我们暂且作为前者对待。}。
+而到了电脑上，「Windows」和「macOS」是最常见的两种操作系统，
+后者只能使用在 Apple 的硬件上。
+由于我们认为 macOS 的使用者不会依靠《Missing》来学习电脑知识，因而《Missing》中的所有操作都认定读者使用 Windows 系统。
 
-下图中，左侧是 Windows 操作系统的典型界面，而右侧是 macOS 系统的典型界面。
+下图为我们展示了 Windows 与 macOS 系统的典型界面。
 
-\begin{figure}[H]
+\begin{figure}[htb!]
   \centering
-  \includegraphics[width=10cm]{assets/Windows_and_macOS.png}
-  \caption{Windows 和 macOS 系统的界面}
+  \includegraphics[width=11cm]{assets/Windows_and_macOS.png}
+  \caption{Windows （左）和 macOS （右）}
   \label{win-and-mac}
 \end{figure}
 
@@ -224,10 +237,10 @@ Windows 可以使用在英特尔或者 AMD 处理器的电脑上——事实上�
   \item 你使用的是游戏本还是轻薄本？亦或是介于二者之间的所谓「全能本」？尝试翻到笔记本的底面，上网搜索它底面所写的型号，了解关于你自己机器的更多信息。
   \item 在 Windows 10 / 11 中，打开【任务管理器】，切换到【性能】选项卡，可以看到一个更详细的硬件运行状态，其中【硬盘】相关栏目展示了你设备的硬盘数量和类型（机械硬盘 HDD、固态硬盘 SSD）。尝试查看你电脑的硬盘容量和类型。
   
-  你可以通过按 \keys{Ctrl} + \keys{Shift} + \keys{Esc} 来打开「任务管理器」。也可以右击【开始按钮】，选择【任务管理器】来打开它。
+  你可以通过按 \keys{Ctrl + Shift + Esc} 来打开「任务管理器」。也可以右击【开始按钮】，选择【任务管理器】来打开它。
   \begin{figure}[H]
     \centering
-    \includegraphics[width=8cm]{assets/Check_disk_status.png}
+    \includegraphics[width=10cm]{assets/Check_disk_status.png}
     \caption{查看电脑硬盘容量和类型}
     \label{check-disk}
   \end{figure}

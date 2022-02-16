@@ -1,4 +1,5 @@
 \chapter{文件与文件管理}
+\label{files-and-file-management}
 
 \begin{intro}
   在这一部分，我们将重新介绍你可能所不知道的「文件」以及「文件」的管理，以及一些实用的文件管理的技巧。
@@ -32,7 +33,7 @@
 可以看到，这两个分区一个大小为 175 GB，另一个大小为 299 GB，相加为 474 GB——这是这台电脑的硬盘可用总空间。
 
 划分分区的意义，在于帮助我们更好地管理文件。
-分区划分之后，各个分区之间就仿佛被「隔离」开来了。
+分区划分之后，各个分区之间就仿佛被「隔离」开来了，如图 \ref{Disk_Parts} 所展示的那样。
 即使我们「格式化」一个分区（这样会删除这个分区中的所有文件），也不会影响另外一个分区里面的文件。
 
 \begin{figure}[htb!]
@@ -115,11 +116,11 @@
 \begin{figure}[htb!]
   \centering
   \includegraphics[width=5cm]{assets/Files_No_Ext.png}
-  \caption{隐藏扩展名的文件}
+  \caption{没有显示扩展名的文件}
   \label{File_No_Ext}
 \end{figure}
 
-在 Windows 10 中请点选文件夹窗口上方的【查看】选项卡，然后勾选【文件扩展名】这一项：
+在 Windows 10 中请点选文件夹窗口上方的【查看】选项卡，然后勾选【文件扩展名】，如图 \ref{Windows_10_set_full_filename} 所示；在 Windows 11 中请点选文件夹窗口上方的【查看】菜单，然后勾选【显示】→【文件扩展名】，如图 \ref{Windows_11_set_full_filename} 所示。
 
 \begin{figure}[htb!]
   \centering
@@ -127,8 +128,6 @@
   \caption{Windows 10 设置方法}
   \label{Windows_10_set_full_filename}
 \end{figure}
-
-在 Windows 11 中请点选文件夹窗口上方的【查看】菜单，然后勾选【显示】→【文件扩展名】：
 
 \begin{figure}[htb!]
   \centering
@@ -155,7 +154,7 @@
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=6cm]{assets/Real_Folder.png}
+  \includegraphics[width=4cm]{assets/Real_Folder.png}
   \caption{真实的文件夹}
   \label{Real_Folder}
 \end{figure}
@@ -275,9 +274,11 @@
 因此，你双击打开这个「网易云音乐」快捷方式，就会打开 \verb|cloudmusic.exe| 这个文件。
 如果你\regcolor{删掉了这个快捷方式，它并不会影响 \texttt{cloudmusic.exe} 这个文件，不会影响你电脑上安装的网易云音乐本身。}
 
-\regcolor{（因此，卸载软件的方式可不是把桌面上的「快捷方式」删掉就完事的）}
+\begin{note}
+  因此，卸载软件的方式可不是把桌面上的「快捷方式」删掉就完事的。
+\end{note}
 
-所有类型的文件以及文件夹都可以制作无数个快捷方式。
+所有类型的文件以及文件夹都可以制作出无数个快捷方式。
 如果你想给自己的某个文件 / 文件夹制作一个快捷方式，只需右键它，选择【发送到】→【桌面快捷方式】，就能在桌面生成一个指向这个文件的快捷方式了。
 这个快捷方式可以挪到系统的任何地方，也可以复制粘贴出很多个副本。它们全都指向原来的那个文件本身。
 

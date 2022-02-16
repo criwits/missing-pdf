@@ -291,5 +291,27 @@
   title=在开始之前……
 }
 
+\newtcolorbox{warning}{
+  enhanced,
+  breakable=true,
+  top=4mm,
+  colframe=Firebrick2,
+  colback=white,
+  colbacktitle=Firebrick2,
+  coltext=Firebrick1,
+  coltitle=white,
+  attach boxed title to top left={xshift=.5cm, yshift=-\tcboxedtitleheight/2},
+  fonttitle=\bfseries,
+  fontupper=\bfseries,
+  title={
+    \tikz {
+      \draw[rounded corners=.5pt, line width=.8pt, draw=black, fill=yellow] (0,0) -- (0:10pt) -- (60:10pt) -- cycle;
+      \draw[line width=1pt, line cap=round, draw=black] (5pt,3pt) -- (5pt,6pt);
+      \fill[black] (5pt,1.5pt) circle [radius=.7pt];
+    }
+    警告
+  }
+}
+
 % 练习
 \newcommand{\practice}{\section*{练习 \thechapter}\addcontentsline{toc}{section}{练习 \thechapter}}

@@ -7,7 +7,7 @@
 
 \RequirePackage[inner=1.5in,outer=1.25in,vmargin=1in]{geometry}
 \RequirePackage{cmbright}
-\RequirePackage{fontspec}
+\RequirePackage[quiet]{fontspec}
 \RequirePackage{amsmath,amssymb}
 \RequirePackage{graphicx,float,booktabs,array}
 \RequirePackage[x11names]{xcolor}
@@ -31,8 +31,8 @@
 }
 
 % 字体
-\setmainfont{Inter}
-\setsansfont{Inter}
+\setmainfont{Inter}[Numbers = Monospaced]
+\setsansfont{Inter}[Numbers = Monospaced]
 \setmonofont{等距更纱黑体 Slab SC}
 
 \xeCJKsetup{

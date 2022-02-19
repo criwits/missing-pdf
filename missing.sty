@@ -115,15 +115,16 @@
   }
 }
 
-\newcounter{premepi}
-\def\premepisymb#1{\expandafter\@premepisymb\csname c@#1\endcsname}
-\def\@premepisymb#1{%
+\newcounter{noheadchap}
+\def\noheadsymb#1{\expandafter\@noheadsymb\csname c@#1\endcsname}
+\def\@noheadsymb#1{%
   \ifcase#1%
-    \or \or %
+    \or \or \or %
     \else\@ctrerr
   \fi
 }
-\renewcommand\thepremepi{\premepisymb{premepi}}
+\renewcommand\thenoheadchap{\noheadsymb{noheadchap}}
+\setcounter{noheadchap}{0}
 
 \def\chaptersymb#1{\expandafter\@chaptersymb\csname c@#1\endcsname}
 \def\@chaptersymb#1{%
@@ -149,7 +150,8 @@
     #1
   }{
     \bfseries\raggedright
-    {\Huge\color{DeepSkyBlue3}\noindent\parbox[t][.3ex][b]{6em}{\thepremepi}\par}
+    \stepcounter{noheadchap}
+    {\Huge\color{DeepSkyBlue3}\noindent\parbox[t][.3ex][b]{6em}{\thenoheadchap}\par}
     \hspace*{.2cm}#1
   }
 }

@@ -87,7 +87,27 @@
     \renewcommand\thefootnote{\arabic{footnote}}%
 }
 
+%
 % 部分、章节的标题
+%
+
+% 修复 \chapter* 的页眉问题
+
+\renewcommand{\@schapter}[1]{%
+  \CTEX@ifnamefalse
+  \CTEX@makeanchor@schapter{\Hy@chapapp*}%
+  \CTEX@gettitle{#1}%
+  \chaptermark{#1}%
+  \if@twocolumn
+    \@topnewpage[\@makeschapterhead{#1}]%
+  \else
+    \@makeschapterhead{#1}%
+    \@afterheading
+  \fi
+}
+
+% 「部分」的格式
+
 \newcommand{\partformat}[1]{
   \raggedright
   \tikz[remember picture,overlay] \node at (current page.center) {\includegraphics{assets/missing-parts-bg.pdf}};
@@ -110,6 +130,8 @@
     OF USING COMPUTER\par
   }
 }
+
+% 自定义图标的格式
 
 \newcounter{noheadchap}
 \def\noheadsymb#1{\expandafter\@noheadsymb\csname c@#1\endcsname}
@@ -139,6 +161,8 @@
     \else\@ctrerr
   \fi
 }
+
+% 「章节」的格式
 
 \newcommand{\chapterformat}[1]{
   \CTEXifname{

@@ -243,34 +243,35 @@ Bandizip的主界面大致如下图所示。
   \label{Bandizip_View}
 \end{figure}
 
-Bandizip 值得一提的两个功能，一是「压缩文件预览」，二是「自动解压」。
+Bandizip 值得一提的两个功能，一是「压缩文件预览」，二是「智能解压」。
 
 「压缩文件预览」是说，当你右击一个压缩文件时，若这个文件没怎么加密\footnote{压缩文件的加密大体上有两种情况：一种是比较完全，这种压缩文件如果不输入密码，就连里边压缩的文件的名字也无法读取；另一种则相对宽松，在不输入密码的时候，也可以打开这个压缩包去查看里面有哪些文件（尽管不能把它们解压出来）。}，你的右键菜单便会显示出这个压缩包内部的部分文件；
 若是连文件名都加密了，那当然什么都看不见啦。
+这个功能默认未启用，需要在 Bandizip 的【设置】→【上下文菜单】→【选择解压菜单】中开启。
 可惜这个功能只支持旧式菜单，不支持 Windows 11 的新式菜单。
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=8cm]{assets/Compressed_Preview.jpg}
+  \includegraphics[width=8cm]{assets/Compressed_Preview.png}
   \caption{「压缩文件预览」右键菜单}
   \label{Compressed_Preview}
 \end{figure}
 
-「自动解压」则是一种「傻瓜式解压操作」。
+「智能解压」则是一种「傻瓜式解压操作」。
 还记得\nameref{files-and-file-management}中我们介绍的「解压到当前文件夹」和「解压到 xxxxxx\textbackslash 」的区别吗？
-「自动解压」能够自动在这两种模式中选择更合适的那个——当你的压缩文件根目录仅有一个文件或文件夹时，Bandizip 便选择「解压到当前文件夹」；
-若有多个文件 / 文件夹， Bandizip 则会选择「解压到 xxxxxx\textbackslash」。
+「智能解压」能够自动在这两种模式中选择更合适的那个——当你的压缩文件根目录仅有一个项目（无论文件或文件夹）时，Bandizip 便选择「解压到当前文件夹」；
+若有多个项目， Bandizip 则会选择「解压到 xxxxxx\textbackslash」。
 
-举个简单的例子：上图中的压缩包内部就有许多图片，假设这个压缩包所在的路径是「\verb|D:\Touhou_Street.zip|」，点击【自动解压】，那么图片就会被提取到「\verb|D:\Touhou_Street\|」下；
+举个简单的例子：上图中的压缩包内部就有许多图片，假设这个压缩包所在的路径是「\verb|D:\Touhou_Street.zip|」，点击【智能解压】，那么图片就会被提取到「\verb|D:\Touhou_Street\|」下；
 若这压缩包里面就一张图，则会被提取到「\verb|D:\|」下。
 
-「自动解压」既支持旧式右键菜单也支持 Windows 11 的新式右键菜单，若使用 Bandizip，我们建议始终使用「自动解压」来解压文件，除非你有特殊目的。
+「智能解压」既支持旧式右键菜单也支持 Windows 11 的新式右键菜单，若使用 Bandizip，我们建议始终使用「智能解压」来解压文件，除非你有特殊目的。
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=9cm]{assets/Auto_Decompress.jpg}
-  \caption{「自动解压」右键菜单}
-  \label{Auto_Decompress}
+  \includegraphics[width=9cm]{assets/Smart_Extract.jpg}
+  \caption{「智能解压」右键菜单}
+  \label{Smart_Extract}
 \end{figure}
 
 \subsection{WinRAR}
@@ -314,6 +315,6 @@ WinRAR 的国际官网是 \url{https://www.rarlab.com/}，但如果要下载「�
 
 \begin{enumerate}
   \item 简要用自己的话复述「压缩」这个过程。
-  \item 自己制作几个压缩文件，然后分别用「解压到当前文件夹」「解压到 xxxxxx\textbackslash 」来解压它们，体会这两种解压方式的区别。思考 Bandizip 的「自动解压」到底有多「自动」。
+  \item 自己制作几个压缩文件，然后分别用「解压到当前文件夹」「解压到 xxxxxx\textbackslash 」来解压它们，体会这两种解压方式的区别。思考 Bandizip 的「智能解压」到底有多「智能」。
   \item 你正在使用什么压缩软件？它的使用体验（界面美观度、操作难易度、是否有广告……）如何？
 \end{enumerate}

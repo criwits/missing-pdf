@@ -13,7 +13,7 @@
   \end{itemize}
 \end{intro}
 
-我们在日常使用电脑的过程中，总不可能避免遇到各种各样的问题，这其中最为出名的要数「蓝屏死机」了。
+我们在日常使用电脑的过程中，总不可能避免遇到各种各样的问题，其中最为出名的要数「蓝屏死机」了。
 蓝屏令人恼火，但更多的却是无可奈何，因为大多数人只能盯着那蓝蓝的界面，等着电脑自动重启，然后继续使用，祈祷着不会再一次出现同样的问题。
 但我们真的束手无策吗？在此，不妨来详细了解一下这蓝屏，顺便尝试着手清除它的隐患。
 
@@ -21,15 +21,15 @@
 
 \section{:(}
 
-蓝屏死机，英文叫 BSoD（Blue Screen of Death，「死亡蓝屏」，很形象啊）。
-如今的 2022 年，大多数个人电脑上搭载的都是 Windows 10 或 Windows 11 操作系统，它们的蓝屏错误界面很有特色，大概如图 \ref{Win-10-BSoD}。
-
 \begin{figure}[htb!]
   \centering
   \includegraphics[width=9cm]{assets/Win-10-BSoD.png}
   \caption{Windows 10 与 11 的蓝屏界面}
   \label{Win-10-BSoD}
 \end{figure}
+
+蓝屏死机，英文叫 BSoD（Blue Screen of Death，「死亡蓝屏」，很形象啊）。
+如今的 2023 年，大多数个人电脑上搭载的都是 Windows 10 或 Windows 11 操作系统，它们的蓝屏错误界面很有特色，大概如图 \ref{Win-10-BSoD}。
 
 以一个大大的文字表情「 :( 」开头，代表了人们遇到这个界面时的心声，接下来是一些说明性文字，看起来很简洁。
 略览这些文字，我们不难推测，\regcolor{蓝屏死机一般是操作系统遭受某种不可抗错误而被迫终止运行造就的结果}。
@@ -55,7 +55,7 @@
 1990 年，微软发布了 Windows 3.0 操作系统，这个版本获得了巨大成功，发布的半年内就卖了 200 万份。
 它仍然基于 DOS，但带来了更好的性能……与更新的报错界面。
 值得注意的一点是，在这个版本的 Windows 中，用户可以按下 \keys{Ctrl + Alt + Delete} 来手动触发错误\CJKsout*{（随时随地蓝屏）}。
-之后发布于 1994 年的 Windows 3.2 则是第一个得到广泛使用的中文版 Windows 系统（还可以玩扫雷哦），于是我们可以看到图 \ref{Win-3.2-Error} 这样带中文的的蓝色错误界面。
+之后发布于 1994 年的 Windows 3.2 则是第一个得到广泛使用的中文版 Windows 系统（还可以玩扫雷哦），于是我们可以看到图 \ref{Win-3.2-Error} 这样带中文的蓝色错误界面。
 
 \begin{figure}[htb!]
   \centering
@@ -96,7 +96,7 @@
 微软觉得很棒，但 IBM 很不爽，随后在 1990 年终止了与微软的合作，微软开发的东西也变成了「Windows NT」，而这也是现今 Windows 系统的内核。
 
 Windows NT 的第一个大版本系列是 Windows NT 3.x，它包括 1993 年发布的 3.1、1994 年发布的 3.4 与 1995 年发布的 3.51。
-从这个系列起，Windows 蓝屏真正地可以叫做蓝屏了，因为它来自系统运行时的崩溃，一崩溃就只能重启。
+从这个系列起，Windows 蓝屏可以真正地叫做蓝屏了，因为它来自系统运行时的崩溃，一崩溃就只能重启。
 
 \begin{figure}[htb!]
   \centering
@@ -116,7 +116,7 @@ Windows NT 的第一个大版本系列是 Windows NT 3.x，它包括 1993 年发
 1996年，Windows NT 4.0 发布。
 这个系统看起来与 Windows NT 3.x 大同小异，当然蓝屏界面与 Windows NT 3.x 也几乎一致，没什么好看的。
 
-虽然这样的蓝屏看起来很吓人，满屏幕密密麻麻看不懂的东西，但却方便了用户在后续寻求帮助时，让专业人士来分析问题，因为它包含了排查错误所需的许多信息。
+这样的蓝屏虽然看起来很吓人，满屏幕密密麻麻看不懂的东西，却方便了用户在后续寻求帮助时，让专业人士来分析问题，因为它包含了排查错误所需的许多信息。
 不过有些时候蓝屏显示的信息不是很多，或许是这时的错误没有那么多信息来给系统显示。
 
 2000 年，微软发布了 Windows 2000 操作系统（又称 Windows 2K），即便它属于 NT 系列，却使用了与此前 DOS 系列类似的「年份命名法」，或许在千禧年发布的东西总要沾点它的光呢。
@@ -212,6 +212,8 @@ Windows 10 的下一代是 2021 年发布的 Windows 11，正式版的蓝屏界�
 
 \section{搞定蓝屏}
 
+\subsection{设置内存转储}
+
 如今 Windows 10/11 的蓝屏界面只提供了错误代码，如果你尝试过去网上搜索它，一般得到的都是非常笼统的说辞，诸如「使用安全模式启动」「尝试更新驱动」「尝试检查磁盘错误」「尝试系统还原」甚至「尝试重装系统」。
 这也难怪，毕竟蓝屏代码就那么几个，但引起蓝屏的因素却如同恒河沙数，自然只能把想到的全试一遍。
 虽说重装系统能解决 99\% 的问题，但不建议如此大动干戈，毕竟数据无价。
@@ -228,9 +230,48 @@ Windows 10 的下一代是 2021 年发布的 Windows 11，正式版的蓝屏界�
 在蓝屏发生之时，系统会收集发生错误的进程所在的内存与堆栈内容，并将它们放入一个「蓝屏内存转储文件」中。
 如今的蓝屏上「我们只收集某些错误信息」说的就是这个事。
 也就是说，即便蓝屏界面上没有了相关的技术信息，我们也可以通过分析内存转储文件的方式查找真正的蓝屏原因。
-而想要分析内存转储文件，我们需要特殊的工具——WinDbg（Windows 调试器）。
+
+默认情形下，Windows 系统会自动收集内存信息并形成内存转储文件，但你如果发现你的电脑在蓝屏的时候什么也没干，或者想自定义收集选项、查看或设置转储文件的保存位置，那就要前去调整设置。
+与内存转储相关的设置藏得有点深，找到它的操作步骤是这样的：
+
+\begin{enumerate}
+  \item 按下 \keys{ + Pause} 或 \keys{ + Break}，或者右击【此电脑】→【属性】来打开「系统信息」页面；
+  \item 点击【高级系统设置】，弹出「系统属性」窗口；
+  \item 在「系统属性」窗口中点击【高级】→「启动和故障恢复」下的【设置】，就可以看到「写入调试信息」部分有内存转储的相关设置。
+\end{enumerate}
+
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[width=.8\textwidth]{assets/Dump_Settings.jpg}
+  \caption{设置内存转储}
+  \label{Dump_Settings}
+\end{figure}
+
+可见，内存转储的类型有五种，除去「小内存转储」默认保存在 \verb|%SystemRoot%\Minidump| 文件夹下以外，其余选项默认均会生成一个路径为 \verb|%SystemRoot%\MEMORY.DMP| 的文件。
+这些路径中的「\verb|%SystemRoot%|」指的是电脑上 Windows 系统所在的目录，一般而言是 \verb|C:\Windows|（应该不会有人大动干戈把系统移到别处去吧）。
+五种内存转储类型的特征大致是这样的：
+
+\begin{itemize}
+  \item 小内存转储：大小仅有 64 KB 到 256 KB，包含了最基本的崩溃进程、线程、内核堆栈数据与已加载的驱动程序列表，提供最基础的崩溃信息。它的文件名以 \verb|miniMMDDYY-XX.dmp| 为格式，\verb|MMDDYY| 是「月日年」格式的日期， \verb|XX| 是两位数的文件编号。
+  \item 核心内存转储：包含崩溃时 Windows 内核、硬件、驱动程序使用的所有内存，但不包含由用户启动的程序所使用的内存。一般而言这些内存已经足够技术人员来确定崩溃的源头了。
+  \item 完整内存转储：包含崩溃时 Windows 使用的所有内存。这种转储模式能够收集最完全的信息，但会占用大量空间，要求系统盘中的分页文件（pagefile）要有电脑上所有内存那么大。
+  \item 自动内存转储：在分页文件大小由系统自动管理的条件下，系统会自动确保分页文件的大小能尽量完成核心内存转储，当不够用时，分页文件会自动增大并保持大约两星期，之后会恢复原来的大小。
+  \item 活动内存转储：类似于「完整内存转储」，但系统自动筛除了与排查主机问题无关的部分，所以通常而言大小会小于完整内存转储，且能提供内存中的绝大部分有用信息。
+\end{itemize}
+
+若想修改内存转储文件的存储路径，请为「小内存转储」提供一个文件夹目录，为其他类型提供一个 DMP 文件路径。
+
+默认情形下，Windows 会启用「自动内存转储」，这样能平衡存储空间消耗与崩溃信息收集效率，这也是大多数情形下的推荐选项。
+如果存储空间吃紧，建议启用「小内存转储」，让 Windows 至少收集最低限度的崩溃信息。
+不建议启用「完整内存转储」，它在占用大量空间的同时，收集信息的收益并没有比「核心内存转储」高出多少。「活动内存转储」适用于大量运行虚拟机时的情形，它会筛去虚拟机使用的内存，只关注物理主机。
+
+\subsection{分析转储文件}
+
+现在，我们的电脑已经会自动在蓝屏发生时收集内存信息并形成内存转储文件了。
+而想要分析这些内存转储文件，我们需要特殊的工具——WinDbg（Windows 调试器）。
 
 打开 Microsoft Store，也就是微软应用商店，在上面搜索「WinDbg」，跳出来的第一个应用会是「WinDbg Preview」（没错它还是预览版），点击【获取】，等待一会，就安装好了。
+如果不想在 Microsoft Store 安装，也可以去微软提供的 \href{https://learn.microsoft.com/zh-cn/windows-hardware/drivers/debugger/}{WinDbg 官方页面}下载。
 
 \begin{figure}[htb!]
   \centering
@@ -240,12 +281,11 @@ Windows 10 的下一代是 2021 年发布的 Windows 11，正式版的蓝屏界�
 \end{figure}
 
 安装好之后，电脑上的蓝屏内存转储文件就能直接双击打开了。
-Windows 系统创建的蓝屏转储文件一般都在 \verb|C:\Windows\Minidump| 下。
-打开最近一次蓝屏的转储文件，你大概会看到这样的界面：
+转到之前设置转储选项时看到的内存转储路径中，打开最近一次蓝屏的转储文件，你大概会看到如图 \ref{WinDbg-1} 所示的界面。
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=12cm]{assets/WinDbg-1.png}
+  \includegraphics[width=.83\textwidth]{assets/WinDbg-1.png}
   \caption{用 WinDbg 加载蓝屏转储文件}
   \label{WinDbg-1}
 \end{figure}
@@ -254,11 +294,11 @@ Windows 系统创建的蓝屏转储文件一般都在 \verb|C:\Windows\Minidump|
 WinDbg 也很方便，\regcolor{点击这里的蓝色文字就可以运行命令}。
 在命令执行过程中，左侧中下部的状态会显示 \verb|*BUSY*|，同时最下方会显示正在从服务器下载哪些所需的文件，如图 \ref{WinDbg-2} 所示。
 这时可以喝杯茶，等待分析过程完成。
-不过如果你发现下载过程实在太慢了，可以考虑\href{http://www.gov.cn/zhengce/2020-12/26/content_5574802.htm}{通过合法渠道进行国际互联网连接}来加快下载速度。
+不过如果你发现下载过程实在太慢了，可以考虑\href{https://www.12377.cn/xzfg/2020/7f441527_web.html}{通过合法渠道进行国际互联网连接}来加快下载速度。
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=13cm]{assets/WinDbg-2.png}
+  \includegraphics[width=.83\textwidth]{assets/WinDbg-2.png}
   \caption{启动 WinDbg 的分析命令}
   \label{WinDbg-2}
 \end{figure}
@@ -267,7 +307,7 @@ WinDbg 也很方便，\regcolor{点击这里的蓝色文字就可以运行命令
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=13cm]{assets/WinDbg-3.png}
+  \includegraphics[width=.8\textwidth]{assets/WinDbg-3.png}
   \caption{WinDbg 的分析结果}
   \label{WinDbg-3}
 \end{figure}
@@ -307,11 +347,10 @@ WinDbg 也很方便，\regcolor{点击这里的蓝色文字就可以运行命令
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=9cm]{assets/Win-10-BSoD.png}
+  \includegraphics[width=8cm]{assets/Win-10-BSoD.png}
   \caption{Windows 10 与 11 的蓝屏界面}
   \label{Win-10-BSoD-2}
 \end{figure}
-
 
 \begin{note}
   有关此问题的详细信息和可能的解决办法，请访问 \url{https://www.windows.com/stopcode}
@@ -321,7 +360,7 @@ WinDbg 也很方便，\regcolor{点击这里的蓝色文字就可以运行命令
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=10cm]{assets/Stopcode-Webpage.png}
+  \includegraphics[width=8cm]{assets/Stopcode-Webpage.png}
   \caption{二维码指向的网页}
   \label{Stopcode-Webpage}
 \end{figure}

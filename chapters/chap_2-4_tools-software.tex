@@ -64,7 +64,7 @@ VLC Media Player 是一个出色的本地视频播放器，它支持几乎所有
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=13cm]{assets/VLC.jpg}
+  \includegraphics[width=.9\textwidth]{assets/VLC.jpg}
   \caption[VLC界面]{VLC界面\footnotemark}
   \label{VLC}
 \end{figure}
@@ -105,6 +105,23 @@ SpaceSniffer——直白的名字，专注于磁盘空间分析嗅探。在你�
   \label{SpaceSniffer}
 \end{figure}
 
+\subsection{WizTree}
+
+官网下载地址：\url{https://diskanalyzer.com/download}，左侧的「DOWNLOAD INSTALLER」是安装版，右侧的「DOWNLOAD PORTABLE」是便携版。
+
+虽说 WizTree 干的事情其实和上面的 SpaceSniffer 差不多，但是相较后者而言它有几个优点：
+超快分析——500 G 左右的固态硬盘只需 10 秒不到；
+多种视图——包括框图可视化、文件夹占比排序、文件类型占比排序等；
+实时响应——你删了什么东西它马上就知道，并给你标出来。
+但美中不足的是，它的免费版右上角有个「捐助请求」，只有捐点钱才能去掉。
+
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[width=.8\textwidth]{assets/WizTree.jpg}
+  \caption{WizTree界面}
+  \label{WizTree}
+\end{figure}
+
 \subsection{Everything}
 
 官网下载地址：\url{https://www.voidtools.com/zh-cn/downloads/}
@@ -118,6 +135,58 @@ Everything，软件如其名，帮你寻找电脑上的一切！对于不经常�
   \label{Everything}
 \end{figure}
 
+\section{杂烩类}
+
+这一节介绍能干许多不同方面事情的工具。
+
+\subsection{PowerToys}
+
+官网下载地址：\url{https://github.com/microsoft/PowerToys/releases}，注意选择适合自己系统规格的文件，一般而言文件名含有 \verb|Setup| 和 \verb|x64|。
+
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[width=.9\textwidth]{assets/PowerToys.jpg}
+  \caption{PowerToys界面}
+  \label{PowerToys}
+\end{figure}
+
+PowerToys 是由微软主导，集合社区之力共同开发的一套小工具集合，可以辅助我们进行各种各样的工作。
+这里简单介绍一下几个有用的模块：
+
+\begin{itemize}
+  \item 始终置顶：快速将桌面上已经打开的任意窗口置顶。
+  \item 唤醒：保持电脑处于唤醒状态（即不会自动休眠、睡眠或关机）。
+  \item 颜色选择器：识别并提取屏幕上任意一点的颜色，获取它在各种颜色表示方式下的色值。
+    \begin{figure}[htb!]
+      \centering
+      \includegraphics[width=.4\textwidth]{assets/Color_Picker.jpg}
+      \caption{颜色选择器}
+      \label{Color_Picker}
+    \end{figure}
+  \item File Locksmith：识别哪些程序正在占用文件，当删除文件时显示「此文件正被占用」时非常有用。
+    \begin{figure}[htb!]
+      \centering
+      \includegraphics[width=.7\textwidth]{assets/File_Locksmith.jpg}
+      \caption{File Locksmith}
+      \label{File_Locksmith}
+    \end{figure}
+  \item 资源管理器加载项：在资源管理器中提供 SVG、PDF 等文件的图标中预览。
+    \begin{figure}[htb!]
+      \centering
+      \includegraphics[width=.4\textwidth]{assets/Explorer_Addon.jpg}
+      \caption{资源管理器加载项}
+      \label{Explorer_Addon}
+    \end{figure}
+  \item 键盘管理器：重映射按键，例如设置按下 `A` 键其实是按下 `Ctrl` + `C` 快捷键等。
+  \item PowerToys Run：非常强大的快速启动器与搜索工具，输入一些关键字，它可以让你快速打开浏览器进行搜索、运行电脑上含有关键字的应用，甚至是搜索文件名含有关键字的文件（前提是令 Windows 编制好索引）。除此之外，使用特殊的指令，还可以快速进行数学计算、单位换算、执行命令行指令、打开指定路径等等，花样繁多。
+    \begin{figure}[htb!]
+      \centering
+      \includegraphics[width=.5\textwidth]{assets/Powertoys_Run.jpg}
+      \caption{PowerToys Run}
+      \label{PowerToys_Run}
+    \end{figure}
+  \item 文本提取器：快速屏幕 OCR 识别。
+\end{itemize}
 \practice
 
 不妨试试上面介绍的这些小软件？

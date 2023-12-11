@@ -19,7 +19,7 @@
 
 \section{硬盘的分区}
 
-打开桌面上的【此电脑】，我们往往可以看到多于一个的「盘」，例如 C 盘、D 盘等。
+打开桌面上的【此电脑】（但其实打开的东西叫「文件资源管理器」），我们往往可以看到多于一个的「盘」，例如 C 盘、D 盘等。
 这样的「盘」学名叫做「分区」，顾名思义，它们是将硬盘上的空间人为地划分成了一些子空间。
 
 \begin{figure}[htb!]
@@ -38,7 +38,7 @@
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=12cm]{assets/Disk_Parts.png}
+  \includegraphics[width=.9\textwidth]{assets/Disk_Parts.png}
   \caption{硬盘与分区的关系}
   \label{Disk_Parts}
 \end{figure}
@@ -52,7 +52,7 @@
     盘符一般在被指定之后就不方便更换了。在今天，Windows 系统中的盘符都是从字母 C 开始\footnote{这是因为 A 和 B 两个盘符在过去是留给「软盘」的，但软盘早就已经成为历史了，不过这个习惯却保留了下来。}的。
   \item 另一个是「\regcolor{卷标}」，这是一个可选的标识符，它是一定长度的文本。
     在上图中，C 盘的卷标是「Windows」，D 盘的卷标是「Files」。
-    盘符的作用是让系统和软件识别分区，而卷标的作用是帮助我们用户更加直观的了解分区的作用，因而卷标是可以随时更换的。
+    盘符的作用是让系统和软件识别分区，而卷标的作用是帮助我们用户更加直观地了解分区的作用，因而卷标是可以随时更换的。
     事实上，通过右键某一分区，选择【重命名】，就可以更换卷标了。如果你什么都不写，它默认叫做「本地磁盘」。
 \end{itemize}
 
@@ -73,7 +73,7 @@
 
 在本章的后续部分，以及\nameref{software-installation}中，我们会详细介绍，怎样把我们的软件以及其他东西放在 C 盘以外的地方，以及这样做的其他好处。
 
-\section{文件、文件名和和文件类型}
+\section{文件、文件名和文件类型}
 
 「文件」是数据存储在硬盘上的形式。这么说可能有些抽象，直观地说，文件就是我们每天都打交道的东西：
 
@@ -103,23 +103,24 @@
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=5cm]{assets/File_Name.png}
-  \caption{文件名结构}
-  \label{File_Name}
+  \begin{minipage}{.48\textwidth}
+    \centering
+    \includegraphics[width=.95\textwidth]{assets/File_Name.png}
+    \caption{文件名结构}
+    \label{File_Name}
+  \end{minipage}
+  \begin{minipage}{.48\textwidth}
+    \centering
+    \includegraphics[width=.95\textwidth]{assets/Files_No_Ext.jpg}
+    \caption{没有显示扩展名的文件}
+    \label{File_No_Ext}
+  \end{minipage}
 \end{figure}
 
 扩展名也是可以人为改变的，但这样往往会出问题——试想，对于上图中的 \texttt{高等数学不挂速成.mp4} ，它本来是一个 \verb|mp4| 文件，即「视频文件」，应该用看视频的软件打开。
 如果你强行把它改成 \verb|txt| ，系统就会用「记事本」来打开一个「视频文件」——用错误的工具打开文件。
 
-如果你的电脑上，文件的扩展名没有被显示（也就是说你只能看到文件的主名），像这样：
-
-\begin{figure}[htb!]
-  \centering
-  \includegraphics[width=5cm]{assets/Files_No_Ext.jpg}
-  \caption{没有显示扩展名的文件}
-  \label{File_No_Ext}
-\end{figure}
-
+如果你的电脑上，文件的扩展名没有被显示（也就是说你只能看到文件的主名），如图 \ref{File_No_Ext} 所示。
 在 Windows 10 中请点选文件夹窗口上方的【查看】选项卡，然后勾选【文件扩展名】，如图 \ref{Windows_10_set_full_filename} 所示；在 Windows 11 中请点选文件夹窗口上方的【查看】菜单，然后勾选【显示】→【文件扩展名】，如图 \ref{Windows_11_set_full_filename} 所示。
 
 \begin{figure}[htb!]
@@ -146,6 +147,29 @@
   \caption{尝试更改扩展名……}
   \label{Warning_of_Changing_Ext}
 \end{figure}
+
+「那既然这样，我不想不小心突然间改掉文件的扩展名，还不如不开呢。」如果你有这样的想法，那么另一重危险正悄然降临。且看下面的两个文件：
+
+\begin{figure}[htb!]
+  \centering
+  \begin{minipage}{.48\textwidth}
+    \centering
+    \includegraphics[width=.95\textwidth]{assets/fake_doc.png}
+    \caption{两个神奇的文件}
+    \label{fake_doc}
+  \end{minipage}
+  \begin{minipage}{.48\textwidth}
+    \centering
+    \includegraphics[width=.95\textwidth]{assets/fake_doc_revealed.png}
+    \caption{揭示扩展名后}
+    \label{fake_doc_revealed}
+  \end{minipage}
+\end{figure}
+
+这两个「高数速成秘籍」看起来完全一样，就是两个正常的 Word 文档，但众所周知，一个目录下不可能存在两个文件名相同的文件，显然这里面必然有猫腻。
+现在打开文件扩展名，这两个文件的名称变成了下面这个样子，可见，其中一个居然是可执行文件（\verb|exe|）格式，即一个应用程序（详见下文），只是图标故意被做成了 Word 文档的样子。
+所以，看不到扩展名的话，指不定哪天有居心叵测的人发来一个这样伪装的病毒，那可就不好了。
+
 
 \section{文件夹、路径和目录}
 
@@ -211,9 +235,9 @@
 
 可执行文件的扩展名是 \verb|exe| 。
 对于这种类型的文件，系统不会想着用别的软件去打开它，而是直接运行它自身。
-可执行文件有时被直接成为「程序文件」或者「程序」。
+可执行文件有时被直接称为「程序文件」或者「程序」。
 
-需要注意的是，电脑上的一款软件（或者说 app，在《Missing》中我们会同时使用这两种称呼）可能不仅仅只有一个程序，也就不止有一个可执行文件。
+需要注意的是，电脑上的一款软件（或者说 app，在《Missing》中我们会同时使用这两种称呼）可能不仅仅只有一个程序，也就不止一个可执行文件。
 下面是软件「网易云音乐」所在的文件夹中的一部分：
 
 \begin{figure}[htb!]
@@ -241,11 +265,6 @@
 
 \section{文件的「替身」——快捷方式}
 
-你是怎么启动「网易云音乐」的呢？
-
-一般来说，我们会双击桌面上的「网易云音乐」或者点击开始菜单中的「网易云音乐」。
-不管是桌面上的「网易云音乐」还是开始菜单里的「网易云音乐」，它们都是不是这个 app 本身——app 本身的样子我们在上面刚刚看过——而是另一种特殊类型的文件，称作「快捷方式」。
-
 \begin{figure}[htb!]
   \centering
   \includegraphics[width=10cm]{assets/Shortcut.png}
@@ -253,9 +272,10 @@
   \label{Shortcut}
 \end{figure}
 
-「快捷方式」可以看成某个具体文件的单向「指针」或者说「替身」，指向电脑某个角落里的某个文件。
-它的扩展名是 \verb|lnk| ，但实际上不可见\footnote{千万不要手动把一个正常文件的扩展名改成\texttt{lnk}，否则就很难改回来了。}。
-你桌面上的「网易云音乐」，指向的正是网易云音乐软件目录下的那个 \verb|cloudmusic.exe| 文件。右击桌面上的【网易云音乐】，选择【属性】，会弹出这个快捷方式的详细信息：
+你是怎么启动「网易云音乐」的呢？
+
+一般来说，我们会双击桌面上的「网易云音乐」或者点击开始菜单中的「网易云音乐」。
+不管是桌面上的「网易云音乐」还是开始菜单里的「网易云音乐」，它们都是不是这个 app 本身——app 本身的样子我们在上面刚刚看过——而是另一种特殊类型的文件，称作「快捷方式」。
 
 \begin{wrapfigure}[12]{r}{6cm}
   \centering
@@ -263,6 +283,10 @@
   \caption{桌面上的「网易云音乐」}
   \label{NetEase_Music_Link}
 \end{wrapfigure}
+
+「快捷方式」可以看成某个具体文件的单向「指针」或者说「替身」，指向电脑某个角落里的某个文件。
+它的扩展名是 \verb|lnk| ，但实际上不可见\footnote{千万不要手动把一个正常文件的扩展名改成\texttt{lnk}，否则就很难改回来了。}。
+你桌面上的「网易云音乐」，指向的正是网易云音乐软件目录下的那个 \verb|cloudmusic.exe| 文件。右击桌面上的【网易云音乐】，选择【属性】，会弹出这个快捷方式的详细信息：
 
 其中「目标」一栏填写的正是 \verb|cloudmusic.exe| 这个可执行文件，即「网易云音乐」的主程序的路径：
 
@@ -294,7 +318,7 @@
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=10cm]{assets/Compress.png}
+  \includegraphics[width=.9\textwidth]{assets/Compress.png}
   \caption{普通文件与压缩文件}
   \label{Compress}
 \end{figure}
@@ -306,11 +330,11 @@
 
 
 \begin{itemize}
-  \item 选中你要打包的文件。可以使一个文件 / 文件夹，也可以是一群文件 / 文件夹。
+  \item 选中你要打包的文件。可以是一个文件 / 文件夹，也可以是一群文件 / 文件夹。
   \item 右击，选择【添加到压缩包】或者类似语义的选项。
   \item 设置参数，例如压缩格式（推荐 \verb|zip| 格式）、压缩后的文件的文件名以及压缩方式。\\
     一般来说，压缩后的文件的体积要比原来松散文件的体积小（所谓「压缩」）。
-    具体而言，在压缩时可以选择「更快压缩」和「更小体积」之类的选项，前者压缩、解压都更快，但压缩时体积缩小的不明显；后者压缩、解压相对较慢，但压缩后体积可能缩小得更多。
+    具体而言，在压缩时可以选择「更快压缩」和「更小体积」之类的选项，前者压缩、解压都更快，但压缩时体积缩小得不明显；后者压缩、解压相对较慢，但压缩后体积可能缩小得更多。
   \item 开始压缩。压缩完成后，在原来的文件的相同目录下，就会生产一个 \verb|<文件名>.zip| 的文件。
 \end{itemize}
 
@@ -362,7 +386,7 @@
 \end{note}
 
 系统内部维护有一张「表」，这个「表」记录了已知的文件类型（扩展名）和对应的打开方式。
-你可以把这张表想象成这样：
+你可以把这张表想象成如表 \ref{regtable} 所示的样子。
 
 \begin{table}[htbp]
   \centering\begin{tabular}{*{3}{>{\small}c}}
@@ -473,15 +497,15 @@
 上文提到了一个叫做 \verb|文档| 的文件夹，它是系统预置的一个用户文件夹。
 在介绍这一部分之前，我们先简单提一下「用户文件夹」是什么。
 
-如前所言，Windows 系统默认为用户准备了几个文件夹来进行文件的分类。
-通过双击桌面上的【此电脑】，展开【文件夹】折叠项，你可以看到这些文件夹：
-
 \begin{figure}[htb!]
   \centering
   \includegraphics[width=11cm]{assets/User_directories.png}
   \caption{用户文件夹}
   \label{User_directories}
 \end{figure}
+
+如前所言，Windows 系统默认为用户准备了几个文件夹来进行文件的分类。
+通过双击桌面上的【此电脑】，展开【文件夹】折叠项，这些文件夹就如图 \ref{User_directories} 所示。
 
 Windows 系统的本意，是希望用户可以借助这些文件夹来辅助进行文件的整理。
 可是，这些文件夹默认情况下全部位于 C 盘（路径是 \verb|C:\用户\<你的用户名>\| ），而把大量的个人文件放在 C 盘是我们所不建议的。
@@ -498,7 +522,7 @@ Windows 系统的本意，是希望用户可以借助这些文件夹来辅助进
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=5cm]{assets/All_User_Directories.jpg}
+  \includegraphics[width=4cm]{assets/All_User_Directories.jpg}
   \caption{更多用户文件夹}
   \label{All_User_Directories}
 \end{figure}

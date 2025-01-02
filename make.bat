@@ -64,7 +64,7 @@ pause
 goto :end
 
 :end_success
-@REM if exist missing.pdf (start missing.pdf)
+if exist missing.pdf (start missing.pdf)
 echo.
 echo Done.
 

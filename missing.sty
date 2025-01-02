@@ -78,11 +78,26 @@
 \RequirePackage{fancyhdr}
 
 \fancyhf{}
-\fancyhead[OR]{\bfseries\thepage}
-\fancyhead[OL]{\bfseries\rightmark}
-\fancyhead[ER]{\bfseries\leftmark}
-\fancyhead[EL]{\bfseries\thepage}
+\fancyhead[OL]{\bfseries\color{missing}\rightmark}
+\fancyhead[ER]{\bfseries\color{missing}\leftmark}
+\fancyfoot[OR]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[fill=MissingLightGreen] (current page.south east) rectangle +(-31mm, 22mm);
+  \end{tikzpicture}%
+  \bfseries\color{missing}\thepage
+}
+\fancyfoot[EL]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[fill=MissingLightGreen] (current page.south west) rectangle +(31mm, 22mm);
+  \end{tikzpicture}%
+  \bfseries\large\color{missing}\thepage%
+}
 \renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{%
+  {\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
+  \color{missing}\hrule\@height\headrulewidth\@width\headwidth
+  \vskip-\headrulewidth}%
+}
 \setlength{\headheight}{12.5pt}
 
 \pagestyle{fancy}
@@ -194,22 +209,46 @@
 % 「章节」的格式
 
 \newcommand{\chapterformat}[1]{
-  \CTEXifname{
-    \bfseries\raggedright
-    #1
-  }{
-    \bfseries\raggedright
+  \CTEXifname{%
+    \bfseries\raggedright#1%
+  }{%
+    \begin{tikzpicture}[remember picture, overlay]
+      \fill[fill=missing] (current page.north east) -- +(0, -53.8mm) -- +(-140mm, -53.8mm) -- +(-140mm, 0) -- cycle;
+      \fill[fill=MissingLightGreen] (current page.north west) -- +(0, -77mm) -- +(63mm, -77mm) -- +(88mm, 0) -- cycle;
+    \end{tikzpicture}%
     \stepcounter{noheadchap}
-    {\Huge\color{missing}\noindent\parbox[t][.3ex][b]{6em}{\thenoheadchap}\par}
-    \hspace*{.2cm}#1
+    \bfseries\noindent
+    \begingroup
+      \Huge\raggedleft\color{white}
+      \parbox[t][.3ex][b]{1.2em}{\thenoheadchap}\par
+    \endgroup
+    \begingroup
+      \fontsize{5pt}{5pt}\noindent%
+      \color{missing}\rule[3pt]{38.2mm}{1.8pt}%
+      \color{MissingLightGreen}\rule[3pt]{114mm}{1.8pt}\par
+    \endgroup%
+    #1
   }
 }
 
-\newcommand{\chapteraftername}{\hspace*{1cm}
+\newcommand{\chapternameformat}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[fill=missing] (current page.north west) -- +(0, -53.8mm) -- +(88mm, -53.8mm) -- +(88mm, 0) -- cycle;
+    \fill[fill=MissingLightGreen] (current page.north east) -- +(0, -77mm) -- +(-148mm, -77mm) -- +(-122mm, 0) -- cycle;
+  \end{tikzpicture}%
+  \huge\noindent\raggedleft\color{white}%
+  \parbox{5.5em}{#1}
+}
+
+\newcommand{\chapteraftername}{\hspace*{3mm}%
   \renewcommand{\thechapter}{\chaptersymb{chapter}}
-  {\Huge\color{missing}\parbox[t][.3ex][b]{6em}{\thechapter}\par}
-  \renewcommand{\thechapter}{\chinese{chapter}}
-  {\fontsize{5pt}{5pt}\color{missing}\rule[3pt]{15em}{1.5pt}\par}
+  \begingroup\Huge\color{missing}\parbox[t][.3ex][b]{6em}{\thechapter}\par\endgroup
+  \renewcommand{\thechapter}{\chinese{chapter}}%
+  \begingroup
+    \fontsize{5pt}{5pt}\color{MissingLightGreen}%
+    \rule[3pt]{38.2mm}{1.8pt}%
+    \color{missing}\rule[3pt]{114mm}{1.8pt}\par
+  \endgroup
 }
 
 \let\oldappendix\appendix
@@ -234,9 +273,9 @@
   },
   chapter = {
     format      = \chapterformat,
-    nameformat  = \huge\noindent\color{missing},
+    nameformat  = \chapternameformat,
     aftername   = \chapteraftername,
-    titleformat = \Huge,
+    titleformat = \Huge\CTEXifname{\raggedleft}{\raggedright},
     beforeskip  = 18pt,
   },
 }

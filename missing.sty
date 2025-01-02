@@ -113,6 +113,39 @@
     \renewcommand\thefootnote{\arabic{footnote}}%
 }
 
+% 抄来的「部分」的目录条目的样式
+\renewcommand*\l@part[2]{%
+  \ifnum \c@tocdepth >-2\relax
+    \addpenalty{-\@highpenalty}%
+    \addvspace{2.25em \@plus\p@}%
+    \setlength\@tempdima{3em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \begin{tcolorbox}[
+        colback=missing,
+        colframe=missing,
+        colupper=white,
+        boxrule=0mm,
+        right=0.5ex,
+        left=0cm,
+        arc=.5mm,
+        width=\textwidth,
+        grow to right by=0.3em,
+        grow to left by=0.3em,
+      ]
+      \leavevmode
+        \large \bfseries \vbox{\bfseries#1}%
+        \hb@xt@.5ex{\hss #2}
+      \end{tcolorbox}
+      \vspace*{1ex}
+      \nobreak
+      \global\@nobreaktrue
+      \everypar{\global\@nobreakfalse\everypar{}}%
+    \endgroup
+  \fi
+}
+
 %
 % 部分、章节的标题
 %

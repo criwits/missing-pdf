@@ -5,13 +5,14 @@
 % 引入宏包
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage[inner=1.5in,outer=1.25in,vmargin=1in]{geometry}
+\RequirePackage[inner=1.25in,outer=1in,vmargin=1in]{geometry}
 \RequirePackage{cmbright}
 \RequirePackage[quiet]{fontspec}
 \RequirePackage{amsmath,amssymb}
-\RequirePackage{graphicx,float,booktabs,array}
+\RequirePackage{tabularray}
+\RequirePackage{graphicx,float,wrapfig}
 \RequirePackage[x11names]{xcolor}
-\RequirePackage{wrapfig,tikz,pdfpages}
+\RequirePackage{tikz,pdfpages}
 \RequirePackage{tcolorbox}
 \RequirePackage[fontset=none,zihao=false,scheme=chinese,heading=true,punct=kaiming]{ctex}
 \RequirePackage{xeCJKfntef}
@@ -20,15 +21,31 @@
 \RequirePackage{ifplatform}
 \RequirePackage{fancyvrb}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 部分宏包选项
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% tabularray 包
+\UseTblrLibrary{booktabs}
+
+% tcolorbox 包
+\tcbuselibrary{skins, raster, theorems, breakable}
+
+% menukeys 包
+\renewmenumacro{\keys}[+]{roundedkeys}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 格式
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% 《你缺计课》代表色
+\definecolor[named]{missing}{HTML}{1876C9} % C88 M41 Y0 K21 
+\definecolor[named]{MissingLightGreen}{HTML}{6BECCD} % C55 M0 Y13 K7
+
 \RequirePackage{hyperref}
 \hypersetup{
-  colorlinks,%
-  linkcolor=red!80!black,%
+  % colorlinks,%
+  % linkcolor=red!80!black,%
   bookmarksnumbered=true%
 }
 
@@ -44,12 +61,11 @@
   AutoFakeSlant   = true
 }
 
-\xeCJKDeclareSubCJKBlock{Windows}{"E782, "EC6A}
 \xeCJKDeclareSubCJKBlock{Icons}{"E001 -> "E781, "E783 -> "EC64, "EC6C -> "F8B3}
 \xeCJKDeclareSubCJKBlock{Symbols}{"22EF, "2261}
 
-\setCJKmainfont{思源黑体}[BoldFont=思源黑体 Bold, Windows=Office Support MDL2 Assets, Icons=Segoe Fluent Icons, Mapping=quote, Symbols=思源黑体]
-\setCJKsansfont{思源黑体}[BoldFont=思源黑体 Bold, Windows=Office Support MDL2 Assets, Icons=Segoe Fluent Icons, Mapping=quote, Symbols=思源黑体]
+\setCJKmainfont{思源黑体}[BoldFont=思源黑体 Bold, Icons=Segoe Fluent Icons, Mapping=quote, Symbols=思源黑体]
+\setCJKsansfont{思源黑体}[BoldFont=思源黑体 Bold, Icons=Segoe Fluent Icons, Mapping=quote, Symbols=思源黑体]
 \setCJKmonofont{等距更纱黑体 Slab SC}
 
 % 如果单纯用 punct=kaiming，实际上部分句末点号的宽度还是撑不到 1em。
@@ -57,12 +73,6 @@
 \xeCJKsetwidth{。？！}{1em}
 \xeCJKsetkern{」}{？}{1pt}
 \xeCJKsetkern{】}{。}{1pt}
-
-% tcolorbox包
-\tcbuselibrary{skins, raster, theorems, breakable}
-
-% menukeys包
-\renewmenumacro{\keys}[+]{roundedkeys}
 
 % 页眉页脚
 \RequirePackage{fancyhdr}
@@ -112,27 +122,43 @@
 \newcommand{\partformat}[1]{
   \raggedright
   \tikz[remember picture,overlay] \node at (current page.center) {\includegraphics{assets/missing-parts-bg.pdf}};
-  \hspace*{6cm}\parbox[t]{21em}{\vspace*{1.5cm}#1}
+  \hspace*{5cm}\parbox[t]{98mm}{#1}
 }
 
 \newcommand{\partaftername}{
   \CTEXifname{
-    \par\vskip10pt{\fontsize{24pt}{24pt}\selectfont\color{DeepSkyBlue3}PART \thepart}\par\vskip20pt
+    \par
+    \begingroup
+      \color{missing}
+      \rule[4pt]{98mm}{1.6mm}
+      \raggedleft\fontsize{24pt}{12pt}\selectfont
+      PART \thepart\par
+    \endgroup
+    \vskip20mm
   }{
-    \par\vskip10pt{\fontsize{24pt}{24pt}\selectfont\color{DeepSkyBlue3}APPENDIX}\par\vskip20pt
+    \par
+    \begingroup
+      \color{missing}
+      \rule[4pt]{98mm}{1.6mm}
+      \raggedleft\fontsize{24pt}{12pt}\selectfont
+      APPENDIX\par
+    \endgroup
+    \vskip20mm
   }
 }
 
+\def\partintro{}
 \newcommand{\partaftertitle}{%
-  \par\vskip22pt%
-  {\fontsize{14.2pt}{14pt}\selectfont\color{DeepSkyBlue3}
-    YOUR MISSING SEMESTER\par
-    \fontsize{17pt}{13pt}\selectfont
-    OF USING COMPUTER\par
-  }
+  \par\vskip50mm%
+  \begingroup
+    \fontsize{14pt}{17pt}\normalfont\selectfont
+    \begin{partintrobox}
+      \partintro
+    \end{partintrobox}
+  \endgroup
 }
 
-% 自定义图标的格式
+% 自定义图标
 
 \newcounter{noheadchap}
 \def\noheadsymb#1{\expandafter\@noheadsymb\csname c@#1\endcsname}
@@ -174,16 +200,16 @@
   }{
     \bfseries\raggedright
     \stepcounter{noheadchap}
-    {\Huge\color{DeepSkyBlue3}\noindent\parbox[t][.3ex][b]{6em}{\thenoheadchap}\par}
+    {\Huge\color{missing}\noindent\parbox[t][.3ex][b]{6em}{\thenoheadchap}\par}
     \hspace*{.2cm}#1
   }
 }
 
 \newcommand{\chapteraftername}{\hspace*{1cm}
   \renewcommand{\thechapter}{\chaptersymb{chapter}}
-  {\Huge\color{DeepSkyBlue3}\parbox[t][.3ex][b]{6em}{\thechapter}\par}
+  {\Huge\color{missing}\parbox[t][.3ex][b]{6em}{\thechapter}\par}
   \renewcommand{\thechapter}{\chinese{chapter}}
-  {\fontsize{5pt}{5pt}\color{DeepSkyBlue3}\rule[3pt]{15em}{1.5pt}\par}
+  {\fontsize{5pt}{5pt}\color{missing}\rule[3pt]{15em}{1.5pt}\par}
 }
 
 \let\oldappendix\appendix
@@ -191,9 +217,9 @@
   \oldappendix%
   \renewcommand{\chapteraftername}{\hspace*{1cm}
     \renewcommand{\thechapter}{\appendixsymb{chapter}}
-    {\Huge\color{DeepSkyBlue3}\parbox[t][.3ex][b]{6em}{\thechapter}\par}
+    {\Huge\color{missing}\parbox[t][.3ex][b]{6em}{\thechapter}\par}
     \renewcommand{\thechapter}{\Alph{chapter}}
-    {\fontsize{5pt}{5pt}\color{DeepSkyBlue3}\rule[3pt]{13em}{1.5pt}\par}
+    {\fontsize{5pt}{5pt}\color{missing}\rule[3pt]{13em}{1.5pt}\par}
   }
 }
 
@@ -201,18 +227,26 @@
   part = {
     pagestyle   = empty,
     format      = \partformat,
-    nameformat  = \bfseries\fontsize{32pt}{38pt}\selectfont\noindent\color{DeepSkyBlue3},
+    nameformat  = \bfseries\fontsize{36pt}{38pt}\selectfont\noindent\color{missing},
     aftername   = \partaftername,
-    titleformat = \fontsize{64pt}{72pt}\selectfont,
+    titleformat = \bfseries\fontsize{64pt}{72pt}\selectfont\centering,
     aftertitle  = \partaftertitle,
   },
   chapter = {
     format      = \chapterformat,
-    nameformat  = \huge\noindent\color{DeepSkyBlue3},
+    nameformat  = \huge\noindent\color{missing},
     aftername   = \chapteraftername,
     titleformat = \Huge,
     beforeskip  = 18pt,
   },
+}
+
+% 把「部分导读」塞到 \part 里面
+\let\oldpart\part
+\renewcommand{\part}[2]{
+  \def\partintro{#2}
+  \oldpart{#1}
+  \def\partintro{}
 }
 
 % 列表
@@ -220,6 +254,16 @@
 
 % 禁止随意断词
 \hyphenation{macOS}
+
+% 禁止乱加空格
+\let\oldtexttt\texttt
+\def\clearglue{\xeCJKsetup{CJKecglue = {}}}
+\def\restoreglue{\xeCJKsetup{CJKecglue = { }}}
+\renewcommand{\texttt}[1]{
+  \protect\clearglue
+  \oldtexttt{#1}
+  \protect\restoreglue
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 空白双数页
@@ -246,16 +290,26 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % 强调文字
-\newcommand{\regcolor}[1]{\textbf{{\color{DodgerBlue2} #1}}}
+\newcommand{\regcolor}[1]{\textbf{{\color{missing} #1}}}
 
-% 禁止乱加空格
-\let\oldtexttt\texttt
-\def\clearglue{\xeCJKsetup{CJKecglue = {}}}
-\def\restoreglue{\xeCJKsetup{CJKecglue = { }}}
-\renewcommand{\texttt}[1]{
-  \protect\clearglue
-  \oldtexttt{#1}
-  \protect\restoreglue
+% Windows 徽标
+\newcommand\Windows{
+  \begin{tikzpicture}[scale=1, menukeys key symbol, yshift=-.25ex]
+    \draw[fill=black] (0,0) rectangle (.8ex, .8ex);
+    \draw[fill=black] (1.1ex,0) rectangle (1.9ex, .8ex);
+    \draw[fill=black] (0,1.1ex) rectangle (.8ex, 1.9ex);
+    \draw[fill=black] (1.1ex,1.1ex) rectangle (1.9ex, 1.9ex);
+  \end{tikzpicture}%
+}
+\newcommand\WindowsTen{
+  \begin{tikzpicture}[scale=1.1, menukeys key symbol, yshift=.7ex]
+    \draw[fill=black] (0.25ex,0) -- (.85ex, 0) -- (.85ex, .55ex) -- (0.25ex, .444ex) -- cycle;
+    \draw[fill=black] (1.1ex,0) -- (1.95ex, 0) -- (1.95ex, .744ex) -- (1.1ex, .594ex) -- cycle;
+    \begin{scope}[yshift=-.25ex]
+      \draw[fill=black] (0.25ex,0) -- (.85ex, 0) -- (.85ex, -.55ex) -- (0.25ex, -.444ex) -- cycle;
+      \draw[fill=black] (1.1ex,0) -- (1.95ex, 0) -- (1.95ex, -.744ex) -- (1.1ex, -.594ex) -- cycle;
+    \end{scope}
+  \end{tikzpicture}%
 }
 
 % 标题页
@@ -289,7 +343,7 @@
     \end{pspicture}
     \vfill
     \includegraphics[width=4cm]{assets/by-nc-sa.png}\par
-    \textcopyright 2021--2024 Hans Wan \& Windy Deng\par
+    \textcopyright 2021--\the\year{} Hans Wan \& Windy Deng\par
     本作品所有文字采用「知识共享\ 署名-非商业性使用-相同方式共享 4.0 国际」许可协议进行许可。
     要查看该许可协议，可访问 \url{http://creativecommons.org/licenses/by-nc-sa/4.0/}
     或者写信到 Creative Commons, PO Box 1866, Mountain View, CA 94042, USA。\par
@@ -300,12 +354,15 @@
     文中出现的所有商标，无论是否标注有 ® 或 ™，其所有权都归属它们各自的持有者所有。\par
     \vspace{2ex}
     \small
-    Segoe Fluent Icons, Office Support MDL2 Assets \textcopyright Microsoft Corporation. All Rights Reserved.\par
+    Segoe Fluent Icons \textcopyright{} Microsoft Corporation. All Rights Reserved.\par
     \clearpage
     \setlength{\parskip}{0pt plus 1pt}
     \setlength{\parindent}{2em}
   \end{titlepage}
 }%
+
+% 练习
+\newcommand{\practice}{\section*{练习 \thechapter}\addcontentsline{toc}{section}{练习 \thechapter}}
 
 % 自定义盒子
 \newtcolorbox{note}{
@@ -318,6 +375,26 @@
   colback=white,
   colbacktitle=RoyalBlue4,
   colframe=RoyalBlue4
+}
+
+% \newtcolorbox{quoting}{
+
+% }
+
+\newtcolorbox{partintrobox}{
+  enhanced,
+  colback=MissingLightGreen,
+  colframe=MissingLightGreen,
+  boxrule=0pt,
+  left=1ex,
+  right=1ex,
+  top=1.2ex,
+  bottom=1.2ex,
+  text width=100mm,
+  grow to right by=12mm,
+  grow to left by=-12mm,
+  arc=2.5mm,
+  before upper={\parindent2em},
 }
 
 \newtcolorbox{intro}{
@@ -348,6 +425,3 @@
     警告
   }
 }
-
-% 练习
-\newcommand{\practice}{\section*{练习 \thechapter}\addcontentsline{toc}{section}{练习 \thechapter}}

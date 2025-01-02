@@ -166,10 +166,13 @@
 \newcommand{\partaftertitle}{%
   \par\vskip50mm%
   \begingroup
-    \fontsize{14pt}{17pt}\normalfont\selectfont
-    \begin{partintrobox}
-      \partintro
-    \end{partintrobox}
+    \ifx\partintro\empty
+    \else
+      \fontsize{14pt}{17pt}\normalfont\selectfont
+      \begin{partintrobox}
+        \partintro
+      \end{partintrobox}
+    \fi
   \endgroup
 }
 
@@ -282,8 +285,12 @@
 
 % 把「部分导读」塞到 \part 里面
 \let\oldpart\part
-\renewcommand{\part}[2]{
-  \def\partintro{#2}
+\RenewDocumentCommand\part{m+o}{
+  \IfNoValueTF{#2}{%
+    \def\partintro{}%
+  }{%
+    \def\partintro{#2}%
+  }%
   \oldpart{#1}
   \def\partintro{}
 }

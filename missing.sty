@@ -137,7 +137,7 @@
 \newcommand{\partformat}[1]{
   \raggedright
   \tikz[remember picture,overlay] \node at (current page.center) {\includegraphics{assets/missing-parts-bg.pdf}};
-  \hspace*{5cm}\parbox[t]{98mm}{#1}
+  \hspace*{5cm}\parbox[t][19cm]{98mm}{#1}
 }
 
 \newcommand{\partaftername}{
@@ -149,7 +149,7 @@
       \raggedleft\fontsize{24pt}{12pt}\selectfont
       PART \thepart\par
     \endgroup
-    \vskip20mm
+    \vskip17mm
   }{
     \par
     \begingroup
@@ -158,13 +158,13 @@
       \raggedleft\fontsize{24pt}{12pt}\selectfont
       APPENDIX\par
     \endgroup
-    \vskip20mm
+    \vskip17mm
   }
 }
 
 \def\partintro{}
 \newcommand{\partaftertitle}{%
-  \par\vskip50mm%
+  \par\vskip40mm%
   \begingroup
     \ifx\partintro\empty
     \else

@@ -69,5 +69,5 @@ echo.
 echo Done.
 
 :end
-del %TEMPFILE%
+del %TEMPFILE% >>output.log 2>>error.log
 exit /b %prev_err_lvl%.

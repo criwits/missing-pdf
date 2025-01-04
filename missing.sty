@@ -20,6 +20,7 @@
 \RequirePackage{pst-barcode}
 \RequirePackage{ifplatform}
 \RequirePackage{fancyvrb}
+\RequirePackage{cprotect}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 部分宏包选项
@@ -584,4 +585,25 @@
     }
   },
   before upper={\parindent2em},
+}
+
+\NewTotalTCBox{\MissingVerb}{ v }{%
+  fontupper=\ttfamily,
+  nobeforeafter,
+  tcbox raise base,
+  arc=0pt,
+  outer arc=0pt,
+  top=0pt,
+  bottom=0pt,
+  left=0mm,
+  right=0mm,
+  leftrule=0pt,
+  rightrule=0pt,
+  toprule=0.3mm,
+  bottomrule=0.3mm,
+  boxsep=0.5mm,
+  colback=MissingLightBlue,
+  colframe=missing,
+}{%
+  \vphantom{六}#1%
 }

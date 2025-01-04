@@ -49,7 +49,7 @@
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.7\textwidth]{assets/basic/Two_CPUs.pdf}
+  \includegraphics[width=.6\textwidth]{assets/basic/Two_CPUs.pdf}
   \caption{常见的台式机和笔记本电脑的处理器芯片}
   \label{fig:Two_CPUs}
 \end{figure}
@@ -67,14 +67,21 @@
       \caption{英特尔CPU产品系列}
       \label{tab:Intel-CPUs}
       \begin{tblr}{
-        colspec = XX[3]X[4]X[4],
+        colspec = XX[2]X[4]X[4],
+        cells = {c, m},
+        cell{Z}{2-Z} = {j},
+        row{1} = {fg = white, bg = missing, font = \bfseries},
+        row{even} = {MissingLightBlue},
       }
+        \toprule
         & 传统酷睿系列 & 酷睿 Ultra 系列 & 酷睿数字系列 \\
+        \midrule
         低端 & 酷睿 i3 & 酷睿 Ultra 3 & 酷睿 3 \\
         中端 & 酷睿 i5 & 酷睿 Ultra 5 & 酷睿 5 \\
         高端 & 酷睿 i7 & 酷睿 Ultra 7 & 酷睿 7 \\
         顶尖 & 酷睿 i9 & 酷睿 Ultra 9 &  ---\footnotemark \\
         说明 & 传统的酷睿系列，自 2008 年起沿用至今 & 2023 年发布的新系列，主要应用在高端笔记本电脑产品上，增加了针对 AI 应用的优化 & 2024 年发布的新系列，针对笔记本电脑产品进行了能耗方面的优化 \\
+        \bottomrule
       \end{tblr}
     \end{table}
     \footnotetext{截至 2024 年 12 月，英特尔并没有推出酷睿 9 系列的 CPU。}

@@ -10,7 +10,7 @@
 \RequirePackage[quiet]{fontspec}
 \RequirePackage{amsmath,amssymb}
 \RequirePackage{tabularray}
-\RequirePackage{graphicx,float,wrapfig}
+\RequirePackage{graphicx,float,wrapfig,caption}
 \RequirePackage[x11names]{xcolor}
 \RequirePackage{tikz,pdfpages}
 \RequirePackage{tcolorbox}
@@ -71,9 +71,10 @@
 
 \xeCJKDeclareSubCJKBlock{Icons}{"E001 -> "E781, "E783 -> "EC64, "EC6C -> "F8B3}
 \xeCJKDeclareSubCJKBlock{Symbols}{"22EF, "2261}
+\xeCJKDeclareSubCJKBlock{CircledNum}{"278A -> "2793}
 
-\setCJKmainfont{思源黑体}[BoldFont=思源黑体 Bold, Icons=Segoe Fluent Icons, Mapping=quote, Symbols=思源黑体]
-\setCJKsansfont{思源黑体}[BoldFont=思源黑体 Bold, Icons=Segoe Fluent Icons, Mapping=quote, Symbols=思源黑体]
+\setCJKmainfont{思源黑体}[BoldFont=思源黑体 Bold, Icons=Segoe Fluent Icons, Mapping=quote, Symbols=思源黑体, CircledNum=思源黑体]
+\setCJKsansfont{思源黑体}[BoldFont=思源黑体 Bold, Icons=Segoe Fluent Icons, Mapping=quote, Symbols=思源黑体, CircledNum=思源黑体]
 \setCJKmonofont{等距更纱黑体 Slab SC}
 
 % 如果单纯用 punct=kaiming，实际上部分句末点号的宽度还是撑不到 1em。

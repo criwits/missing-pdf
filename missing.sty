@@ -25,11 +25,14 @@
 % 部分宏包选项
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% TikZ 包
+\usetikzlibrary{calc, shapes.geometric}
+
 % tabularray 包
 \UseTblrLibrary{booktabs}
 
 % tcolorbox 包
-\tcbuselibrary{skins, raster, theorems, breakable}
+\tcbuselibrary{skins, raster, theorems, breakable, hooks}
 
 % menukeys 包
 \renewmenumacro{\keys}[+]{roundedkeys}
@@ -40,7 +43,12 @@
 
 % 《你缺计课》代表色
 \definecolor[named]{missing}{HTML}{1876C9} % C88 M41 Y0 K21 
+\definecolor[named]{MissingLightBlue}{HTML}{BFECFB} % C24 M6 Y0 K2
 \definecolor[named]{MissingLightGreen}{HTML}{6BECCD} % C55 M0 Y13 K7
+\definecolor[named]{MissingRed}{HTML}{ED2200} % C0 M86 Y100 K7
+\definecolor[named]{MissingOrange}{HTML}{FF8100} % C0 M49 Y100 K0
+\definecolor[named]{MissingYellow}{HTML}{FFED3B} % C0 M7 Y76 K0
+\definecolor[named]{MissingLightYellow}{HTML}{FFFFAD} % C0 M0 Y32 K0
 
 \RequirePackage{hyperref}
 \hypersetup{
@@ -441,25 +449,47 @@
 % 自定义盒子
 \newtcolorbox{note}{
   enhanced,
-  frame hidden,
+  colback=MissingLightBlue,
+  colframe=missing,
+  toprule=0pt,
+  bottomrule=0pt,
+  leftrule=11mm,
+  rightrule=0pt,
+  arc=2.5mm,
+  height from=1.2cm to 30cm,
+  left=3mm,
+  right=3mm,
+  valign=center,
   breakable=true,
-  arc=0mm,
-  detach title,
-  borderline west={.5mm}{0mm}{RoyalBlue4},
-  colback=white,
-  colbacktitle=RoyalBlue4,
-  colframe=RoyalBlue4
+  before upper={\parindent2em},
+  frame code app={%
+    \node[regular polygon, regular polygon sides=6, color=white, fill, draw, line width=8pt, line join=round, minimum size=.8cm, rotate=90, yscale=.7333] at ($(frame.west) + (5.2mm,0)$) {};
+    \draw[color=missing, line width=2pt, line cap=round] ($(frame.west) + (5.2mm,0) - (36:.38)$) -- +(36:.76);
+    \node[color=missing] at ($(frame.west) + (5.2mm,0) + (120:.23)$) {\bfseries\Large?};
+    \node[color=missing] at ($(frame.west) + (5.2mm,0) - (130:.25)$) {\bfseries\Large!};
+  },
 }
 
-% \newtcolorbox{quoting}{
-
-% }
+\newtcolorbox{quoting}{
+  enhanced,
+  colback=MissingLightYellow,
+  frame hidden,
+  enlarge top initially by=2mm,
+  enlarge bottom finally by=2mm,
+  left=3mm,
+  right=3mm,
+  arc=2.5mm,
+  before upper={\parindent2em},
+  overlay={
+    \node[color=gray] at ($(frame.north west) + (0,-8mm)$) {\fontsize{70pt}{70pt}“};
+    \node[color=gray] at ($(frame.south east) + (0,-6mm)$) {\fontsize{70pt}{70pt}”};
+  },
+}
 
 \newtcolorbox{partintrobox}{
   enhanced,
   colback=MissingLightGreen,
-  colframe=MissingLightGreen,
-  boxrule=0pt,
+  frame hidden,
   left=1ex,
   right=1ex,
   top=1.2ex,
@@ -472,30 +502,83 @@
 }
 
 \newtcolorbox{intro}{
-  colback=LightBlue1,
-  colframe=DeepSkyBlue3,
-  fonttitle=\bfseries,
-  title=本章导览
+  enhanced,
+  colback=MissingLightBlue,
+  colframe=missing,
+  colbacktitle=MissingLightBlue,
+  coltitle=missing,
+  sharp corners=northwest,
+  enlarge top initially by=-1cm,
+  left=3mm,
+  right=3mm,
+  attach boxed title to top left={yshift=-.5mm},
+  boxed title style={
+    skin=enhancedfirst jigsaw,
+    boxrule=.5mm,
+  },
+  fonttitle=\bfseries\large,
+  title=本章导览,
+  before upper={\parindent2em},
 }
 
 \newtcolorbox{warning}{
   enhanced,
   breakable=true,
-  top=4mm,
-  colframe=Firebrick2,
+  top=3mm,
+  left=3mm,
+  right=3mm,
+  colframe=MissingOrange,
   colback=white,
-  colbacktitle=Firebrick2,
-  coltext=Firebrick1,
+  colbacktitle=MissingOrange,
+  coltext=MissingOrange,
   coltitle=white,
   attach boxed title to top left={xshift=.5cm, yshift=-\tcboxedtitleheight/2},
   fonttitle=\bfseries,
   fontupper=\bfseries,
+  boxed title style={
+    top=-1mm,
+    bottom=-1mm,
+    left=1mm,
+    right=0mm,
+  },
   title={
     \tikz {
-      \draw[rounded corners=.5pt, line width=.8pt, draw=black, fill=yellow] (0,0) -- (0:10pt) -- (60:10pt) -- cycle;
+      \draw[rounded corners=.5pt, line width=.8pt, draw=black, fill=MissingYellow] (0,0) -- (0:10pt) -- (60:10pt) -- cycle;
       \draw[line width=1pt, line cap=round, draw=black] (5pt,3pt) -- (5pt,6pt);
       \fill[black] (5pt,1.5pt) circle [radius=.7pt];
+      \node[color=white] at (25pt, 4.7pt) {\bfseries 注意};
     }
-    警告
-  }
+  },
+  before upper={\parindent2em},
+}
+
+\newtcolorbox{danger}{
+  enhanced,
+  breakable=true,
+  top=3mm,
+  left=3mm,
+  right=3mm,
+  colframe=MissingRed,
+  colback=white,
+  colbacktitle=MissingRed,
+  coltext=MissingRed,
+  coltitle=white,
+  attach boxed title to top center={yshift=-\tcboxedtitleheight/2},
+  fonttitle=\bfseries,
+  fontupper=\bfseries,
+  boxed title style={
+    top=-1mm,
+    bottom=-1mm,
+    left=1mm,
+    right=0mm,
+  },
+  title={
+    \tikz {
+      \draw[rounded corners=.5pt, line width=.8pt, draw=black, fill=MissingYellow] (0,0) -- (0:10pt) -- (60:10pt) -- cycle;
+      \draw[line width=1pt, line cap=round, draw=black] (5pt,3pt) -- (5pt,6pt);
+      \fill[black] (5pt,1.5pt) circle [radius=.7pt];
+      \node[color=white] at (25pt, 4.7pt) {\bfseries 警告};
+    }
+  },
+  before upper={\parindent2em},
 }

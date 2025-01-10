@@ -54,8 +54,8 @@
 
 % 《你缺计课》代表色
 \definecolor[named]{missing}{HTML}{1876C9} % C88 M41 Y0 K21 
-\definecolor[named]{MissingLightBlue}{HTML}{BFECFB} % C24 M6 Y0 K2
-\definecolor[named]{MissingLightGreen}{HTML}{6BECCD} % C55 M0 Y13 K7
+\definecolor[named]{MissingSkyBlue}{HTML}{BFECFB} % C24 M6 Y0 K2
+\definecolor[named]{MissingAquamarine}{HTML}{6BECCD} % C55 M0 Y13 K7
 \definecolor[named]{MissingRed}{HTML}{ED2200} % C0 M86 Y100 K7
 \definecolor[named]{MissingOrange}{HTML}{FF8100} % C0 M49 Y100 K0
 \definecolor[named]{MissingYellow}{HTML}{FFED3B} % C0 M7 Y76 K0
@@ -102,13 +102,13 @@
 \fancyhead[EL]{\bfseries\color{missing}\leftmark}
 \fancyfoot[OR]{%
   \begin{tikzpicture}[remember picture, overlay]
-    \fill[fill=MissingLightGreen] (current page.south east) rectangle +(-35mm, 22mm);
+    \fill[fill=MissingAquamarine] (current page.south east) rectangle +(-35mm, 22mm);
   \end{tikzpicture}%
   \bfseries\large\color{missing}\thepage
 }
 \fancyfoot[EL]{%
   \begin{tikzpicture}[remember picture, overlay]
-    \fill[fill=MissingLightGreen] (current page.south west) rectangle +(35mm, 22mm);
+    \fill[fill=MissingAquamarine] (current page.south west) rectangle +(35mm, 22mm);
   \end{tikzpicture}%
   \bfseries\large\color{missing}\thepage%
 }
@@ -272,7 +272,7 @@
   }{%
     \begin{tikzpicture}[remember picture, overlay]
       \fill[fill=missing] (current page.north east) -- +(0, -53.8mm) -- +(-140mm, -53.8mm) -- +(-140mm, 0) -- cycle;
-      \fill[fill=MissingLightGreen] (current page.north west) -- +(0, -77mm) -- +(63mm, -77mm) -- +(88mm, 0) -- cycle;
+      \fill[fill=MissingAquamarine] (current page.north west) -- +(0, -77mm) -- +(63mm, -77mm) -- +(88mm, 0) -- cycle;
     \end{tikzpicture}%
     \stepcounter{noheadchap}
     \bfseries\noindent
@@ -283,7 +283,7 @@
     \begingroup
       \fontsize{5pt}{5pt}\noindent%
       \color{missing}\rule[3pt]{38.9mm}{1.8pt}%
-      \color{MissingLightGreen}\rule[3pt]{114mm}{1.8pt}\par
+      \color{MissingAquamarine}\rule[3pt]{114mm}{1.8pt}\par
     \endgroup%
     #1
   }
@@ -292,7 +292,7 @@
 \newcommand{\chapternameformat}[1]{%
   \begin{tikzpicture}[remember picture, overlay]
     \fill[fill=missing] (current page.north west) -- +(0, -53.8mm) -- +(88mm, -53.8mm) -- +(88mm, 0) -- cycle;
-    \fill[fill=MissingLightGreen] (current page.north east) -- +(0, -77mm) -- +(-148mm, -77mm) -- +(-122mm, 0) -- cycle;
+    \fill[fill=MissingAquamarine] (current page.north east) -- +(0, -77mm) -- +(-148mm, -77mm) -- +(-122mm, 0) -- cycle;
   \end{tikzpicture}%
   \huge\noindent\raggedleft\color{white}%
   \parbox{5.5em}{#1}
@@ -303,7 +303,7 @@
   \begingroup\Huge\color{missing}\parbox[t][.3ex][b]{6em}{\thechapter}\par\endgroup
   \renewcommand{\thechapter}{\chinese{chapter}}%
   \begingroup
-    \fontsize{5pt}{5pt}\color{MissingLightGreen}%
+    \fontsize{5pt}{5pt}\color{MissingAquamarine}%
     \rule[3pt]{38.2mm}{1.8pt}%
     \color{missing}\rule[3pt]{114mm}{1.8pt}\par
   \endgroup
@@ -463,7 +463,7 @@
 % 自定义盒子
 \newtcolorbox{note}{
   enhanced,
-  colback=MissingLightBlue,
+  colback=MissingSkyBlue,
   colframe=missing,
   toprule=0pt,
   bottomrule=0pt,
@@ -510,7 +510,7 @@
 
 \newtcolorbox{partintrobox}{
   enhanced,
-  colback=MissingLightGreen,
+  colback=MissingAquamarine,
   frame hidden,
   left=1ex,
   right=1ex,
@@ -525,9 +525,9 @@
 
 \newtcolorbox{intro}{
   enhanced,
-  colback=MissingLightBlue,
+  colback=MissingSkyBlue,
   colframe=missing,
-  colbacktitle=MissingLightBlue,
+  colbacktitle=MissingSkyBlue,
   coltitle=missing,
   sharp corners=northwest,
   enlarge top initially by=-1cm,
@@ -620,7 +620,7 @@
   toprule=0.3mm,
   bottomrule=0.3mm,
   boxsep=0.5mm,
-  colback=MissingLightBlue,
+  colback=MissingSkyBlue,
   colframe=missing,
   before upper={\clearglue},
   after upper={\restoreglue},
@@ -643,7 +643,7 @@
   toprule=0.3mm,
   bottomrule=0.3mm,
   boxsep=0.5mm,
-  colback=MissingLightBlue,
+  colback=MissingSkyBlue,
   colframe=missing,
   before upper={\clearglue},
   after upper={\restoreglue},
@@ -665,7 +665,7 @@
   rightrule=0pt,
   toprule=0.3mm,
   bottomrule=0.3mm,
-  colback=MissingLightBlue,
+  colback=MissingSkyBlue,
   colframe=missing,
   listing only,
   minted language = #2,

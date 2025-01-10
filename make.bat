@@ -10,7 +10,7 @@ goto :show_output
 
 :create_pdf
 echo Creating PDF...
-set TEMPFILE=missing.aux chapters\*.aux missing.log missing.out missing.toc missing.xdv missing.synctex.gz
+set TEMPFILE=missing.aux chapters\*.aux missing.log missing.out missing.toc missing.xdv missing.synctex.gz *.cpt *.listing
 set BASE_OPT=-interaction=nonstopmode -halt-on-error --shell-escape
 set EXTRA_OPT=-synctex=1 -output-driver="xdvipdfmx -i dvipdfmx-unsafe.cfg -q -E"
 
@@ -22,8 +22,6 @@ xelatex %BASE_OPT% %EXTRA_OPT% --no-pdf missing.tex >>output.log 2>>error.log
 if %ERRORLEVEL% neq 0 goto :show_output
 echo XeLaTeX -- 3rd run...
 xelatex %BASE_OPT% %EXTRA_OPT% missing.tex >>output.log 2>>error.log
-if %ERRORLEVEL% neq 0 goto :show_output
-
 if %ERRORLEVEL% == 0 goto :end_success
 
 :show_output
@@ -50,7 +48,8 @@ type error.log
 echo.
 
 echo !!!
-echo Failed due to an error, please refer to error.log above or file.
+echo Failed due to an error, please refer to
+echo output.log and error.log above or files.
 goto :end_fail
 
 :end_failed_no_error

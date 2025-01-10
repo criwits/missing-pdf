@@ -33,7 +33,17 @@
 \UseTblrLibrary{booktabs, counter}
 
 % tcolorbox 包
-\tcbuselibrary{skins, raster, theorems, breakable, hooks}
+\tcbuselibrary{skins, raster, theorems, breakable, hooks, minted}
+\tcbset{%
+  listing engine          = minted,
+  minted language         = C++,
+  minted style            = colorful,
+  default minted options  = {
+    tabsize   = 4,
+    autogobble,
+    breaklines,
+  },
+}
 
 % menukeys 包
 \renewmenumacro{\keys}[+]{roundedkeys}
@@ -472,6 +482,14 @@
     \node[color=missing] at ($(frame.west) + (5.2mm,0) + (120:.23)$) {\bfseries\Large?};
     \node[color=missing] at ($(frame.west) + (5.2mm,0) - (130:.25)$) {\bfseries\Large!};
   },
+  extras broken={%
+    overlay={%
+      \node[regular polygon, regular polygon sides=6, color=white, fill, draw, line width=8pt, line join=round, minimum size=.8cm, rotate=90, yscale=.7333] at ($(frame.west) + (5.2mm,0)$) {};
+      \draw[color=missing, line width=2pt, line cap=round] ($(frame.west) + (5.2mm,0) - (36:.38)$) -- +(36:.76);
+      \node[color=missing] at ($(frame.west) + (5.2mm,0) + (120:.23)$) {\bfseries\Large?};
+      \node[color=missing] at ($(frame.west) + (5.2mm,0) - (130:.25)$) {\bfseries\Large!};
+    },
+  },
 }
 
 \newtcolorbox{quoting}{
@@ -587,6 +605,29 @@
   before upper={\parindent2em},
 }
 
+\NewTotalTCBox{\MissingTT}{ m }{%
+  fontupper=\ttfamily,
+  nobeforeafter,
+  tcbox raise base,
+  arc=0pt,
+  outer arc=0pt,
+  top=0pt,
+  bottom=0pt,
+  left=0mm,
+  right=0mm,
+  leftrule=0pt,
+  rightrule=0pt,
+  toprule=0.3mm,
+  bottomrule=0.3mm,
+  boxsep=0.5mm,
+  colback=MissingLightBlue,
+  colframe=missing,
+  before upper={\clearglue},
+  after upper={\restoreglue},
+}{%
+  \vphantom{六}#1%
+}
+
 \NewTotalTCBox{\MissingVerb}{ v }{%
   fontupper=\ttfamily,
   nobeforeafter,
@@ -604,6 +645,30 @@
   boxsep=0.5mm,
   colback=MissingLightBlue,
   colframe=missing,
+  before upper={\clearglue},
+  after upper={\restoreglue},
 }{%
   \vphantom{六}#1%
+}
+
+\NewTCBListing{MissingVerbatim}{s O{text} O{0pt}}{%
+  breakable,
+  IfBooleanTF = {#1}
+    {enforce breakable}
+    {},
+  break at = #3,
+  enhanced,
+  arc=0pt,
+  left=3mm,
+  right=3mm,
+  leftrule=0pt,
+  rightrule=0pt,
+  toprule=0.3mm,
+  bottomrule=0.3mm,
+  colback=MissingLightBlue,
+  colframe=missing,
+  listing only,
+  minted language = #2,
+  before upper={\clearglue},
+  after upper={\restoreglue},
 }

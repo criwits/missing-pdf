@@ -1,5 +1,5 @@
 \chapter{文件与文件管理}
-\label{cha:files-and-file-management}
+\label{cha:file-and-file-management}
 
 \begin{intro}
   一直以来，「文件管理」都是困扰着许多电脑用户，尤其是初学者的一大难题。看完本章，你将可以找到下面这些问题的答案：
@@ -10,7 +10,7 @@
   \end{itemize}
 \end{intro}
 
-如\nameref{cha:computer-and-its-components}一章所言，硬盘是电脑中存放数据的地方，而「文件」则是数据存放的具体形式。你所撰写的 Word 文档、制作的 PowerPoint 幻灯片、从网上下载的图片和视频，乃至各个软件本身，都以文件的形式存储在硬盘上。
+如\chapref{cha:computer-and-its-components}一章所言，硬盘是电脑中存放数据的地方，而「文件」则是数据存放的具体形式。你所撰写的 Word 文档、制作的 PowerPoint 幻灯片、从网上下载的图片和视频，乃至各个软件本身，都以文件的形式存储在硬盘上。
 
 本章，我们将具体介绍「文件」以及文件的管理。这是《你缺计课》中需要动手实践的第一章，更是我们合理、有效地使用电脑的第一课。
 
@@ -19,12 +19,12 @@
 双击桌面上的【此电脑】，就能打开「\regcolor{文件资源管理器}」，简称「\regcolor{资源管理器}」。在其中，我们可以看到一个或几个「盘」，例如 C 盘、D 盘等。这样的「盘」学名叫做「分区」，顾名思义，它们是将硬盘上的空间人为地划分成了一些子空间。
 
 \begin{note}
-  如果你的电脑上没有【此电脑】图标，请先按\nameref{cha:computer-and-its-components}中的方法让它显示在桌面上。
+  如果你的电脑上没有【此电脑】图标，请先按\chapref{cha:computer-and-its-components}中的方法让它显示在桌面上。
 \end{note}
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.7\textwidth]{assets/basic/Partitions.png}
+  \includegraphics[width=.8\textwidth]{assets/basic/Partitions.png}
   \caption{电脑上的两个分区}
   \label{fig:Partitions1-2}
 \end{figure}
@@ -54,14 +54,14 @@
   \label{fig:Partition_labels}
 \end{figure}
 
-我们在\nameref{cha:computer-and-its-components}中提到，操作系统本身也是一个大软件，那么这个软件放在硬盘上的哪呢？对于 Windows 而言，\regcolor{整个 Windows 系统默认放在 C 盘里}。双击打开电脑 C 盘，你会看到一些你可能不熟悉的文件夹，例如 \MissingVerb{Windows} 文件夹，Windows 系统自己的许多文件就存在其中。
+我们在\chapref{cha:computer-and-its-components}中提到，操作系统本身也是一个大软件，那么这个软件放在硬盘上的哪呢？对于 Windows 而言，\regcolor{整个 Windows 系统默认放在 C 盘里}。双击打开电脑 C 盘，你会看到一些你可能不熟悉的文件夹，例如 \MissingVerb{Windows} 文件夹，Windows 系统自己的许多文件就存在其中。
 
 也许你曾经听过「不要把软件安装到 C 盘」「不要把自己的数据放在 C 盘」这样的说法。这种说法是有一定道理的：如果你的 C 盘总空间较小（这在以前是很常见的情况），而 Windows 系统本身就很庞大，且系统自身工作产生的一些文件也会被自动地放在 C 盘内，这导致 C 盘本身空间很容易变得局促。这时，如果我们还将大量的软件装在 C 盘，就会让 C 盘更加不堪重负，结果就是——满了。
 
-在本章的后续部分，以及\nameref{cha:software-installation}中，我们会详细介绍我们如何比较妥善地利用各个分区。如果你的 C 盘空间已经不足，那么请参考\nameref{cha:manage-storage}中的方法，来释放 C 盘的空间。
+在本章的后续部分，以及\chapref{cha:software-installation}中，我们会详细介绍我们如何比较妥善地利用各个分区。如果你的 C 盘空间已经不足，那么请参考\chapref{cha:manage-storage}中的方法，来释放 C 盘的空间。
 
 \begin{note}
-  如果你打开「此电脑」之后，发现自己电脑上只有一个 C 盘，这说明你的电脑磁盘只有一个分区。一些品牌的新电脑出厂时就是这样的设置。如果你想要在 C 盘之后分出一个新的分区，可以参考\nameref{cha:new-laptop-setup}中的方法。如果前面的方法不行，或者你想进行更高级的分区调整（例如调整大小），则需要参见进阶篇的\nameref{cha:manage-storage}。
+  如果你打开「此电脑」之后，发现自己电脑上只有一个 C 盘，这说明你的电脑磁盘只有一个分区。一些品牌的新电脑出厂时就是这样的设置。如果你想要在 C 盘之后分出一个新的分区，可以参考\chapref{cha:new-laptop-setup}中的方法。如果前面的方法不行，或者你想进行更高级的分区调整（例如调整大小），则需要参见进阶篇的\chapref{cha:manage-storage}。
 \end{note}
 
 \section{文件、文件名和文件类型}
@@ -73,7 +73,7 @@
   \label{fig:5_files}
 \end{wrapfigure}
 
-「文件」是数据存储在硬盘上的形式。这么说可能有些抽象，直观地说，文件就是我们在资源管理器里看到的这些东西：
+「文件」是数据存储在硬盘上的形式。这么说可能有些抽象，直观地说，文件就是我们在资源管理器里看到的，像\autoref{fig:5_files} 里面的这些东西。
 
 文件有自己的名字，称为「文件名」。在 Windows 系统中，文件名可以分成三个部分：
 
@@ -117,7 +117,7 @@
   \end{center}
 \end{note}
 
-扩展名也是可以人为改变的，但这样往往会出问题——试想，图 \ref{fig:5_files} 中的 \MissingVerb{数字逻辑设计第 13 讲.ppt}，本来是一个 \MissingVerb{ppt} 文件，即 PowerPoint 幻灯片，应该用 PowerPoint 或 WPS 打开。如果你强行把它改成 \MissingVerb{txt}，系统就会用记事本来打开一个幻灯片——用错误的工具打开文件。因此，扩展名不能随便改，因为改了之后系统就会用错误的工具去打开它。右键某一文件，选择【重命名】，你会看到系统会自动帮你选中文件的主名，而不选中扩展名。如果你执意更改文件的扩展名，系统会发出一个提示：
+扩展名也是可以人为改变的，但这样往往会出问题——试想，图 \autoref{fig:5_files} 中的 \MissingVerb{数字逻辑设计第 13 讲.ppt}，本来是一个 \MissingVerb{ppt} 文件，即 PowerPoint 幻灯片，应该用 PowerPoint 或 WPS 打开。如果你强行把它改成 \MissingVerb{txt}，系统就会用记事本来打开一个幻灯片——用错误的工具打开文件。因此，扩展名不能随便改，因为改了之后系统就会用错误的工具去打开它。右键某一文件，选择【重命名】，你会看到系统会自动帮你选中文件的主名，而不选中扩展名。如果你执意更改文件的扩展名，系统会发出一个提示：
 
 \begin{figure}[htb!]
   \centering
@@ -164,7 +164,7 @@
 
 也许你有听说过「目录」这个名字。其实「目录」就是文件夹。例如说「打开目录 \MissingVerb{D:\missing\public}」指的就是打开 D 盘中 \MissingVerb{missing} 文件夹里的 \MissingVerb{public} 文件夹。
 
-目录（文件夹）一层一层的结构可以像图 \ref{fig:Tree} 这样从上到下画出来，称作「目录树」。树的特点是从一个「根」开始，生长出许多的枝叶，这和文件夹「一层套一层」的结构是一致的。下图便展示了一棵目录树，它的根是文件夹 \MissingVerb{Documents}，而其他的文件和文件夹则是它的枝叶。与现实中的树不同的是，目录树是倒着的，根在上，叶子在下。
+目录（文件夹）一层一层的结构可以像\autoref{fig:Tree} 这样从上到下画出来，称作「目录树」。树的特点是从一个「根」开始，生长出许多的枝叶，这和文件夹「一层套一层」的结构是一致的。下图便展示了一棵目录树，它的根是文件夹 \MissingVerb{Documents}，而其他的文件和文件夹则是它的枝叶。与现实中的树不同的是，目录树是倒着的，根在上，叶子在下。
 
 \begin{figure}[htb!]
   \centering
@@ -206,7 +206,7 @@
 每次我们启动网易云音乐，运行的都是 \MissingVerb{cloudmusic.exe} 这个可执行文件。然而，这个文件的运行离不开放在它边上的那一堆辅助文件——如果你把 \MissingVerb{cloudmusic.exe} 复制到另外的一个地方，双击运行，大概率会直接报错；即使不报错，功能也必不完全正常。在后续的章节，我们在介绍软件的安装与卸载时，会继续提到这件事。
 
 \begin{note}
-  好奇这 \MissingVerb{exe} 文件里面到底是什么？答案将在超越篇的\nameref{cha:program-and-arch}揭晓。
+  好奇这 \MissingVerb{exe} 文件里面到底是什么？答案将在超越篇的\chapref{cha:program-and-arch}揭晓。
 \end{note}
 
 \section{文件的「替身」——快捷方式}
@@ -222,7 +222,7 @@
   \label{fig:Link}
 \end{figure}
 
-快捷方式的扩展名是 \MissingVerb{lnk}，但实际上不可见\cprotect\footnote{千万不要手动把一个正常文件的扩展名改成 \MissingVerb{lnk}，否则就很难改回来了。}。我们桌面上的「网易云音乐」，指向的正是网易云音乐软件目录下的那个 \MissingVerb{cloudmusic.exe} 文件。右击桌面上的【网易云音乐】，选择【属性】，会弹出这个快捷方式的详细信息，如图 \ref{fig:Link_properties} 所示。
+快捷方式的扩展名是 \MissingVerb{lnk}，但实际上不可见\cprotect\footnote{千万不要手动把一个正常文件的扩展名改成 \MissingVerb{lnk}，否则就很难改回来了。}。我们桌面上的「网易云音乐」，指向的正是网易云音乐软件目录下的那个 \MissingVerb{cloudmusic.exe} 文件。右击桌面上的【网易云音乐】，选择【属性】，会弹出这个快捷方式的详细信息，如\autoref{fig:Link_properties} 所示。
 
 \begin{wrapfigure}[12]{r}{6cm}
   \centering
@@ -237,7 +237,7 @@
   D:\Program Files (x86)\Netease\CloudMusic\cloudmusic.exe
 \end{MissingVerbatim}
 
-因此，双击打开这个「网易云音乐」快捷方式，就等同于打开 \MissingVerb{cloudmusic.exe} 这个文件。\cprotect\regcolor{如果你删掉了这个快捷方式，它并不会影响 \MissingVerb{cloudmusic.exe} 这个文件，不会影响你电脑上安装的网易云音乐本身。}因此，卸载软件并非仅仅把桌面上的「快捷方式」删掉就完事了，而是需要通过借助卸载工具。我们将在\nameref{cha:basic-maintenance}中介绍。
+因此，双击打开这个「网易云音乐」快捷方式，就等同于打开 \MissingVerb{cloudmusic.exe} 这个文件。\cprotect\regcolor{如果你删掉了这个快捷方式，它并不会影响 \MissingVerb{cloudmusic.exe} 这个文件，不会影响你电脑上安装的网易云音乐本身。}因此，卸载软件并非仅仅把桌面上的「快捷方式」删掉就完事了，而是需要通过借助卸载工具。我们将在\chapref{cha:basic-maintenance}中介绍。
 
 所有类型的文件以及文件夹都可以制作无数个快捷方式。如果你想给自己的某个文件/文件夹制作一个快捷方式，只需右键它，选择【发送到】→【桌面快捷方式】，就能在桌面生成一个指向这个文件的快捷方式了。这个快捷方式可以挪到系统的任何地方，也可以复制粘贴出很多个副本。它们全都指向原来的那个文件本身。
 
@@ -245,7 +245,7 @@
 
 \section{合多为一，精简空间——压缩文件}
 
-「压缩文件」又称「压缩包」，是一种常用的文件类型。人们可以\regcolor{利用「压缩工具」这种软件，将一批松散的文件和文件夹「打包」成一个压缩文件}\footnote{也可以打包成多个文件，称为「分卷压缩」，详见\nameref{archive-formats-and-tools}一章。}。假设你有 8 个文件夹以及 7 个文件一共 15 个项目，你想一次性把它们分享给别人，那么把它们打包成一个压缩文件不失是一种好的选择。
+「压缩文件」又称「压缩包」，是一种常用的文件类型。人们可以\regcolor{利用「压缩工具」这种软件，将一批松散的文件和文件夹「打包」成一个压缩文件}\footnote{也可以打包成多个文件，称为「分卷压缩」，详见\chapref{archive-formats-and-tools}一章。}。假设你有 8 个文件夹以及 7 个文件一共 15 个项目，你想一次性把它们分享给别人，那么把它们打包成一个压缩文件不失是一种好的选择。
 
 \begin{figure}[htb!]
   \centering
@@ -254,7 +254,7 @@
   \label{fig:Compress_and_decompress}
 \end{figure}
 
-压缩文件有很多种类，常见的有 \MissingVerb{zip} 文件和 \MissingVerb{rar} 文件，但后者的压缩软件是收费的\cprotect\footnote{具体来说，大多数压缩工具都可以解压 \MissingVerb{rar} 格式的压缩包，但只有 WinRAR 这一款压缩工具可以制作这种格式的压缩包；而这款工具是收费的。详见\nameref{archive-formats-and-tools}。}。我们建议在与他人交换文件的时候，使用\MissingVerb{zip} 格式打包。
+压缩文件有很多种类，常见的有 \MissingVerb{zip} 文件和 \MissingVerb{rar} 文件，但后者的压缩软件是收费的\cprotect\footnote{具体来说，大多数压缩工具都可以解压 \MissingVerb{rar} 格式的压缩包，但只有 WinRAR 这一款压缩工具可以制作这种格式的压缩包；而这款工具是收费的。详见\chapref{archive-formats-and-tools}。}。我们建议在与他人交换文件的时候，使用\MissingVerb{zip} 格式打包。
 
 当收到一个压缩文件时，我们一般需要将它解压，来还原出原始的文件。如果你电脑上已经安装有压缩工具，那么可以右击压缩文件，选择类似「解压到当前文件夹」\footnote{部分压缩工具称「解压」为「提取」，而有的压缩工具称「解压到此处」，它们的意思是一样的。}或者「解压到 \MissingVerb{<文件名>\}」的选项。这两类选项的不同是：
 
@@ -287,7 +287,7 @@
 
 当你想制作一个压缩文件时，可以先选中你要打包的所有文件和文件夹，右击它们并选择类似「新建压缩包」或「压缩为 \MissingVerb{<文件名>}」的选项。压缩工具可能会提示你设置一些参数，例如压缩格式（推荐 \MissingVerb{zip} 格式）、压缩后的文件的文件名以及压缩方式。
 
-有关压缩文件和压缩工具的更多细节，请参见本书软件篇的\nameref{cha:archive-formats-and-tools}一章。
+有关压缩文件和压缩工具的更多细节，请参见本书软件篇的\chapref{cha:archive-formats-and-tools}一章。
 
 \section{文件的打开方式}
 
@@ -321,13 +321,13 @@
   \end{tblr}
 \end{table}
 
-系统内部维护有一张「表」，这张表记录了已知的文件类型（扩展名）和对应的打开方式。你可以把这张表想象成表 \ref{tab:regtable} 那样。
+系统内部维护有一张「表」，这张表记录了已知的文件类型（扩展名）和对应的打开方式。你可以把这张表想象成\autoref{tab:regtable} 那样。
 
 有了这张表，系统就能自动地帮我们选择文件对应的打开方式。有时，我们不想要用这张表帮我们预置的方式来打开文件。比如，打开 \MissingVerb{png} 图片的默认方式是「照片」软件，但如果我们想\textbf{暂时}用「画图」来打开它，我们可以这样做：
 
 \begin{itemize}
-  \item 右键要打开的这个 \MissingVerb{jpg} 文件，选择【打开方式】，在里面选择【画图】，如图 \ref{fig:Open_with} 所示。
-  \item - 如果上一步找不到「画图」，那么选择【打开方式】→【选择其他应用】。然后在弹出的对话框中寻找并点击【画图】。然后，对于 Windows 10，不要勾选【始终使用此应用打开 \MissingVerb{.png} 文件】，直接点击【确定】；对于 Windows 11，点击【仅一次】，如图 \ref{fig:Open_with_dialog} 所示。
+  \item 右键要打开的这个 \MissingVerb{jpg} 文件，选择【打开方式】，在里面选择【画图】，如\autoref{fig:Open_with} 所示。
+  \item - 如果上一步找不到「画图」，那么选择【打开方式】→【选择其他应用】。然后在弹出的对话框中寻找并点击【画图】。然后，对于 Windows 10，不要勾选【始终使用此应用打开 \MissingVerb{.png} 文件】，直接点击【确定】；对于 Windows 11，点击【仅一次】，如\autoref{fig:Open_with_dialog} 所示。
     \begin{figure}[htb!]
       \centering
       \begin{minipage}{.55\textwidth}
@@ -376,7 +376,7 @@
     \item 若你的总容量小于 300 GB，建议不要再分额外的分区，将你的文件直接存放在 C 盘。同时，你可以使用移动硬盘或各种「网盘」来备份好你的重要数据。
     \item 如果你的总容量在 300 GB—500 GB，可以选择为 C 盘留下 200 GB 左右，并将剩余的空间分出一个新的分区（D 盘）。然后，在 D 盘存放你的文件。
       \begin{note}
-        如果你想要在 C 盘之后分出一个新的分区，可以参考\nameref{cha:new-laptop-setup}中的方法。如果前面的方法不行，或者你想进行更高级的分区调整（例如调整大小），则需要参见进阶篇的\nameref{cha:manage-storage}。
+        如果你想要在 C 盘之后分出一个新的分区，可以参考\chapref{cha:new-laptop-setup}中的方法。如果前面的方法不行，或者你想进行更高级的分区调整（例如调整大小），则需要参见进阶篇的\chapref{cha:manage-storage}。
       \end{note}
     \item 如果你的总容量在 500 GB 以上，建议为 C 盘留出 400 GB—500 GB 的空间，再将剩余的空间按自己的喜好，分出一个或多个新的分区（D 盘、E 盘……）。然后，在这些分区存放你的文件。
   \end{itemize}
@@ -392,7 +392,7 @@
 
 \subsection{为文件安家}
 
-为了给文件安家，我们首先需要挑选一个合适的位置。\regcolor{如果你打算把文件放在 C 盘，可以使用 Windows 为你提供的一系列「已知文件夹」（Known Folder）}，即「文档」「视频」「下载」等。Windows 11 系统中，你可以在【此电脑】窗口的左侧看到这些文件夹，如图 \ref{fig:Win11_user_folders}；而在 Windows 10 中，双击桌面上的【此电脑】，展开【文件夹】折叠项看到这些文件夹，如图 \ref{fig:User_directories}。
+为了给文件安家，我们首先需要挑选一个合适的位置。\regcolor{如果你打算把文件放在 C 盘，可以使用 Windows 为你提供的一系列「已知文件夹」（Known Folder）}，即「文档」「视频」「下载」等。Windows 11 系统中，你可以在【此电脑】窗口的左侧看到这些文件夹，如\autoref{fig:Win11_user_folders}；而在 Windows 10 中，双击桌面上的【此电脑】，展开【文件夹】折叠项看到这些文件夹，如\autoref{fig:User_directories}。
 
 \begin{figure}[htb!]
   \centering
@@ -458,7 +458,7 @@
 
 电脑里面的东西总是随着我们的日常使用而越积越多\CJKsout*{（比如微软的更新，一更一大堆；以及 QQ、微信的文件接收文件夹，相信你不一定知道在哪\footnotemark）}\footnotetext{你可以先把一个文件发给自己，然后删掉原始文件，再下回来，就能找到这些接收文件夹的位置（真是曲线救国啊）。}，所以定期检查你不需要的东西然后扔掉它们显得尤为重要。
 
-对于系统分区 C 盘来说，你不去动它，它也会被塞入一些诸如系统临时文件、Windows 更新文件等等这些。诸如「火绒安全软件」「360 电脑管家」之类的工具通常都会提供「系统清理」功能，可以帮助你清理这些文件。除此之外，Windows 自身也提供了一个磁盘清理工具。在\nameref{cha:manage-storage.md}一章中，你将学习到如何使用它来打扫你的 C 盘。
+对于系统分区 C 盘来说，你不去动它，它也会被塞入一些诸如系统临时文件、Windows 更新文件等等这些。诸如「火绒安全软件」「360 电脑管家」之类的工具通常都会提供「系统清理」功能，可以帮助你清理这些文件。除此之外，Windows 自身也提供了一个磁盘清理工具。在\chapref{cha:manage-storage.md}一章中，你将学习到如何使用它来打扫你的 C 盘。
 
 上述各种磁盘清理工具并不会把我们日常中积累的用户文件（例如你收到的课件、文档等）也清理掉，但在日常使用过程中，我们也会不可避免地产生许许多多的冗余文件，或是曾经需要而现在不再需要的文件。这里不妨就来看看你的「下载」文件夹：
 

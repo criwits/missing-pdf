@@ -67,6 +67,13 @@
   % linkcolor=red!80!black,%
   bookmarksnumbered=true%
 }
+\renewcommand{\figurename}{图}
+\renewcommand{\figureautorefname}{图}
+\renewcommand{\tablename}{表}
+\renewcommand{\tableautorefname}{表}
+\newcommand{\chapref}[1]{%
+  \tcbox[enhanced,tcbox raise base,left=0mm,right=0mm,top=0mm,bottom=0mm,boxsep=1mm,arc=1mm,colback=MissingLightYellow,frame hidden,nobeforeafter,hyperref={#1}]{\raisebox{-.2ex}{\ref*{#1}} \nameref*{#1}}%
+}
 
 \RequirePackage{bookmark}
 
@@ -289,6 +296,8 @@
   }
 }
 
+\newcommand{\chapternumberformat}[1]{\sbox0{#1}\chinese{chapter}}
+
 \newcommand{\chapternameformat}[1]{%
   \begin{tikzpicture}[remember picture, overlay]
     \fill[fill=missing] (current page.north west) -- +(0, -53.8mm) -- +(88mm, -53.8mm) -- +(88mm, 0) -- cycle;
@@ -299,25 +308,12 @@
 }
 
 \newcommand{\chapteraftername}{\hspace*{3mm}%
-  \renewcommand{\thechapter}{\chaptersymb{chapter}}
-  \begingroup\Huge\color{missing}\parbox[t][.3ex][b]{6em}{\thechapter}\par\endgroup
-  \renewcommand{\thechapter}{\chinese{chapter}}%
+  \begingroup\Huge\color{missing}\parbox[t][.3ex][b]{6em}{\chaptersymb{chapter}}\par\endgroup
   \begingroup
     \fontsize{5pt}{5pt}\color{MissingAquamarine}%
     \rule[3pt]{38.2mm}{1.8pt}%
     \color{missing}\rule[3pt]{114mm}{1.8pt}\par
   \endgroup
-}
-
-\let\oldappendix\appendix
-\renewcommand{\appendix}{
-  \oldappendix%
-  \renewcommand{\chapteraftername}{\hspace*{1cm}
-    \renewcommand{\thechapter}{\appendixsymb{chapter}}
-    {\Huge\color{missing}\parbox[t][.3ex][b]{6em}{\thechapter}\par}
-    \renewcommand{\thechapter}{\Alph{chapter}}
-    {\fontsize{5pt}{5pt}\color{missing}\rule[3pt]{13em}{1.5pt}\par}
-  }
 }
 
 \ctexset{
@@ -331,11 +327,42 @@
   },
   chapter = {
     format      = \chapterformat,
+    number      = \chaptersymb{chapter},
+    numberformat= \chapternumberformat,
     nameformat  = \chapternameformat,
     aftername   = \chapteraftername,
     titleformat = \Huge\CTEXifname{\raggedleft}{\raggedright},
     beforeskip  = 18pt,
+    tocline     = {\CTEXifname{\protect\numberline{第\chinese{chapter}章\hspace{.3em}}}{}#2},
   },
+}
+
+\renewcommand{\chaptermark}[1]{%
+  \markboth{\CTEXifname{第\chinese{chapter}章}{}\hspace{1em}#1}{\CTEXifname{第\chinese{chapter}章}{}\hspace{1em}#1}%
+}
+
+% 切换到附录时要重定义许多东西
+\let\oldappendix\appendix
+\renewcommand{\appendix}{
+  \oldappendix%
+  \renewcommand{\chapternumberformat}[1]{\sbox0{#1}\Alph{chapter}}%
+  \renewcommand{\chapteraftername}{\hspace*{3mm}%
+    \begingroup\Huge\color{missing}\parbox[t][.3ex][b]{6em}{\appendixsymb{chapter}}\par\endgroup
+    \begingroup
+    \fontsize{5pt}{5pt}\color{MissingAquamarine}%
+    \rule[3pt]{38.2mm}{1.8pt}%
+    \color{missing}\rule[3pt]{114mm}{1.8pt}\par
+    \endgroup
+  }
+  \ctexset{
+    chapter = {
+      number  = \appendixsymb{chapter},
+      tocline = {\CTEXifname{\protect\numberline{附录 \Alph{chapter}\hspace{.3em}}}{}##2},
+     }
+  }
+  \renewcommand{\chaptermark}[1]{%
+    \markboth{\CTEXifname{附录 \Alph{chapter}}{}\hspace{1em}##1}{\CTEXifname{附录 \Alph{chapter}}{}\hspace{1em}##1}%
+  }
 }
 
 % 把「部分导读」塞到 \part 里面

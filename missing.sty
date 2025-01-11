@@ -345,7 +345,7 @@
 \let\oldappendix\appendix
 \renewcommand{\appendix}{
   \oldappendix%
-  \renewcommand{\chapternumberformat}[1]{\sbox0{#1}\Alph{chapter}}%
+  \renewcommand{\chapternumberformat}[1]{\sbox0{##1}\Alph{chapter}}%
   \renewcommand{\chapteraftername}{\hspace*{3mm}%
     \begingroup\Huge\color{missing}\parbox[t][.3ex][b]{6em}{\appendixsymb{chapter}}\par\endgroup
     \begingroup

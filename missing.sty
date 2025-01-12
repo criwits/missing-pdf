@@ -60,6 +60,7 @@
 \definecolor[named]{MissingOrange}{HTML}{FF8100} % C0 M49 Y100 K0
 \definecolor[named]{MissingYellow}{HTML}{FFED3B} % C0 M7 Y76 K0
 \definecolor[named]{MissingLightYellow}{HTML}{FFFFAD} % C0 M0 Y32 K0
+\definecolor[named]{MissingGreen}{HTML}{2DAB41} % C74 M2 Y95 K0
 
 \RequirePackage{hyperref}
 \hypersetup{
@@ -88,11 +89,11 @@
 }
 
 \xeCJKDeclareSubCJKBlock{Icons}{"E001 -> "E781, "E783 -> "EC64, "EC6C -> "F8B3}
-\xeCJKDeclareSubCJKBlock{Symbols}{"22EF, "2261}
-\xeCJKDeclareSubCJKBlock{CircledNum}{"278A -> "2793}
+\xeCJKDeclareSubCJKBlock{Symbols}{"22EF, "2261, "278A -> "2793}
+\xeCJKDeclareSubCJKBlock{Cross}{"2715}
 
-\setCJKmainfont{思源黑体}[BoldFont=思源黑体 Bold, Icons=Segoe Fluent Icons, Mapping=quote, Symbols=思源黑体, CircledNum=思源黑体]
-\setCJKsansfont{思源黑体}[BoldFont=思源黑体 Bold, Icons=Segoe Fluent Icons, Mapping=quote, Symbols=思源黑体, CircledNum=思源黑体]
+\setCJKmainfont{思源黑体}[BoldFont=思源黑体 Bold, Icons=Segoe Fluent Icons, Mapping=quote, Symbols=思源黑体, Cross=等距更纱黑体 Slab SC]
+\setCJKsansfont{思源黑体}[BoldFont=思源黑体 Bold, Icons=Segoe Fluent Icons, Mapping=quote, Symbols=思源黑体, Cross=等距更纱黑体 Slab SC]
 \setCJKmonofont{等距更纱黑体 Slab SC}
 
 % 如果单纯用 punct=kaiming，实际上部分句末点号的宽度还是撑不到 1em。

@@ -10,7 +10,7 @@ goto :show_output
 
 :create_pdf
 echo Creating PDF...
-set TEMPFILE=missing.aux chapters\*.aux missing.log missing.out missing.toc missing.xdv missing.synctex.gz *.cpt *.listing
+set TEMPFILE=missing.aux chapters\*.aux missing.log missing.out missing.toc missing.xdv *.cpt *.listing
 set BASE_OPT=-interaction=nonstopmode -halt-on-error --shell-escape
 set EXTRA_OPT=-synctex=1 -output-driver="xdvipdfmx -i dvipdfmx-unsafe.cfg -q -E"
 

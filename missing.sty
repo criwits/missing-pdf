@@ -9,6 +9,7 @@
 \RequirePackage{cmbright}
 \RequirePackage[quiet]{fontspec}
 \RequirePackage{amsmath,amssymb}
+\RequirePackage{relsize}
 \RequirePackage{tabularray}
 \RequirePackage{graphicx,float,wrapfig,caption}
 \RequirePackage[x11names]{xcolor}
@@ -74,7 +75,7 @@
 \renewcommand{\tablename}{表}
 \renewcommand{\tableautorefname}{表}
 \newcommand{\chapref}[1]{%
-  \tcbox[enhanced,tcbox raise base,left=0mm,right=0mm,top=0mm,bottom=0mm,boxsep=1mm,arc=1mm,colback=MissingLightYellow,frame hidden,nobeforeafter,hyperref={#1}]{\raisebox{-.2ex}{\ref*{#1}} \nameref*{#1}}%
+  \tcbox[enhanced,tcbox raise base,left=0mm,right=0mm,top=0mm,bottom=0mm,boxsep=1mm,arc=1mm,colback=MissingLightYellow,frame hidden,nobeforeafter,hyperref={#1}]{\raisebox{.13ex}{\MissingIcons\larger\ref*{#1}} \nameref*{#1}}%
 }
 
 \RequirePackage{bookmark}
@@ -83,6 +84,7 @@
 \setmainfont{Inter}[Numbers = Monospaced]
 \setsansfont{Inter}[Numbers = Monospaced]
 \setmonofont{等距更纱黑体 Slab SC}
+\newfontfamily\MissingIcons[ExternalLocation=resources/]{MissingIcons-Regular.otf}
 
 \xeCJKsetup{
   underline/skip  = false,
@@ -246,7 +248,7 @@
 \def\noheadsymb#1{\expandafter\@noheadsymb\csname c@#1\endcsname}
 \def\@noheadsymb#1{%
   \ifcase#1%
-    \or \or \or %
+    \or 0\or 1\or 2%
     \else\@ctrerr
   \fi
 }
@@ -257,18 +259,10 @@
 \def\@chaptersymb#1{%
   \ifcase#1%
     % 按照「部分」分割
-    \or \or \or \or \or \or \or% 第一部分
-    \or \or \or \or \or \or% 第二部分
-    \or \or \or \or \or \Windows\or% 第三部分
-    \or \or \or % 第四部分
-    \else\@ctrerr
-  \fi
-}
-
-\def\appendixsymb#1{\expandafter\@appendixsymb\csname c@#1\endcsname}
-\def\@appendixsymb#1{%
-  \ifcase#1%
-    \or \or \or \or 
+    A\or B\or C\or D\or E\or F\or G\or% 第一部分
+    H\or I\or J\or K\or L\or M\or% 第二部分
+    N\or O\or P\or Q\or R\or S\or% 第三部分
+    T\or U\or V\or W% 第四部分
     \else\@ctrerr
   \fi
 }
@@ -282,18 +276,16 @@
     \begin{tikzpicture}[remember picture, overlay]
       \fill[fill=missing] (current page.north east) -- +(0, -53.8mm) -- +(-140mm, -53.8mm) -- +(-140mm, 0) -- cycle;
       \fill[fill=MissingAquamarine] (current page.north west) -- +(0, -77mm) -- +(63mm, -77mm) -- +(88mm, 0) -- cycle;
+      \draw[color=missing, line width=1.8pt] ($(current page.north west) + (31.8mm, -53.5mm)$) -- +(38.9mm, 0);
+      \draw[color=MissingAquamarine, line width=1.8pt] ($(current page.north west) + (70.7mm, -53.5mm)$) -- +(114mm, 0);
     \end{tikzpicture}%
     \stepcounter{noheadchap}
     \bfseries\noindent
     \begingroup
       \Huge\raggedleft\color{white}
-      \parbox[t][.3ex][b]{1.2em}{\thenoheadchap}\par
+      \MissingIcons\thenoheadchap\par
     \endgroup
-    \begingroup
-      \fontsize{5pt}{5pt}\noindent%
-      \color{missing}\rule[3pt]{38.9mm}{1.8pt}%
-      \color{MissingAquamarine}\rule[3pt]{114mm}{1.8pt}\par
-    \endgroup%
+    \vskip6mm\relax%
     #1
   }
 }
@@ -304,18 +296,16 @@
   \begin{tikzpicture}[remember picture, overlay]
     \fill[fill=missing] (current page.north west) -- +(0, -53.8mm) -- +(88mm, -53.8mm) -- +(88mm, 0) -- cycle;
     \fill[fill=MissingAquamarine] (current page.north east) -- +(0, -77mm) -- +(-148mm, -77mm) -- +(-122mm, 0) -- cycle;
+    \draw[color=MissingAquamarine, line width=1.8pt] ($(current page.north west) + (31mm, -53.5mm)$) -- +(39mm, 0);
+    \draw[color=missing, line width=1.8pt] ($(current page.north west) + (70mm, -53.5mm)$) -- +(116mm, 0);
   \end{tikzpicture}%
   \huge\noindent\raggedleft\color{white}%
   \parbox{5.5em}{#1}
 }
 
 \newcommand{\chapteraftername}{\hspace*{3mm}%
-  \begingroup\Huge\color{missing}\parbox[t][.3ex][b]{6em}{\chaptersymb{chapter}}\par\endgroup
-  \begingroup
-    \fontsize{5pt}{5pt}\color{MissingAquamarine}%
-    \rule[3pt]{38.2mm}{1.8pt}%
-    \color{missing}\rule[3pt]{114mm}{1.8pt}\par
-  \endgroup
+  \begingroup\fontsize{28pt}{30pt}\selectfont\color{missing}\MissingIcons\chaptersymb{chapter}\par\endgroup%
+  \vskip6mm\relax%
 }
 
 \ctexset{
@@ -349,12 +339,8 @@
   \oldappendix%
   \renewcommand{\chapternumberformat}[1]{\sbox0{##1}\Alph{chapter}}%
   \renewcommand{\chapteraftername}{\hspace*{3mm}%
-    \begingroup\Huge\color{missing}\parbox[t][.3ex][b]{6em}{\appendixsymb{chapter}}\par\endgroup
-    \begingroup
-    \fontsize{5pt}{5pt}\color{MissingAquamarine}%
-    \rule[3pt]{38.2mm}{1.8pt}%
-    \color{missing}\rule[3pt]{114mm}{1.8pt}\par
-    \endgroup
+    \begingroup\fontsize{28pt}{30pt}\selectfont\color{missing}\MissingIcons\alph{chapter}\par\endgroup%
+    \vskip6mm\relax%
   }
   \ctexset{
     chapter = {

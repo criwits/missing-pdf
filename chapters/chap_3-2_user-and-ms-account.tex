@@ -6,7 +6,7 @@
 
   \begin{itemize}
     \item 为什么我自己的电脑还有「用户」？
-    \item 什么是微软账号（Microsoft 账户\footnotemark）？我为什么被要求注册/登录微软账号？
+    \item 什么是微软账号（Microsoft 帐户\footnotemark）？我为什么被要求注册/登录微软账号？
     \item 在\chapref{cha:basic-maintenance}中提到的「UAC 弹窗」和「以管理员身份运行」究竟是什么？
     \item 谁是「系统管理员」？
     \item 登录微软账号有什么好处？
@@ -49,7 +49,7 @@
 
 在前文我们已经讲过，「文档」「下载」这样的已知文件夹是微软好心留给我们，帮助我们整理文件的。现在你应该能理解这样的好心了：Windows 本身就是一个为多用户设计的系统，从其他用户的角度考虑，用户的文件只有放在 \MissingVerb{C:\用户\<用户名>\} 这里才比较安稳——至于什么「这里是 C 盘，不适合放文件」，那微软才不管呢。
 
-\section{用户与权限，以及 Administrator}
+\subsection{用户与权限，以及 Administrator}
 
 上文有说，今天保留多用户机制的一个很重要的原因，就是它能够更好地实现系统权限的分离。还记得\chapref{cha:basic-maintenance}中提到的权限相关的知识吗？在这里，我们会更深入地探讨这个话题。
 
@@ -99,9 +99,9 @@
   在过去盗版、修改版系统横行的年代，许多国内盗版和修改版的 Windows 系统，会强行解除 Administrator 用户的「封印」，并把它作为系统的默认用户。尽管这样，我们将不再见到有些恼人的「UAC 弹窗」（因为此时我们总是以管理员权限运行程序），但这时，我们相当于头上悬着一把「\href{https://baike.baidu.com/item/%E8%BE%BE%E6%91%A9%E5%85%8B%E5%88%A9%E6%96%AF%E4%B9%8B%E5%89%91/231450}{\regcolor{达摩克利斯之剑}}」在系统中四处穿行，其危险性可想而知。
 \end{note}
 
-\section{「本地帐户」和微软账号}
+\subsection{「本地帐户」和微软账号}
 
-你用过手机上的「云服务」吗？近年来，诸如 iCloud、华为云服务、小米账号这样的云服务在一定程度上提升了我们使用手机的便利程度。事实上，微软在 Windows 系统上也有着类似的服务：我们可以将系统中的用户和在线的「微软账号」（称为「Microsoft 帐户」）绑定，实现诸如同步等的各种附加功能。
+你用过手机上的「云服务」吗？近年来，诸如 iCloud、华为云服务、小米账号这样的云服务在一定程度上提升了我们使用手机的便利程度。事实上，微软在 Windows 系统上也有着类似的服务：我们可以将系统中的用户和在线的「微软账号」（微软称「Microsoft 帐户」）绑定，实现诸如同步等的各种附加功能。
 
 为了和「已经绑定了微软账号的用户」区分，Windows 专门为传统的用户起了个名字——「本地帐户」。将「本地帐户」链接到微软账号后，微软账号的登录密码就会变成我们开机使用的密码（除此之外还可以设置额外的数字密码），微软账号的用户名就变成了我们\regcolor{显示在屏幕上}的用户名\cprotect\footnote{本地存储的用户名是不会因为绑定到微软账号而改变的。即，绑定前后，打开 \MissingVerb{C:\用户\ } 看到的文件夹名字是一样的。}。
 
@@ -109,7 +109,7 @@
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.65\textwidth]{assets/advanced/Login_with_MS_accont_Win11.png}
+  \includegraphics[width=.7\textwidth]{assets/advanced/Login_with_MS_accont_Win11.png}
   \caption{Windows 11 的登录选项}
   \label{fig:Login_with_MS_accont_Win11}
 \end{figure}
@@ -118,7 +118,7 @@
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.6\textwidth]{assets/advanced/Login_with_MS_accont_Win10.png}
+  \includegraphics[width=.62\textwidth]{assets/advanced/Login_with_MS_accont_Win10.png}
   \caption{Windows 10 的登录选项}
   \label{fig:Login_with_MS_accont_Win10}
 \end{figure}
@@ -134,7 +134,7 @@
   \item ……
 \end{itemize}
 
-\section{设备加密与微软帐号}
+\subsection{设备加密与微软账号}
 
 \begin{warning}
   打开【此电脑】，观察你的磁盘图标上是否有挂锁图案。若有，请务必阅读这部分内容。

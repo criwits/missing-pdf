@@ -341,9 +341,11 @@ mklink /d "%localappdata%\Programs\Common\Wolfram Research\Documentation.zh-Hans
 
 不妨试一试用记事本来打开一个快捷方式\footnote{直接在记事本里面点【打开】是不行的，因为「打开」操作调用了文件资源管理器。}：
 
-- 在桌面按住 \keys{Shift} 点右键，选择【在此处打开 PowerShell 窗口】；
-- 先输入 \MissingVerb{dir}，按回车，你就可以看到目前你桌面上的所有文件与文件夹；
-- 再挑一个快捷方式，输入 \MissingVerb{notepad <快捷方式（带扩展名）>}，按回车，你就会看到你选的快捷方式的「真面目」。
+\begin{itemize}
+  \item 在桌面按住 \keys{Shift} 点右键，选择【在此处打开 PowerShell 窗口】；
+  \item 先输入 \MissingVerb{dir}，按回车，你就可以看到目前你桌面上的所有文件与文件夹；
+  \item 再挑一个快捷方式，输入 \MissingVerb{notepad <快捷方式（带扩展名）>}，按回车，你就会看到你选的快捷方式的「真面目」。
+\end{itemize}
 
 那么有没有一种「更强力的快捷方式」，让无论是哪个应用都知道去找目标文件呢？这就是文件链接。文件链接有两种类型——「硬链接」与「符号链接」（又称「软链接」），让我们来看看它们是个什么玩意。
 

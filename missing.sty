@@ -11,7 +11,7 @@
 \RequirePackage{amsmath,amssymb}
 \RequirePackage{relsize}
 \RequirePackage{tabularray}
-\RequirePackage{graphicx,float,wrapfig,caption}
+\RequirePackage{graphicx,wrapfig,caption,multicol}
 \RequirePackage[x11names]{xcolor}
 \RequirePackage{tikz,pdfpages}
 \RequirePackage{tcolorbox}
@@ -20,7 +20,6 @@
 \RequirePackage[os=win]{menukeys}
 \RequirePackage{pst-barcode}
 \RequirePackage{ifplatform}
-\RequirePackage{fancyvrb}
 \RequirePackage{cprotect}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -135,14 +134,17 @@
 
 % 目录
 \renewcommand\@pnumwidth{2em}
-\renewcommand\tableofcontents%
-  {\renewcommand\thefootnote{\fnsymbol{footnote}}%
-    \chapter{\contentsname%
-    \protect\@mkboth{\contentsname}{\contentsname}}%
-    \@starttoc{toc}%
-    \addfontfeatures{RawFeature=-tnum}
-    \renewcommand\thefootnote{\arabic{footnote}}%
+\renewcommand\tableofcontents{%
+  \renewcommand\thefootnote{\fnsymbol{footnote}}%
+  \chapter{\contentsname\protect\@mkboth{\contentsname}{\contentsname}}%
+  \@starttoc{toc}%
+  \addfontfeatures{RawFeature=-tnum}
+  \renewcommand\thefootnote{\arabic{footnote}}%
 }
+\AtBeginDocument{\addtocontents{toc}{\protect\begin{multicols}{2}}}
+\AtEndDocument{\immediate\write\@auxout{\noexpand\@writefile{toc}{\noexpand\end{multicols}}}}
+\let\@oldendpart\@endpart
+\renewcommand{\@endpart}{\addtocontents{toc}{\protect\begin{multicols}{2}}\@oldendpart}
 
 % 抄来的「部分」的目录条目的样式
 \renewcommand*\l@part[2]{%
@@ -356,6 +358,7 @@
 % 把「部分导读」塞到 \part 里面
 \let\oldpart\part
 \RenewDocumentCommand\part{m+o}{
+  \addtocontents{toc}{\protect\end{multicols}}
   \IfNoValueTF{#2}{%
     \def\partintro{}%
   }{%

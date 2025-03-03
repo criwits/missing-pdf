@@ -195,9 +195,9 @@
 
 上图中，即使用户名被改成了 Ventus，但用户文件夹名仍然是原来的 \MissingVerb{Windy}。接下来，我们将详细演示如何将用户文件夹名也修改成 \MissingVerb{Ventus}。
 
-\begin{danger}
+\begin{dangerbox}
   在着手操作之前，请\regcolor{一定确保电脑上没有在运行或自动运行的任何云存储服务}（包括但不限于 OneDrive、iCloud、百度网盘等）。如果有，请预先停止自动同步或关闭自动启动。
-\end{danger}
+\end{dangerbox}
 
 \subsection{获取当前用户的 SID}
 
@@ -254,9 +254,9 @@ SID，即「安全标识符」（security identifier），用于在操作系统�
 
 \subsection{修改注册表以匹配新名字}
 
-\begin{danger}
+\begin{dangerbox}
   这一步需要非常细心的操作，一定不能出错！
-\end{danger}
+\end{dangerbox}
 
 按下 \keys{\Windows + R}，输入 \MissingVerb{regedit}，确定，打开注册表编辑器，转到以下地址（你也可以把这一行复制粘贴到注册表编辑器的地址栏去）：
 
@@ -275,9 +275,9 @@ SID，即「安全标识符」（security identifier），用于在操作系统�
 
 \subsection{建立新旧用户文件夹间的符号链接}
 
-\begin{danger}
+\begin{dangerbox}
   这一步也是重中之重，一定不能出错！
-\end{danger}
+\end{dangerbox}
 
 符号链接相当于通用的「快捷方式」，访问符号链接就相当于访问它指向的目标，欲了解更多，可以阅读\chapref{cha:manage-storage}一章。所以，建立符号链接的目的就是让那些已有的软件在照旧访问原来的用户文件夹时能够访问到修改后的位置。
 

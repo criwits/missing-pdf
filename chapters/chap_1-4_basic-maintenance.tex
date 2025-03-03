@@ -89,8 +89,9 @@
   \item 对于一些\regcolor{「系统优化」类的软件}来说，它本身就是需要更改系统设置的，而有限的权限禁止了这种行为。
 \end{itemize}
 
-\begin{wrapfigure}{r}{6.5cm}
+\begin{wrapfigure}[12]{r}{6.5cm}
   \centering
+  % \vspace*{-.5cm}
   \includegraphics[width=6cm]{assets/basic/UAC_popup.png}
   \caption{一个 UAC 弹窗}
   \label{fig:UAC_popup}
@@ -110,7 +111,7 @@
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.8\textwidth]{assets/basic/Windows_Security.png}
+  \includegraphics[width=.64\textwidth]{assets/basic/Windows_Security.png}
   \caption{Windows 安全中心}
   \label{fig:Windows_Security}
 \end{figure}
@@ -119,14 +120,14 @@
 
 \regcolor{当心「全家桶」。}大型软件厂商都会希望用户能选择自己的整套产品系列。以「腾讯电脑管家」为例，它会以各种方式推荐用户安装包括但不限于「QQ 浏览器」「QQ 游戏」「腾讯桌面整理」等一整套腾讯产品。但事实上，很多时候，我们只是希望安装一款安全软件或杀毒软件来保护我们的电脑罢了。稍不留神，这些软件就会因为某个隐秘的角落的勾勾没有去掉，而来到我们的电脑上。
 
-我们安装安全软件是为了保障电脑安全，而不是希望这些软件来拖慢我们电脑的运行速度。因此，它们需要经受一些「调教」，才能更好地为我们服务。具体地说，我们可以\regcolor{关闭那些无用的功能和提示}，例如每次开机时的启动时间提示、桌面上碍事的「一键加速」加速球、各种「资讯」弹窗广告和「猜你喜欢」搜索框等。这些东西与安全毫不相关，反而有些喧宾夺主。将它们关闭，可以让我们的电脑更加清爽，也不会影响到安全软件的正常工作。以「360 安全卫士」为例，我们可以在软件设置的【开机小助手】【推广设置】【广告资讯设置】等页面中，关闭我们不需要的功能，如\autoref{fig:Disable_360_ads} 所示。
-
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.7\textwidth]{assets/basic/Disable_360_ads.png}
+  \includegraphics[width=.64\textwidth]{assets/basic/Disable_360_ads.png}
   \caption{360 安全卫士的一些设置项}
   \label{fig:Disable_360_ads}
 \end{figure}
+
+我们安装安全软件是为了保障电脑安全，而不是希望这些软件来拖慢我们电脑的运行速度。因此，它们需要经受一些「调教」，才能更好地为我们服务。具体地说，我们可以\regcolor{关闭那些无用的功能和提示}，例如每次开机时的启动时间提示、桌面上碍事的「一键加速」加速球、各种「资讯」弹窗广告和「猜你喜欢」搜索框等。这些东西与安全毫不相关，反而有些喧宾夺主。将它们关闭，可以让我们的电脑更加清爽，也不会影响到安全软件的正常工作。以「360 安全卫士」为例，我们可以在软件设置的【开机小助手】【推广设置】【广告资讯设置】等页面中，关闭我们不需要的功能，如\autoref{fig:Disable_360_ads} 所示。
 
 \section{Windows 更新——让人又爱又恨的「更新」}
 
@@ -134,7 +135,7 @@ Windows 一直在不断的更新之中——这里的「更新」指的不是诸
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.95\textwidth]{assets/basic/Update.png}
+  \includegraphics[width=.85\textwidth]{assets/basic/Update.png}
   \caption{Windows 10 （左）与 Windows 11（右）的「Windows 更新」界面}
   \label{Windows_Update}
 \end{figure}
@@ -159,7 +160,7 @@ Windows 一直在不断的更新之中——这里的「更新」指的不是诸
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=12cm]{assets/basic/Computer_with_unwanted_software.png}
+  \includegraphics[width=.8\textwidth]{assets/basic/Computer_with_unwanted_software.png}
   \caption{被「玩坏了」的电脑}
   \label{fig:Computer_with_unwanted_software2}
 \end{figure}
@@ -189,14 +190,14 @@ Windows 一直在不断的更新之中——这里的「更新」指的不是诸
 
 \section{警惕「电信诈骗」}
 
-\begin{wrapfigure}[11]{r}{6.5cm}
+众所周知，现在勒索病毒横行，染上之后任谁都束手无策。如果你没安装什么危险软件，但某天在上网时，电脑突然弹出了这样的「对话框」，你的第一反应是什么呢？
+
+\begin{figure}[htb!]
   \centering
-  \raisebox{0pt}[\dimexpr\height-0.7\baselineskip\relax]{\includegraphics[width=6cm]{assets/basic/Fake_anti_virus_notification.png}}
+  \includegraphics[width=.5\textwidth]{assets/basic/Fake_anti_virus_notification.png}
   \caption{可疑的「对话框」}
   \label{fig:Fake_anti_virus_notification}
-\end{wrapfigure}
-
-众所周知，现在勒索病毒横行，染上之后任谁都束手无策。如果你没安装什么危险软件，但某天在上网时，电脑突然弹出了这样的「对话框」，你的第一反应是什么呢？
+\end{figure}
 
 尽管这个「对话框」看起来像是系统弹出的警报，但它实际上是 Chrome 浏览器发出的一个\regcolor{网页通知}。就像手机上的许多应用可以在屏幕顶部弹出通知一样，浏览器中打开的网页也可以在电脑上发送通知。仔细观察这个通知，我们会发现，它包含了一张伪造成弹窗的图片，以及一个伪造成系统警告的图标。通过巧妙利用 Windows 通知的展示方式，这个通知成功以假乱真，让人误以为它来自系统本身。
 

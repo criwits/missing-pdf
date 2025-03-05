@@ -389,28 +389,39 @@
 
 \subsection{为文件安家}
 
-为了给文件安家，我们首先需要挑选一个合适的位置。\regcolor{如果你打算把文件放在 C 盘，可以使用 Windows 为你提供的一系列「已知文件夹」（Known Folder）}，即「文档」「视频」「下载」等。Windows 11 系统中，你可以在【此电脑】窗口的左侧看到这些文件夹，如\autoref{fig:Win11_user_folders}；而在 Windows 10 中，双击桌面上的【此电脑】，展开【文件夹】折叠项看到这些文件夹，如\autoref{fig:User_directories}。
+为了给文件安家，我们首先需要挑选一个合适的位置。\regcolor{如果你打算把文件放在 C 盘，可以使用 Windows 为你提供的一系列「已知文件夹」（Known Folder）}，即「文档」「视频」「下载」等。
+
+Windows 11 系统中，默认情况下，所有的已知文件夹会被固定在【此电脑】窗口（即资源管理器）的左侧，如\autoref{fig:Win11_user_folders}。
 
 \begin{figure}[htb!]
   \centering
-  \begin{minipage}{.49\textwidth}
-    \centering
-    \includegraphics[width=.98\textwidth]{assets/basic/Win11_user_folders.png}
-    \caption{Windows 11 的已知文件夹}
-    \label{fig:Win11_user_folders}
-  \end{minipage}
-  \begin{minipage}{.49\textwidth}
-    \centering
-    \includegraphics[width=.98\textwidth]{assets/basic/User_directories.png}
-    \caption{Windows 10 的已知文件夹}
-    \label{fig:User_directories}
-  \end{minipage}
+  \includegraphics[width=.7\textwidth]{assets/basic/Win11_user_folders.png}
+  \caption{Windows 11 的已知文件夹}
+  \label{fig:Win11_user_folders}
 \end{figure}
 
-默认情况下，\cprotect\regcolor{已知文件夹的实际位置在 \MissingVerb{C:\用户\<你的用户名>}，这是你的「用户配置文件夹」（User Profile Folder，俗称「用户文件夹」）。}除了直接在【此电脑】中查看外，你也可以手动打开这个路径来找到它们。已知文件夹涵盖了「桌面」「文档」「图片」「音乐」「视频」等多种类别，并且都配有形象的图标。如果你计划将自己的文件存放在 C 盘，这些目录是不错的选择。
+如果你在【此电脑】窗口左侧没有看见这些已知文件夹，有可能是它们被不小心解除固定了。为了找到它们，你可以双击资源管理器的地址栏，输入「桌面」两个字并回车，就能看见所有的已知文件夹了。你可以趁此机会右键 →【固定到快速访问】来把它们固定回去。
+
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[width=.7\textwidth]{assets/basic/Reach_known_folders_manually.png}
+  \caption{手动找到已知文件夹}
+  \label{fig:Reach_known_folders_manually}
+\end{figure}
+
+而在 Windows 10 中，双击桌面上的【此电脑】，展开【文件夹】折叠项看到这些文件夹，如\autoref{fig:User_directories}。
+
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[width=.7\textwidth]{assets/basic/User_directories.png}
+  \caption{Windows 10 的已知文件夹}
+  \label{fig:User_directories}
+\end{figure}
+
+默认情况下，\cprotect\regcolor{已知文件夹的实际位置在 \MissingVerb{C:\用户\<你的用户名>}，这是你的「用户配置文件夹」（User Profile Folder，俗称「用户文件夹」）。}除了直接在【此电脑】中查看外，你也可以手动打开这个路径来找到它们。已知文件夹涵盖了「桌面」「文档」「图片」「音乐」「视频」等多种类别，并且都配有形象的图标。如果你计划将自己的文件存放在 C 盘，这些目录是不错的选择：毕竟，C 盘作为 Windows 的系统分区，有严格的保护机制，最好不要把你的文件直接放在 C 盘根目录下。
 
 \begin{warning}
-  注意：C 盘作为 Windows 的系统分区，有严格的写保护机制，最好不要把你的文件直接放在 C 盘根目录下。
+  如果你的电脑登录了 OneDrive（微软推出的云同步盘），并且针对文档、图片等已知文件夹启用了备份功能，那么它们可能已经被迁移到了你的 OneDrive 文件夹下。默认情况下它是 \MissingVerb{C:\用户\<你的用户名>\OneDrive}。\regcolor{此时，你很可能无法再按后文的步骤，将它们迁移到其他地方。}
 \end{warning}
 
 如果你打算把自己的文件放到其他的分区，各个分区的根目录都是不错的选择。你可以仿照 Windows 给你的已知文件夹，自己在其他分区的根目录下按类别新建好「文档」「电影」「音频」等文件夹，用来帮助自己整理文件。更进一步，\regcolor{你还可以直接将 Windows 提供给你的这些已知文件夹迁移到其他分区}，这样它们的实际位置就不再是 \MissingVerb{C:\用户\<你的用户名>}，而是你指定的地方了。例如，如果你想使用 D 盘根目录即 \MissingVerb{D:\} 来存放这些已知文件夹，可以按下面的步骤操作。

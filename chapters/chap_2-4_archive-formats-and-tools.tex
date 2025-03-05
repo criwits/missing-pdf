@@ -50,7 +50,7 @@ Ask not what your country can do for you—ask what you can do for your country.
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.8\textwidth]{assets/software/Compress_a_sentence.pdf}
+  \includegraphics[width=.9\textwidth]{assets/software/Compress_a_sentence.pdf}
   \caption{压缩一个句子}
   \label{fig:Compress_a_sentence}
 \end{figure}
@@ -61,7 +61,7 @@ Ask not what your country can do for you—ask what you can do for your country.
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.7\textwidth]{assets/software/Compress_and_Extract.pdf}
+  \includegraphics[width=.8\textwidth]{assets/software/Compress_and_Extract.pdf}
   \caption{压缩与解压}
   \label{fig:Compress_and_Extract}
 \end{figure}
@@ -124,14 +124,15 @@ RAR 格式的压缩率通常比 ZIP 高上不少。除此之外，它还支持�
 
 \subsection{压缩工具的使用}
 
-一般而言，压缩工具安装之后，一系列压缩文件相关的选项就会出现在文件右键菜单中。例如，当安装「Bandizip」这款压缩工具后，资源管理器的右键菜单就会多出\autoref{fig:Context_menu_of_Bandizip} 中的这些选项。
-
-\begin{figure}[htb!]
+\begin{wrapfigure}[8]{r}{6cm}
   \centering
-  \includegraphics[width=.7\textwidth]{assets/software/Context_menu_of_Bandizip.png}
+  \vspace*{-1.5cm}
+  \includegraphics[width=5.5cm]{assets/software/Context_menu_of_Bandizip.png}
   \caption{Bandizip 的右键菜单}
   \label{fig:Context_menu_of_Bandizip}
-\end{figure}
+\end{wrapfigure}
+
+一般而言，压缩工具安装之后，一系列压缩文件相关的选项就会出现在文件右键菜单中。例如，当安装「Bandizip」这款压缩工具后，资源管理器的右键菜单就会多出\autoref{fig:Context_menu_of_Bandizip} 中的这些选项。
 
 这些选项能帮助你解压和制作压缩包。例如，上图中【解压到 \MissingVerb{testdisk-7.2.win64\}】及【解压到此处】就可以将这个压缩文件解压，它们的区别早在\chapref{cha:file-and-file-management}中介绍过。而如果我们想将几个文件打包，也可以先选中它们，然后右键选择【新建压缩包】，并在弹出的窗口中选择压缩格式并设置压缩文件的名字，同时调整一些高级选项，比如给压缩文件设置密码。
 
@@ -197,7 +198,7 @@ RAR 格式的压缩率通常比 ZIP 高上不少。除此之外，它还支持�
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.7\textwidth]{assets/software/explorer-open-zip.png}
+  \includegraphics[width=.65\textwidth]{assets/software/explorer-open-zip.png}
   \caption{资源管理器打开压缩包}
   \label{fig:explorer-open-zip}
 \end{figure}
@@ -223,7 +224,7 @@ RAR 格式的压缩率通常比 ZIP 高上不少。除此之外，它还支持�
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.7\textwidth]{assets/software/NanaZip.png}
+  \includegraphics[width=.65\textwidth]{assets/software/NanaZip.png}
   \caption{NanaZip}
   \label{fig:NanaZip}
 \end{figure}
@@ -232,18 +233,27 @@ NanaZip 可以在 Microsoft Store 搜索「NanaZip」直接安装。或者，你
 
 \subsection{Bandizip}
 
-Bandizip 是由 Bandisoft 开发的一款压缩软件，有免费的标准版与付费的专业版、企业版。免费版可以在 \url{https://www.bandisoft.com/bandizip/} 下载到。它也支持读取几乎所有格式的压缩包，也能制作包括但不限于 ZIP、7z 等格式的压缩包。当然，和 7-Zip 一样，Bandizip 无法制作 RAR 压缩包。
+Bandizip 是由 Bandisoft 开发的一款压缩软件，有免费的标准版与付费的专业版、企业版。它也支持读取几乎所有格式的压缩包，也能制作包括但不限于 ZIP、7z 等格式的压缩包。当然，和 7-Zip 一样，Bandizip 无法制作 RAR 压缩包。
 
-Bandizip的主界面大致如下图所示。可以看见，它的界面较为简洁、现代，但美中不足的便是右下角的广告。这广告需要我们购买专业版或企业版才能去除，不过实际使用上却几乎没有干扰，因为广告仅在没有打开任何文件时出现，而实际使用时我们基本上不会来到这里。
+Bandizip的主界面大致如下图所示。可以看见，它的界面较为简洁、现代，但美中不足的便是右下角的广告。这广告需要我们购买专业版或企业版才能去除。
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.65\textwidth]{assets/software/Bandizip_main_window.png}
+  \includegraphics[width=.55\textwidth]{assets/software/Bandizip_main_window.png}
   \caption{Bandizip}
   \label{fig:Bandizip_main_window}
 \end{figure}
 
-当你使用 Bandizip 打开一个压缩文件时，软件界面大致如下图，这里是没有广告的。你可以在此对压缩文件进行各种操作。
+此外，在 2025 年 2 月的某次更新后，Bandizip 的免费版会每隔两三天，在当天第一次运行软件（无论是打开、压缩还是解压压缩包）的时候，从屏幕的右下角弹出一些广告，如下图所示，它同样也需要购买专业版或企业版去除。虽然广告的内容不像下文的 WinRAR 那样离谱，但仍对我们的使用体验造成了不小的打击。
+
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[width=.45\textwidth]{assets/software/Bandizip_popup.png}
+  \caption{Bandizip}
+  \label{fig:Bandizip_popup}
+\end{figure}
+
+当你使用 Bandizip 打开一个压缩文件时，软件界面大致如下图，你可以在此对压缩文件进行各种操作。
 
 \begin{figure}[htb!]
   \centering
@@ -254,7 +264,7 @@ Bandizip的主界面大致如下图所示。可以看见，它的界面较为简
 
 Bandizip 值得一提的两个功能，一是「压缩文件预览」，二是「智能解压」。
 
-「压缩文件预览」是说，当你右击一个压缩文件时，若这个文件没有加密文件名\footnote{对于一般的加密压缩文件，即使我们手中没有密码，仍然可以查看其中的文件列表；但如果在加密时选择了加密文件名，那么没有密码的情况下，连文件列表也无法查看。}，你的右键菜单便会显示出这个压缩包内部的部分文件；若是连文件名都加密了，那当然什么都看不见啦。这个功能默认未启用，需要在 Bandizip 的【设置】→【上下文菜单】→【选择解压菜单】中开启。可惜这个功能只支持旧式菜单，不支持 Windows 11 的新式菜单。
+「压缩文件预览」是说，当你右击一个压缩文件时，若这个文件没有加密文件名\footnote{对于一般的加密压缩文件，即使我们手中没有密码，仍然可以查看其中的文件列表；但如果在加密时选择了加密文件名，那么没有密码的情况下，连文件列表也无法查看。}，你的右键菜单便会显示出这个压缩包内部的部分文件；若是连文件名都加密了，那当然什么都看不见啦。这个功能默认未启用，需要在 Bandizip 的【设置】→【上下文菜单】→【选择解压菜单】中开启。但这个功能只支持旧式菜单，不支持 Windows 11 的新式菜单。
 
 \begin{figure}[htb!]
   \centering
@@ -267,14 +277,16 @@ Bandizip 值得一提的两个功能，一是「压缩文件预览」，二是�
 
 举个例子：上图中的压缩包内部就有许多图片，假设这个压缩包的路径是 \MissingVerb{D:\Touhou_Street.zip}，点击【智能解压到此处】之类的选项，那么图片就会被提取到 \MissingVerb{D:\Touhou_Street\} 下；若这压缩包里面就一张图，则会被提取到 \MissingVerb{D:\} 下。
 
-智能解压既支持旧式右键菜单也支持 Windows 11 的新式右键菜单，若使用 Bandizip，我们建议你使用智能解压来解压文件，除非你有特殊目的。
+智能解压既支持旧式右键菜单也支持 Windows 11 的新式右键菜单，若使用 Bandizip，我们建议你使用智能解压来解压文件，这样就不用担心会弄乱自己的工作目录了。
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.7\textwidth]{assets/software/Smart_Extract.png}
+  \includegraphics[width=.8\textwidth]{assets/software/Smart_Extract.png}
   \caption{「智能解压」右键菜单}
   \label{fig:Smart_Extract}
 \end{figure}
+
+Bandizip 免费版可以在 \url{https://www.bandisoft.com/bandizip/} 下载到，如果你能忍受不时出现的小广告，那么它的使用体验还算不错。
 
 \subsection{WinRAR}
 
@@ -282,7 +294,7 @@ WinRAR 是 RAR 格式的作者设计的软件。顾名思义，WinRAR 最大的�
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.6\textwidth]{assets/software/WinRAR_main_window.png}
+  \includegraphics[width=.7\textwidth]{assets/software/WinRAR_main_window.png}
   \caption{WinRAR}
   \label{fig:WinRAR_main_window}
 \end{figure}

@@ -64,10 +64,11 @@ VLC Media Player 是一款开源的本地视频播放器，它界面简洁、功
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.7\textwidth]{assets/software/VLC.png}
+  \includegraphics[width=.65\textwidth]{assets/software/VLC.png}
   \caption{VLC}
   \label{fig:VLC}
 \end{figure}
+\vspace*{-1cm}
 
 \subsection{ImageGlass}
 
@@ -90,17 +91,22 @@ ImageGlass 是一款开源、轻量的图片查看器。相比于 Windows 自带
 
 \subsection{Motrix 和 ImFile}
 
-Motrix 官网下载地址：\url{https://motrix.app/zh-CN/}。
-
-ImFile 官网下载地址：\url{https://imfile.io/}。
+Motrix 官网下载地址：\url{https://motrix.app/zh-CN/}；ImFile 官网下载地址：\url{https://imfile.io/}。
 
 Motrix，如它在网页上宣传的那样，是「一款全能的下载工具」，它基本上支持所有常见的资源协议的下载，包括 FTP、BitTorrent 种子，以及群众喜闻乐见的磁力链接等。它界面精巧、代码开源、使用方便，是一款不可多得的优良下载工具。不过，自 2023 年 6 月以来，Motrix 已经一年半没有更新了，因此可能存在一些未修复的问题。ImFile 则是 Motrix 的一个「分支版」，由另外的作者在 Motrix 的基础上改进、维护，和 Motrix 保持了类似的操作体验，并引入了新功能，修复了一些问题。
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.7\textwidth]{assets/software/Motrix.png}
+  \includegraphics[width=.6\textwidth]{assets/software/Motrix.png}
   \caption{Motrix}
   \label{fig:Motrix}
+\end{figure}
+
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[width=.65\textwidth]{assets/software/FDM.png}
+  \caption{FDM}
+  \label{fig:FDM}
 \end{figure}
 
 \subsection{Free Download Manager}
@@ -109,17 +115,11 @@ Motrix，如它在网页上宣传的那样，是「一款全能的下载工具�
 
 Free Download Manager，简称 FDM，是另一款开源的全能下载器。和 Motrix 一样，它支持多种不同的资源协议，如 FTP 和 BitTorrent，还能下载一些网站上的视频，同时具有不错的下载速度。
 
-\begin{figure}[htb!]
-  \centering
-  \includegraphics[width=.7\textwidth]{assets/software/FDM.png}
-  \caption{FDM}
-  \label{fig:FDM}
-\end{figure}
-
 \section{文件类}
 
 这一节介绍「文件类」实用工具，例如文件搜索工具。
 
+\vspace*{-.5cm}
 \subsection{SpaceSniffer}
 
 官网下载地址：\url{http://www.uderzo.it/main_products/space_sniffer/download.html}。
@@ -133,18 +133,18 @@ SpaceSniffer——直白的名字，专注于磁盘空间分析嗅探。在你�
   \label{fig:SpaceSniffer}
 \end{figure}
 
+\begin{figure}[htb!]
+  \centering
+  \includegraphics[width=.65\textwidth]{assets/software/WizTree.png}
+  \caption{WizTree}
+  \label{fig:WizTree}
+\end{figure}
+
 \subsection{WizTree}
 
 官网下载地址：\url{https://diskanalyzer.com/download}，左侧的「DOWNLOAD INSTALLER」是安装版，右侧的「DOWNLOAD PORTABLE」是便携版。
 
 虽说 WizTree 干的事情其实和上面的 SpaceSniffer 差不多，但是相较后者而言它有几个优点：超快分析——500 G 左右的固态硬盘只需 10 秒不到；多种视图——包括框图可视化、文件夹占比排序、文件类型占比排序等；实时响应——你删了什么东西它马上就知道，并给你标出来。但美中不足的是，它的免费版右上角有个「捐助请求」，只有捐点钱才能去掉。
-
-\begin{figure}[htb!]
-  \centering
-  \includegraphics[width=.7\textwidth]{assets/software/WizTree.png}
-  \caption{WizTree}
-  \label{fig:WizTree}
-\end{figure}
 
 \subsection{Everything}
 
@@ -152,7 +152,7 @@ SpaceSniffer——直白的名字，专注于磁盘空间分析嗅探。在你�
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.7\textwidth]{assets/software/Everything.png}
+  \includegraphics[width=.85\textwidth]{assets/software/Everything.png}
   \caption{Everything}
   \label{Everything}
 \end{figure}
@@ -182,12 +182,22 @@ PowerToys 是由微软主导，集合社区之力共同开发的一套小工具�
   \item 始终置顶：快速将桌面上已经打开的任意窗口置顶。
   \item 唤醒：保持电脑处于唤醒状态（即不会自动休眠、睡眠或关机）。
   \item 颜色选择器：识别并提取屏幕上任意一点的颜色，获取它在各种颜色表示方式下的色值。
-  \begin{figure}[htb!]
-      \centering
-      \includegraphics[width=.45\textwidth]{assets/software/Color_Picker.png}
-      \caption{颜色选择器}
-      \label{fig:Color_Picker}
-  \end{figure}
+  \item 资源管理器加载项：在资源管理器中提供 SVG、PDF 等文件的图标中预览。
+    \begin{figure}[htb!]
+        \centering
+        \begin{minipage}{.45\textwidth}
+          \centering
+          \includegraphics[width=.98\textwidth]{assets/software/Color_Picker.png}
+          \caption{颜色选择器}
+          \label{fig:Color_Picker}
+        \end{minipage}
+        \begin{minipage}{.54\textwidth}
+          \centering
+          \includegraphics[width=.98\textwidth]{assets/software/Explorer_Addon.png}
+          \caption{资源管理器加载项}
+          \label{fig:Explorer_Addon}
+        \end{minipage}
+    \end{figure}
   \item File Locksmith：识别哪些程序正在占用文件，当删除文件时显示「此文件正被占用」时非常有用。
     \begin{figure}[htb!]
       \centering
@@ -195,18 +205,11 @@ PowerToys 是由微软主导，集合社区之力共同开发的一套小工具�
       \caption{File Locksmith}
       \label{fig:File_Locksmith}
     \end{figure}
-  \item 资源管理器加载项：在资源管理器中提供 SVG、PDF 等文件的图标中预览。
-    \begin{figure}[htb!]
-      \centering
-      \includegraphics[width=.6\textwidth]{assets/software/Explorer_Addon.png}
-      \caption{资源管理器加载项}
-      \label{fig:Explorer_Addon}
-    \end{figure}
   \item 键盘管理器：重映射按键，例如设置按下 \keys{A} 键其实是按下 \keys{Ctrl + C} 快捷键等。
   \item PowerToys Run：非常强大的快速启动器与搜索工具，输入一些关键字，它可以让你快速打开浏览器进行搜索、运行电脑上含有关键字的应用，甚至是搜索文件名含有关键字的文件（前提是令 Windows 编制好索引）。除此之外，使用特殊的指令，还可以快速进行数学计算、单位换算、执行命令行指令、打开指定路径等等，花样繁多。
     \begin{figure}[htb!]
       \centering
-      \includegraphics[width=.68\textwidth]{assets/software/Powertoys_Run.png}
+      \includegraphics[width=.75\textwidth]{assets/software/Powertoys_Run.png}
       \caption{PowerToys Run}
       \label{fig:PowerToys_Run}
     \end{figure}
@@ -214,7 +217,7 @@ PowerToys 是由微软主导，集合社区之力共同开发的一套小工具�
   \item PowerRename：文件批量重命名。
     \begin{figure}[htb!]
       \centering
-      \includegraphics[width=.75\textwidth]{assets/software/PowerRename.png}
+      \includegraphics[width=.8\textwidth]{assets/software/PowerRename.png}
       \caption{PowerRename}
       \label{fig:PowerRename}
     \end{figure}

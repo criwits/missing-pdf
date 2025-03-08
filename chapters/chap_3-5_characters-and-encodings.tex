@@ -79,7 +79,7 @@
 
 当然，为了计算一个数在某种进制中的表现，我们没必要用这个表从零开始数，而可以直接计算——例如，将十进制数转换为对应的$k$进制数，可以采用「除$k$取余法」，你可以自行上网搜索。
 
-值得一提的是，在高进制下（例如十六进制），依然有些数是不包含字母的，此时如果不加额外说明，没人看得出它到底该是几进制：例如，十六进制的 43 和十进制的 43 显然不是同一个数。为了避免混淆，除了在上下文中特别说明之外，我们还可以选择在表示非十进制数时加上一些特殊标记：十六进制数可以在前面加上一个 \MissingVerb{0x}（一个数字零和一个字母 x）或在尾部加上「ʜ」的后缀（hexadecimal 的首字母）；二进制数在前面加 \MissingVerb{0b}（数字零和字母 b）或在尾部加上「ʙ」的后缀（binary 的首字母）。另外，本章中，除非特别说明，像 \MissingTT{114514} 这种框起来样式的数字，默认是十六进制。
+值得一提的是，在高进制下（例如十六进制），依然有些数是不包含字母的，此时如果不加额外说明，没人看得出它到底该是几进制：例如，十六进制的 43 和十进制的 43 显然不是同一个数。为了避免混淆，除了在上下文中特别说明之外，我们还可以选择在表示非十进制数时加上一些特殊标记：十六进制数可以在前面加上一个 \MissingVerb{0x}\hspace{1pt}（一个数字零和一个字母 x）或在尾部加上「ʜ」的后缀（hexadecimal 的首字母）；二进制数在前面加 \MissingVerb{0b}\hspace{1pt}（数字零和字母 b）或在尾部加上「ʙ」的后缀（binary 的首字母）。另外，本章中，除非特别说明，像 \MissingTT{114514} 这种框起来样式的数字，默认是十六进制。
 
 \subsection{计算机与二进制}
 
@@ -480,7 +480,7 @@ UTF-16 代理区占据了 \MissingTT{U+D800}\textasciitilde\MissingTT{U+DFFF} �
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.35\textwidth]{assets/advanced/UTF16.pdf}
+  \includegraphics[width=.4\textwidth]{assets/advanced/UTF16.pdf}
   \caption{UTF-16 编码示例}
   \label{fig:UTF16}
 \end{figure}
@@ -621,7 +621,7 @@ UTF-8 是一种彻彻底底的变长编码方案，它的单字符编码码长�
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.5\textwidth]{assets/advanced/Devanagari.pdf}
+  \includegraphics[width=.45\textwidth]{assets/advanced/Devanagari.pdf}
   \caption{天城字母}
   \label{fig:Devanagari}
 \end{figure}
@@ -661,7 +661,7 @@ UTF-8 是一种彻彻底底的变长编码方案，它的单字符编码码长�
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.8\textwidth]{assets/advanced/MissingButWindows1252.png}
+  \includegraphics[width=.98\textwidth]{assets/advanced/MissingButWindows1252.png}
   \caption{《你缺计课》网页版遭遇的某种乱码}
   \label{fig:MissingButWindows1252}
 \end{figure}
@@ -735,6 +735,8 @@ UTF-8 是一种彻彻底底的变长编码方案，它的单字符编码码长�
 
 \footnotetext[7]{出自宋代诗人邵雍的《山村咏怀》。}
 \footnotetext[8]{出自唐代诗人常建的《题破山寺后禅院》。}
+\footnotetext[9]{出自唐代诗人刘禹锡的《陋室铭》。}
+\footnotetext[10]{出自日本古代文学著作《平家物语》，大意：祇园精舍钟声响，诉说世事本无常（周作人、申非译，人民文学出版社 1984 年版）。}
 
 \begin{longtblr}[
     caption   = {UTF-8 与 GB18030 解码别的编码文本},
@@ -756,8 +758,6 @@ UTF-8 是一种彻彻底底的变长编码方案，它的单字符编码码长�
   Windows-1252 & Gud är min säkra borg.\footnotemark & Gud \replacesymb{}r min s\replacesymb{}kra borg. & \clearglue{}Gud 鋜 min s鋕ra borg.\restoreglue \\
   \bottomrule
 \end{longtblr}
-\footnotetext[9]{出自唐代诗人刘禹锡的《陋室铭》。}
-\footnotetext[10]{出自日本古代文学著作《平家物语》，大意：祇园精舍钟声响，诉说世事本无常（周作人、申非译，人民文学出版社 1984 年版）。}
 \footnotetext{曾为瑞典皇室格言的一部分，出自《旧约圣经·诗篇》第 59 篇 17 节瑞典语译本，大意：上帝是我的庇护所（《新旧约全书－和合本修订版》，香港圣经公会 2010 年版）。}
 
 似乎以 UTF-8 与 GB18030 解码的文本都有一些明显的特征。UTF-8 解出来的文本，除了它自己编码的以外，基本上或多或少有一些「\replacesymb{}」。「\replacesymb{}」是 \MissingTT{U+FFFD}，用来代替那些不合法的编码字节。当文本出现大量「\replacesymb{}」时，想复制出来到别处解析是不行的，因为「\replacesymb{}」代表着「字符丢失」，再也找不回来了。
@@ -770,19 +770,19 @@ UTF-8 是一种彻彻底底的变长编码方案，它的单字符编码码长�
 
 再回到那份飘洋过海而来的文本的问题。就算我们知道了正确的编码，那又如何使文本阅读工具以特定的编码方式打开文件呢？记事本肯定是不能用了，但是我们在\chapref{cha:tools-software}里已经推荐过一款「更好的记事本」——Notepad3，它正是我们所需的工具。
 
-用 Notepad3 打开一份文本，它会自动识别内容可能是什么编码，并用对应的编码来解码文本，同时在界面的右下角可以看到当前使用的编码体系，如\autoref{fig:Open_text_with_Notepad3}。但如果要手动操作编码，可以转到 Notepad3 的【设置】→【文档】选项，其下有两个子项：
-
-\begin{itemize}
-  \item 【设置文档为】：可以使用其他编码保存当前文件；
-  \item 【从文件恢复为】：可以选择想要的编码打开当前文件。
-\end{itemize}
-
 \begin{figure}[htb!]
   \centering
   \includegraphics[width=.75\textwidth]{assets/advanced/Notepad3.png}
   \caption{用 Notepad3 打开不同编码的文本}
   \label{fig:Open_text_with_Notepad3}
 \end{figure}
+
+用 Notepad3 打开一份文本，它会自动识别内容可能是什么编码，并用对应的编码来解码文本，同时在界面的右下角可以看到当前使用的编码体系，如\autoref{fig:Open_text_with_Notepad3}。但如果要手动操作编码，可以转到 Notepad3 的【设置】→【文档】选项，其下有两个子项：
+
+\begin{itemize}
+  \item 【设置文档为】：可以使用其他编码保存当前文件；
+  \item 【从文件恢复为】：可以选择想要的编码打开当前文件。
+\end{itemize}
 
 那么，我们怎样选择合适的编码体系保存文档，才能尽量避免乱码出现呢？身处国际化的时代，为了文档无论在全球的哪个角落都能顺利打开，我们特别建议\regcolor{选择 UTF-8 编码保存}，它支持整个 Unicode，在全球广泛使用，这样能避免绝大多数情况下的乱码。另一个选项是 GB18030 编码，它也能支持整个 Unicode，但没那么流行。其他编码，只在必须保证兼容性的时候选择。
 

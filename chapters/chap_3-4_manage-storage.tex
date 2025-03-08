@@ -26,7 +26,7 @@
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.7\textwidth]{assets/advanced/Red_C_Drive.png}
+  \includegraphics[width=.8\textwidth]{assets/advanced/Red_C_Drive.png}
   \caption{《红盘》}
   \label{fig:Red_C_Drive}
 \end{figure}
@@ -35,7 +35,7 @@
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.8\textwidth]{assets/advanced/Scan_C_Drive.png}
+  \includegraphics[width=.9\textwidth]{assets/advanced/Scan_C_Drive.png}
   \caption{C 盘的 WizTree 扫描结果}
   \label{fig:Scan_C_Drive}
 \end{figure}
@@ -73,7 +73,7 @@
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.8\textwidth]{assets/advanced/AppData.png}
+  \includegraphics[width=.9\textwidth]{assets/advanced/AppData.png}
   \cprotect\caption{\MissingVerb{Appdata} 文件夹的 WizTree 扫描结果}
   \label{fig:AppData}
 \end{figure}
@@ -82,7 +82,7 @@
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.65\textwidth]{assets/advanced/Dev_Tool_Files.png}
+  \includegraphics[width=.55\textwidth]{assets/advanced/Dev_Tool_Files.png}
   \cprotect\caption{用户文件夹中 \MissingVerb{.} 开头的目录}
   \label{fig:Dev_Tool_Files}
 \end{figure}
@@ -91,14 +91,14 @@
 
 \subsection{页面文件和休眠文件}
 
-\begin{wrapfigure}[12]{r}{6.5cm}
+在 WizTree 的分析页面中，我们往往可以看见两个奇怪的巨大文件：\MissingVerb{pagefile.sys} 和 \MissingVerb{hiberfil.sys}。它们有时可以占据十几甚至是几十 GB 的 C 盘空间，如下图所示。它们的真名是「页面文件」和「休眠文件」，是 Windows 系统运行所需要的。
+
+\begin{figure}[htb!]
   \centering
   \vspace*{-.2cm}
   \includegraphics[width=6cm]{assets/advanced/Pagefile_and_hiberfil.png}
   \caption{WizTree 中展示的页面文件和休眠文件}
-\end{wrapfigure}
-
-在 WizTree 的分析页面中，我们往往可以看见两个奇怪的巨大文件：\MissingVerb{pagefile.sys} 和 \MissingVerb{hiberfil.sys}。它们有时可以占据十几甚至是几十 GB 的 C 盘空间，如右图所示。它们的真名是「页面文件」和「休眠文件」，是 Windows 系统运行所需要的。
+\end{figure}
 
 页面文件的作用，是给系统提供「虚拟内存」：当电脑的内存不足以容纳打开的全部软件时，操作系统会将内存中暂时未用到的一部分数据存入硬盘，从而腾出空间给正在使用的数据和程序。而当我们需要用到那些被存入硬盘的数据时，操作系统再将它们取回内存，同时从内存中取出另一部分近期未用的数据换入硬盘。由于这个交换以一定大小的「页」为单位，硬盘中负责暂存内存数据的文件就称为「页面文件」。在 Windows 系统中，页面文件的默认位置就是 \MissingTT{C:\textbackslash{}pagefile.sys} （系统级隐藏，所以看不见）。它的大小因机器的内存而异，从几 GB 到几十 GB 都有可能。
 
@@ -132,7 +132,7 @@
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.85\textwidth]{assets/advanced/Disk_partitions.pdf}
+  \includegraphics[width=.9\textwidth]{assets/advanced/Disk_partitions.pdf}
   \caption{分区中的数据}
   \label{fig:Disk_partitions}
 \end{figure}
@@ -179,7 +179,7 @@ DiskGenius 是一款多功能磁盘管理软件，可以进行自由分区、磁
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.6\textwidth]{assets/advanced/Adjust_Part.png}
+  \includegraphics[width=.7\textwidth]{assets/advanced/Adjust_Part.png}
   \caption{操作分区}
   \label{fig:Adjust_Part}
 \end{figure}
@@ -190,7 +190,7 @@ DiskGenius 是一款多功能磁盘管理软件，可以进行自由分区、磁
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.45\textwidth]{assets/advanced/Merge_To_C.png}
+  \includegraphics[width=.5\textwidth]{assets/advanced/Merge_To_C.png}
   \caption{将空余空间合并到 C 盘}
   \label{fig:Merge_To_C}
 \end{figure}
@@ -199,7 +199,7 @@ DiskGenius 是一款多功能磁盘管理软件，可以进行自由分区、磁
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.8\textwidth]{assets/advanced/Larger_C.png}
+  \includegraphics[width=.9\textwidth]{assets/advanced/Larger_C.png}
   \caption{更大的 C 盘}
   \label{fig:Larger_C}
 \end{figure}
@@ -249,12 +249,12 @@ DiskGenius 是一款多功能磁盘管理软件，可以进行自由分区、磁
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.75\textwidth]{assets/advanced/Clean_Suggestion.jpg}
+  \includegraphics[width=.9\textwidth]{assets/advanced/Clean_Suggestion.jpg}
   \caption{清理建议}
   \label{fig:Clean_Suggestion}
 \end{figure}
 
-除此之外，按下 \keys{\Windows + R}，输入 \MissingTT{\%temp\%}（这也是一个环境变量）按回车，你就来到了你用户文件夹下的本地临时文件夹。如果实在没东西可删，这里的所有内容你都可以删除（不是 \MissingVerb{Temp} 文件夹本身，是它里面的所有内容），不过删除之前建议重启电脑。
+除此之外，按下 \keys{\Windows + R}，输入 \MissingTT{\%temp\%}\hspace{1pt}（这也是一个环境变量）按回车，你就来到了你用户文件夹下的本地临时文件夹。如果实在没东西可删，这里的所有内容你都可以删除（不是 \MissingVerb{Temp} 文件夹本身，是它里面的所有内容），不过删除之前建议重启电脑。
 
 但对于某些应用产生的垃圾（比如什么 QQ、微信），以及你自己用不到的个人文件，Windows 肯定无能为力了。关于这部分内容，就像我们在\chapref{cha:file-and-file-management}中说的那样——定期整理、定期打扫才是最好的方式。
 
@@ -315,7 +315,7 @@ mklink /d "%localappdata%\Programs\Common\Wolfram Research\Documentation.zh-Hans
   \label{fig:Configure_System_Migration}
 \end{figure}
 
-点击中间右侧的【分区管理】，在弹出的窗口中点击【添加分区】，选择你需要的分区，点【确定】即可添加。
+如\autoref{fig:Configure_System_Migration} 和\autoref{fig:Select_Migrating_Partition} 所示，点击中间右侧的【分区管理】，在弹出的窗口中点击【添加分区】，选择你需要的分区，点【确定】即可添加。
 
 \begin{figure}[htb!]
   \centering

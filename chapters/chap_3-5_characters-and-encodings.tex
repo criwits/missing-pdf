@@ -355,7 +355,7 @@ ASCII 使用 7 位二进制数来编码字符，可以表示的数据范围是 0
 
 与此同时，国际标准化组织（ISO）也在干差不多的活，但是两拨人互相不知道。\CJKsout*{（这就是缺乏调研与沟通的后果。）}1990 年，《ISO 10646 通用多八位编码字符集（草案）》发布，规定了一种有「128 组，每组 256 面，每面 256 行，每行 128 单元」的字符集。虽然算下来它能包含$2^{32}$个字符，但说实话……这有点复杂了。大伙都不看好这种编码方案，于是 ISO 终于找到了 Unicode 工作组，并协商让两个标准统一，Unicode 有了 ISO 的支持，成为了国际标准的一份子。
 
-为了实现对所有文字统一编码这样的宏伟大业，Unicode 将编码工作分成了两步：首先，确定我们需要的字符一共有哪些，构成一个「字符集」，并为这里面的每个字符编号（称为「分配码位」，通常以 \MissingTT{U+} 后面跟十六进制数构成）。随后，设计一些「Unicode 转换格式」（Unicode Transformation Format，简称 UTF），将字符码转换为实际存储在计算机里的，由一个或多个字节组成的编码。例如，「M」「α」「あ」「缺」「\twemoji{rolling on the floor laughing}」和「𰻝」\footnote{这个是陕西名吃「biángbiáng 面」的 biáng 字。} 六个字符占据的码位，以及使用 UTF-8 转换的编码分别是：
+为了实现对所有文字统一编码这样的宏伟大业，Unicode 将编码工作分成了两步：首先，确定我们需要的字符一共有哪些，构成一个「字符集」，并为这里面的每个字符编号（称为「分配码位」，通常以 \MissingTT{U+} 后面跟十六进制数构成）。随后，设计一些「Unicode 转换格式」（Unicode Transformation Format，简称 UTF），将字符码转换为实际存储在计算机里的，由一个或多个字节组成的编码。例如，「M」「α」「あ」「缺」「\emoji{rolling on the floor laughing}」和「𰻝」\footnote{这个是陕西名吃「biángbiáng 面」的 biáng 字。} 六个字符占据的码位，以及使用 UTF-8 转换的编码分别是：
 
 \begin{table}[htb!]
   \centering
@@ -373,7 +373,7 @@ ASCII 使用 7 位二进制数来编码字符，可以表示的数据范围是 0
     α & \MissingTT{U+03B1} & 2 & \MissingTT{CE B1} \\
     あ & \MissingTT{U+3042} & 3 & \MissingTT{E3 81 82} \\
     缺 & \MissingTT{U+7F3A} & 3 & \MissingTT{E7 BC BA} \\
-    \twemoji{rolling on the floor laughing} & \MissingTT{U+1F923} & 4 & \MissingTT{F0 9F A4 A3} \\
+    \emoji{rolling on the floor laughing} & \MissingTT{U+1F923} & 4 & \MissingTT{F0 9F A4 A3} \\
     𰻝 & \MissingTT{U+30EDD} & 4 & \MissingTT{F0 B0 BB 9D} \\
     \bottomrule
   \end{tblr}
@@ -412,7 +412,7 @@ Unicode 收录一种文字的基本流程大概是：
     α & 0 & \MissingTT{U+03B1} \\
     あ & 0 & \MissingTT{U+3042} \\
     缺 & 0 & \MissingTT{U+7F3A} \\
-    \twemoji{rolling on the floor laughing} & 1 & \MissingTT{U+1F923} \\
+    \emoji{rolling on the floor laughing} & 1 & \MissingTT{U+1F923} \\
     𰻝 & 3 & \MissingTT{U+30EDD} \\
     \bottomrule
   \end{tblr}
@@ -433,7 +433,7 @@ Unicode 的第 0 平面叫「基本多文种平面」，又称「基本区」，
   所谓「私用区」（Private Use Area，简称 PUA）是指码表中专门保留的一段码位，这些码位不会被分配给具体的字符。如果你需要「自造字」，就可以将这些码位分配给你自己创造的文字，从而\regcolor{在你自己的系统中}使用这些字符。在早期中文编码少有生僻字的情况下，我国公安系统曾利用 PUA 为未编码的姓名生僻字分配码位，使这些字能够录入系统。然而，随着 GB18030 和 Unicode 标准的不断发展，越来越多的生僻字获得了正式的编码，这导致了「一字多码」的现象：某个字既有公安系统使用的 PUA 码位，又有正式编码。这引发了一些问题，比如有人的身份证无法通过实名验证，原因是身份证内的生僻字使用的是 PUA 编码，但该字已经有了通行的正式编码，计算机因为二者不一致而判定为不同的字。为解决这一问题，目前我国官方和社会各界正在积极推动相关措施（例如 \url{https://name.vurls.cn/ui/index/index/}）。
 \end{note}
 
-接着是第 1 平面，叫「多文种补充平面」，下图是该平面内的大致字符分布。这个平面主要收录符号，以及一些冷门语言、历史语言所使用的文字。你可以在这个平面内见到埃及圣书体、楔形文字、西夏文等等文字，以及象棋、扑克、麻将之类的符号，还有人们喜闻乐见的表情符号（\twemoji{winking face}）。可以看到，这个平面内还有许多空白没有分配，再一次证明这么多码位肯定足够我们使用了。
+接着是第 1 平面，叫「多文种补充平面」，下图是该平面内的大致字符分布。这个平面主要收录符号，以及一些冷门语言、历史语言所使用的文字。你可以在这个平面内见到埃及圣书体、楔形文字、西夏文等等文字，以及象棋、扑克、麻将之类的符号，还有人们喜闻乐见的表情符号（\emoji{winking face}）。可以看到，这个平面内还有许多空白没有分配，再一次证明这么多码位肯定足够我们使用了。
 
 \begin{figure}[htb!]
   \centering

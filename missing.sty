@@ -82,8 +82,14 @@
 \renewcommand{\figureautorefname}{图}
 \renewcommand{\tablename}{表}
 \renewcommand{\tableautorefname}{表}
-\newcommand{\chapref}[1]{%
-  \tcbox[enhanced,tcbox raise base,left=0mm,right=0mm,top=0mm,bottom=0mm,boxsep=1mm,arc=1mm,colback=MissingLightYellow,frame hidden,nobeforeafter,hyperref={#1}]{\raisebox{.13ex}{\MissingIcons\larger\ref*{#1}} \nameref*{#1}}%
+\NewDocumentCommand{\chapref}{ s O{0} m }{%
+  \tcbox[enhanced,tcbox raise base,left=0mm,right=0mm,top=0mm,bottom=0mm,boxsep=1mm,arc=1mm,colback=MissingLightYellow,frame hidden,nobeforeafter,hyperref={#3}]{%
+    \IfBooleanTF{#1}{%
+      \raisebox{.13ex}{\MissingIcons#2}\hspace{.25em minus .1em}%
+    }{%
+      \raisebox{.13ex}{\MissingIcons\larger\ref*{#3}}\hspace{.25em minus .1em}%
+    }\nameref*{#3}
+  }%
 }
 
 \RequirePackage{bookmark}

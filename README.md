@@ -6,8 +6,9 @@
 这是《你缺失的那门计算机课》的开源 PDF 版 LaTeX 源代码，最新发布的 PDF 由 TeX Live 2025 排版。请按照以下步骤来生成 PDF：
 
 > [!warning]
-> 不要使用可变字体（variable font），因为 XeLaTeX 不支持！
-0. 正确安装如下字体，并确保 XeLaTeX 可以找到它们：
+> 请使用本地 TeX 环境编译。不要使用 Overleaf。
+
+0. 正确安装如下字体（不要使用可变字体），并确保 XeLaTeX 可以找到它们：
    1. [Inter](https://rsms.me/inter/)；
    2. [思源黑体](https://github.com/adobe-fonts/source-han-sans/)（不是「Noto Sans SC」，也不是「思源黑体 CN」）；
    3. [等距更纱黑体 Slab SC](https://github.com/be5invis/Sarasa-Gothic)；

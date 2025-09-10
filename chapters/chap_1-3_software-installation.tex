@@ -58,19 +58,24 @@
 
 鉴别一个网站到底是不是官网，我们主要可以观察这么几个地方：
 
+\begingroup
+\setlength\ULdepth{.6ex}
+
 \begin{itemize}
-  \item 看网址。对于一个网址 \texttt{https://www.\underline{example.com}/some/page/...}，我们关注它的主域名部分，即 \texttt{example.com}。一般来说，软件的官网的主域名往往与软件厂商的名称相关联。例如：
+  \item 看网址。对于一个网址 \texttt{https://www.\uline{example.com}/some/page/...}，我们关注它的主域名部分，即 \texttt{example.com}。一般来说，软件的官网的主域名往往与软件厂商的名称相关联。例如：
   \begin{itemize}
-    \item WPS 的官网是 \texttt{https://www.\underline{wps.cn}}。
-    \item QQ 的官网是 \texttt{https://im.\underline{qq.com}}，微信则是 \texttt{https://weixin.\underline{qq.com}}，主域名都是 \texttt{qq.com}。
-    \item 网易云音乐的官网是 \texttt{https://music.\underline{163.com}}，\texttt{163.com} 是网易的主域名，你可以上网查一查它的由来。
-    \item Steam 的官网是 \texttt{https://store.\underline{steampowered.com}}，它比较特殊——主域名并不是软件或公司名本身\footnote{如果你想快速去到 Steam 的官网，可以直接访问 \href{https://s.team}{\texttt{s.team}}。}。
+    \item WPS 的官网是 \texttt{https://www.\uline{wps.cn}}。
+    \item QQ 的官网是 \texttt{https://im.\uline{qq.com}}，微信则是 \texttt{https://weixin.\uline{qq.com}}，主域名都是 \texttt{qq.com}。
+    \item 网易云音乐的官网是 \texttt{https://music.\uline{163.com}}，\texttt{163.com} 是网易的主域名，你可以上网查一查它的由来。
+    \item Steam 的官网是 \texttt{https://store.\uline{steampowered.com}}，它比较特殊——主域名并不是软件或公司名本身\footnote{如果你想快速去到 Steam 的官网，可以直接访问 \href{https://s.team}{\texttt{s.team}}。}。
     \item ……
   \end{itemize}
   \item 排除法。没有哪个软件厂商的名字是叫做「✕✕软件站」「✕✕下载站」「✕✕软件园」的。带有这些名字的\textbf{全部}是第三方下载站。
   \item 语义判断。一般广告网站的标题都与搜索关键词没有任何实质上的联系。我们不妨再看上面的搜索结果中的前几条广告，会发现它们通常名不副实（如「办公软件」「Office」而非「WPS」）。
   那些提供广告软件的网站，为了规避法律风险，标题通常与我们搜索的关键词没有任何实质上的联系——我们不妨再看上面的搜索结果中的前几条广告，会发现它们通常名不副实，如「办公软件」「Office」，而非我们要找的「WPS」。\regcolor{此外，一些提供「高仿软件」的网站会在原版软件名称前后加上一些修饰词，比如「Steam \underline{管家}」「Office \underline{助手}」等，以此混淆视听}。 
 \end{itemize}
+
+\endgroup
 
 当我们下载的软件是国外软件时，这一问题会变得更加严重。假设我们想下载国外著名游戏平台 Steam 的客户端，我们在搜索引擎上搜索「Steam 下载」，得到的结果如下：
 

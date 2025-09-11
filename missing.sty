@@ -351,6 +351,12 @@
     beforeskip  = 18pt,
     tocline     = {\CTEXifname{\protect\numberline{第\chinese{chapter}章\hspace{.3em}}}{}#2},
   },
+  section = {
+    format  +=  \addfontfeatures{RawFeature=-tnum},
+  },
+  subsection = {
+    format  +=  \addfontfeatures{RawFeature=-tnum},
+  },
 }
 
 \renewcommand{\chaptermark}[1]{%

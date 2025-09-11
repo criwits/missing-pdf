@@ -46,7 +46,7 @@
 
 ## 贡献
 
-如果您对本作品内容有任何意见、建议，或发现本书中的错误，请优先发送邮件到 [missing@criwits.top](mailto:missing@criwits.top)，或在网页版的仓库提交议题（Issue）。
+如果您对本作品内容有任何意见、建议，或发现本书中的错误，请优先发送邮件到 [missing@criwits.top](mailto:missing@criwits.top)，或在 [网页版的仓库](https://github.com/criwits/missing-web) 提交议题（Issue）。
 
 ## 著作权与许可
 

@@ -35,7 +35,7 @@
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.9\textwidth]{assets/basic/Partition_structure.pdf}
+  \includegraphics[width=.75\textwidth]{assets/basic/Partition_structure.pdf}
   \caption{分区的结构}
   \label{fig:Partition_structure}
 \end{figure}
@@ -66,9 +66,8 @@
 
 \section{文件、文件名和文件类型}
 
-\begin{wrapfigure}[5]{r}{7.2cm}
+\begin{wrapfigure}[7]{r}{7.2cm}
   \centering
-  \vspace*{-3ex}
   \includegraphics[width=7cm]{assets/basic/5_files.png}
   \caption{一些文件}
   \label{fig:5_files}
@@ -79,7 +78,10 @@
 文件有自己的名字，称为「文件名」。在 Windows 系统中，文件名可以分成三个部分：
 
 \begin{itemize}
-  \item 「主名」是指文件名中，「点号」之前的部分。这部分内容可以自定，相当于人类的姓名。上图中，\MissingVerb{数字逻辑设计第 13 讲} 和 \MissingVerb{Obsidian.1.5.11} 等都是文件的主名。
+  \item 「主名」是指文件名中，「点号」之前的部分。这部分内容可以自定，相当于人类的姓名。\autoref{fig:5_files} 中，\MissingVerb{数字逻辑设计第 13 讲} 和 \MissingVerb{Obsidian.1.5.11} 等都是文件的主名。
+\end{itemize}
+
+\begin{itemize}
   \item 「点号」是指文件名中间\regcolor{最后一个} \MissingVerb{.}。
   \item 「扩展名」是指文件名中，点号之后的部分\cprotect\footnote{有时候我们称呼文件的扩展名时也会把点号包含进去。下面两种说法是等价的：
     \begin{itemize}
@@ -396,7 +398,7 @@ Windows 11 系统中，默认情况下，所有的已知文件夹会被固定在
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.7\textwidth]{assets/basic/Win11_user_folders.png}
+  \includegraphics[width=.75\textwidth]{assets/basic/Win11_user_folders.png}
   \caption{Windows 11 的已知文件夹}
   \label{fig:Win11_user_folders}
 \end{figure}
@@ -405,7 +407,7 @@ Windows 11 系统中，默认情况下，所有的已知文件夹会被固定在
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.7\textwidth]{assets/basic/Reach_known_folders_manually.png}
+  \includegraphics[width=.75\textwidth]{assets/basic/Reach_known_folders_manually.png}
   \caption{手动找到已知文件夹}
   \label{fig:Reach_known_folders_manually}
 \end{figure}
@@ -414,12 +416,12 @@ Windows 11 系统中，默认情况下，所有的已知文件夹会被固定在
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.7\textwidth]{assets/basic/User_directories.png}
+  \includegraphics[width=.75\textwidth]{assets/basic/User_directories.png}
   \caption{Windows 10 的已知文件夹}
   \label{fig:User_directories}
 \end{figure}
 
-默认情况下，\cprotect\regcolor{已知文件夹的实际位置在 \MissingVerb{C:\用户\<你的用户名>}，这是你的「用户配置文件夹」（User Profile Folder，俗称「用户文件夹」）。}除了直接在【此电脑】中查看外，你也可以手动打开这个路径来找到它们。已知文件夹涵盖了「桌面」「文档」「图片」「音乐」「视频」等多种类别，并且都配有形象的图标。如果你计划将自己的文件存放在 C 盘，这些目录是不错的选择：毕竟，C 盘作为 Windows 的系统分区，有严格的保护机制，最好不要把你的文件直接放在 C 盘根目录下。
+默认情况下，\cprotect\regcolor{已知文件夹的实际位置在 \MissingVerb{C:\用户\<你的用户名>}\cprotect\footnote{\MissingVerb{C:\用户} 文件夹有些特殊：它在资源管理器中显示的名称是「用户」，但硬盘中存储的名称实际上是 \MissingVerb{Users}。因此，你可能会在其他地方看到 \MissingVerb{C:\Users} 这样的写法。下文介绍的各种已知文件夹也有类似的机制。在本书中，为了方便你在资源管理器中直接找到它们，我们会统一采用显示名称。}，这是你的「用户配置文件夹」（User Profile Folder，俗称「用户文件夹」）。}除了直接在【此电脑】中查看外，你也可以手动打开这个路径来找到它们。已知文件夹涵盖了「桌面」「文档」「图片」「音乐」「视频」等多种类别，并且都配有形象的图标。如果你计划将自己的文件存放在 C 盘，这些目录是不错的选择：毕竟，C 盘作为 Windows 的系统分区，有严格的保护机制，最好不要把你的文件直接放在 C 盘根目录下。
 
 但如果你打算把自己的文件放到其他的分区，你的选择就会自由很多，各个分区的根目录也许是不错的位置。你可以仿照 Windows 给你的已知文件夹，自己在其他分区的根目录下按类别新建好「文档」「电影」「音频」等文件夹，用来帮助自己整理文件。或者更直接点，\regcolor{你还可以将 Windows 提供给你的这些已知文件夹迁移到其他分区}，这样它们的实际位置就不再是 \MissingVerb{C:\用户\<你的用户名>}，而是你选定的地方了。例如，如果你想使用 D 盘根目录即 \MissingVerb{D:\} 来存放这些已知文件夹，可以按下面的步骤操作。
 
@@ -435,7 +437,7 @@ Windows 11 系统中，默认情况下，所有的已知文件夹会被固定在
   \item 在资源管理器中，右击某个我们想要迁移的文件夹（比如【文档】），选择【属性】，然后切换到【位置】选项卡，如\autoref{fig:Pos_of_Documents}。
     \begin{figure}[htb!]
       \centering
-      \includegraphics[width=.7\textwidth]{assets/basic/Pos_of_Documents.png}
+      \includegraphics[width=.75\textwidth]{assets/basic/Pos_of_Documents.png}
       \caption{查看「文档」的位置}
       \label{fig:Pos_of_Documents}
     \end{figure}

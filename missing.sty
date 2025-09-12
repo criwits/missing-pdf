@@ -80,6 +80,7 @@
 }
 \renewcommand{\figurename}{图}
 \renewcommand{\figureautorefname}{图}
+\renewcommand*{\thefigure}{\if@mainmatter\thechapter.\fi\@arabic\c@figure}
 \renewcommand{\tablename}{表}
 \renewcommand{\tableautorefname}{表}
 \NewDocumentCommand{\chapref}{ s O{0} m }{%
@@ -552,8 +553,8 @@
   arc=2.5mm,
   before upper={\parindent2em},
   overlay={
-    \node[color=gray] at ($(frame.north west) + (0,-8mm)$) {\fontsize{70pt}{70pt}“};
-    \node[color=gray] at ($(frame.south east) + (0,-6mm)$) {\fontsize{70pt}{70pt}”};
+    \node[color=gray] at ($(frame.north west) + (-3mm,-8mm)$) {\fontsize{70pt}{70pt}“};
+    \node[color=gray] at ($(frame.south east) + (-3mm,-6mm)$) {\fontsize{70pt}{70pt}”};
   },
 }
 

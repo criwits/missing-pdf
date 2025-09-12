@@ -127,18 +127,18 @@
   一些软件可能有「安装版」和「便携版」之分——前者像普通软件一样，需要安装使用，而后者不必安装，下载后可以直接运行（可能需要解压）。一般来说，安装版文件名含有「setup」字样，而便携版可能有「portable」字样。一般我们建议下载安装版。
 \end{note}
 
-图\autoref{fig:Download_WPS} 展示了在 WPS 官网下载 WPS 软件，而图\autoref{fig:OBS} 展示了在 OBS Studio 官网下载 OBS Studio 软件。
+\autoref{fig:Download_WPS} 展示了在 WPS 官网下载 WPS 软件，而\autoref{fig:OBS} 展示了在 OBS Studio 官网下载 OBS Studio 软件。
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=10cm]{assets/basic/Download_WPS.png}
+  \includegraphics[width=.9\textwidth]{assets/basic/Download_WPS.png}
   \caption{从官网下载 WPS}
   \label{fig:Download_WPS}
 \end{figure}
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=10cm]{assets/basic/OBS.png}
+  \includegraphics[width=.9\textwidth]{assets/basic/OBS.png}
   \caption{从官网下载 OBS Studio}
   \label{fig:OBS}
 \end{figure}
@@ -172,11 +172,11 @@
   \label{fig:Download_page_1}
 \end{figure}
 
-点击之后我们会跳转到这样一个「下载地址」的页面。同样地，我们不要点击「优先使用✕✕管家下载」之下的所有链接，而要点击「普通下载地址」下方的【通用网络下载】等链接：
+点击之后我们会跳转到这样一个「下载地址」的页面。同样地，我们不要点击「优先使用✕✕管家下载」之下的所有链接，而要点击「普通下载地址」下方的【通用网络下载】等链接，如\autoref{fig:Download_page_2}。
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=10.5cm]{assets/basic/Download_page_2.png}
+  \includegraphics[width=.6\textwidth]{assets/basic/Download_page_2.png}
   \caption{选择「普通下载地址」中的链接}
   \label{fig:Download_page_2}
 \end{figure}
@@ -199,7 +199,7 @@
   \end{minipage} 
 \end{figure}
 
-我们用杀毒软件卡巴斯基扫描假的 OBS 安装包，结果如下：
+我们用杀毒软件卡巴斯基扫描假的 OBS 安装包，结果如\autoref{fig:Kaspersky_app_warning} 所示。而卡巴斯基提供的网页版说明，则对这种威胁有更详细的解释（\autoref{fig:Kaspersky_website_warning}）。在本章的最后，我们会向你展示这个使用【安全下载】得到的可疑文件究竟是什么。
 
 \begin{figure}[htb!]
   \centering
@@ -208,8 +208,6 @@
   \label{fig:Kaspersky_app_warning}
 \end{figure}
 
-而卡巴斯基提供的网页版说明，则对这种威胁有更详细的解释：
-
 \begin{figure}[htb!]
   \centering
   \includegraphics[width=.9\textwidth]{assets/basic/Kaspersky_website_warning.png}
@@ -217,7 +215,6 @@
   \label{fig:Kaspersky_website_warning}
 \end{figure}
 
-在本章的最后，我们会向你展示这个使用【安全下载】得到的可疑文件究竟是什么。
 
 \subsection{另辟蹊径：软件公众号及其他小众渠道}
 
@@ -239,7 +236,7 @@
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.7\textwidth]{assets/basic/Ads_in_store.png}
+  \includegraphics[width=.85\textwidth]{assets/basic/Ads_in_store.png}
   \caption{在某软件管家中搜索「Bandizip」的结果}
   \label{fig:Bandizip_in_software_manager}
 \end{figure}
@@ -252,21 +249,21 @@
   \item 一个光秃秃的 \MissingVerb{exe} 文件或者 \MissingVerb{msi} 文件。我们直接双击这个文件就能启动安装进程。
     \begin{figure}[htb!]
       \centering
-      \includegraphics[width=.6\textwidth]{assets/basic/Single_file_installer.png}
+      \includegraphics[width=.9\textwidth]{assets/basic/Single_file_installer.png}
       \caption{单文件安装包}
       \label{fig:Single_file_installer}
     \end{figure}
   \item 一个压缩包，例如 \MissingVerb{zip} 或 \MissingVerb{rar} 文件。我们需要解压缩这个压缩包到某处，然后在解压出来的文件中找到「\MissingVerb{setup.exe}」「\MissingVerb{install.exe}」等名字的程序双击打开。
     \begin{figure}[htb!]
       \centering
-      \includegraphics[width=.6\textwidth]{assets/basic/Archive_installer.png}
+      \includegraphics[width=.9\textwidth]{assets/basic/Archive_installer.png}
       \caption{压缩文件安装包}
       \label{fig:Archive_installer}
     \end{figure}
   \item 一个扩展名是 \MissingVerb{iso} 的文件。我们右击这个 \MissingVerb{iso} 文件，选择【打开方式】→【文件资源管理器】，然后在弹出的新窗口中找到「\MissingVerb{setup.exe}」「\MissingVerb{install.exe}」等名字的程序双击打开\footnote{当你这样打开 \MissingTT{iso} 文件后，这个文件会临时被「映射」成电脑里的一个新「分区」，打开【此电脑】就能发现它。在你安装完成后，可以打开【此电脑】，右键这个分区选择【弹出】来让这个分区消失。}。
     \begin{figure}[htb!]
       \centering
-      \includegraphics[width=.6\textwidth]{assets/basic/Image_Installer.png}
+      \includegraphics[width=.8\textwidth]{assets/basic/Image_Installer.png}
       \caption{镜像文件安装包}
       \label{fig:Image_Installer}
     \end{figure}
@@ -275,7 +272,7 @@
 \begin{note}
   至于那些「绿色版」或「便携版」软件，它们没有「安装」这一过程。要么是单单一个 \MissingVerb{exe} 文件，点开就能用；要么以压缩包形式出现，但是「开箱即用」——解压后直接运行主程序就可以用，就像下面这样。
   \begin{center}
-    \includegraphics[width=.7\textwidth]{assets/basic/Portable_app.png}
+    \includegraphics[width=.8\textwidth]{assets/basic/Portable_app.png}
     \captionof{figure}{便携版软件}
     \label{fig:Portable_app}
   \end{center}
@@ -310,16 +307,16 @@ C:\Program Files (x86)\<厂商名字>\<软件名字>\
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.55\textwidth]{assets/basic/Change_C_to_D.png}
+  \includegraphics[width=.65\textwidth]{assets/basic/Change_C_to_D.png}
   \caption{快速得到 D 盘安装软件的路径}
   \label{fig:Change_C_to_D}
 \end{figure}
 
-有一些软件的安装包不是「下一步」型的，而是直接有一个【立即安装】的按钮，如下图。一般这种情况，可以展开「自定义安装」之类的选项，然后更改软件的安装位置。
+有一些软件的安装包不是「下一步」型的，而是直接有一个【立即安装】的按钮，如\autoref{fig:Sogou_change_directory}。一般这种情况，可以展开「自定义安装」之类的选项，然后更改软件的安装位置。
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=8cm]{assets/basic/Sogou_change_directory.png}
+  \includegraphics[width=.65\textwidth]{assets/basic/Sogou_change_directory.png}
   \caption{有时候得找「自定义安装」的选项}
   \label{fig:Sogou_change_directory}
 \end{figure}
@@ -328,7 +325,7 @@ C:\Program Files (x86)\<厂商名字>\<软件名字>\
 \begin{MissingVerbatim}
   C:\用户\<你的用户文件夹名>\AppData
 \end{MissingVerbatim}
-这是因为 C 盘作为 Windows 系统所在的分区，有一套复杂的权限管理机制，往两个 \MissingVerb{Program Files} 目录放东西是需要管理员权限的（见\chapref{cha:basic-maintenance}）。相比之下，位于用户文件夹的 \MissingVerb{AppData} 则不需要管理员权限，因此被这些软件选为理想的安装路径。如果你想将这类软件安装到 D 盘或其他分区，可以在对应分区新建一个文件夹（例如 \MissingVerb{UserApps} 或 \MissingVerb{UserPrograms}）来统一存放它们。当然，你也可以照猫画虎地直接「改 C 为别的」来安装到其他分区，但这样会产生复杂的目录结构，可能不利于你自己管理。
+这是因为 C 盘作为 Windows 系统所在的分区，有一套复杂的权限管理机制，往两个 \MissingVerb{Program} \MissingVerb{Files} 目录放东西是需要管理员权限的（见\chapref{cha:basic-maintenance}）。相比之下，位于用户文件夹的 \MissingVerb{AppData} 则不需要管理员权限，因此被这些软件选为理想的安装路径。如果你想将这类软件安装到 D 盘或其他分区，可以在对应分区新建一个文件夹（例如 \MissingVerb{UserApps} 或 \MissingVerb{UserPrograms}）来统一存放它们。当然，你也可以照猫画虎地直接「改 C 为别的」来安装到其他分区，但这样会产生复杂的目录结构，可能不利于你自己管理。
 
 \begin{warning}
   若你仍想把软件\regcolor{安装到 C 盘，请不要更改其默认安装路径}。受 C 盘权限机制的影响，将软件随意安装到 C 盘内的其他位置可能会出现问题。
@@ -344,14 +341,14 @@ C:\Program Files (x86)\<厂商名字>\<软件名字>\
 
 \section{软件收费、破解和自由软件}
 
+很多软件是需要购买的，包括 Windows 系统本身（一般你购买电脑时，电脑厂商已经帮你出了买 Windows 这部分钱）。常见的专业软件，从平面设计领域的 Adobe 家族的 Photoshop（俗称「PS」）、Premiere Pro（俗称「PR」），工程领域的 Autodesk 家族的 AutoCAD、3ds MAX，到开发领域的 JetBrains 家族的 IDEA、PyCharm，甚至于我们每天都在用的 Word 和 PowerPoint，这些软件全部都需要付费购买。\autoref{fig:Adobe_PS}展示的是过去正版 Photoshop 和 Lightroom 软件的购买页面——定价 888 元一年。
+
 \begin{wrapfigure}[17]{r}{6.2cm}
   \centering
-  \raisebox{0pt}[\dimexpr\height-0.4\baselineskip\relax]{\includegraphics[width=6cm]{assets/basic/Adobe_PS.png}}
+  \includegraphics[width=6cm]{assets/basic/Adobe_PS.png}
   \caption{Adobe 的「Creative Cloud 中国摄影计划」套装。}
   \label{fig:Adobe_PS}
 \end{wrapfigure}
-
-很多软件是需要购买的，包括 Windows 系统本身（一般你购买电脑时，电脑厂商已经帮你出了买 Windows 这部分钱）。常见的专业软件，从平面设计领域的 Adobe 家族的 Photoshop、Premiere Pro，工程领域的 Autodesk 家族的 AutoCAD、3ds MAX，到开发领域的 JetBrains 家族的 IDEA、PyCharm，甚至于我们每天都在用的 Word 和 PowerPoint，这些软件全部都需要付费购买。右图是购买正版 Photoshop（俗称的 PS）软件的页面——定价 888 元一年。
 
 而由于这样或那样的原因，我们在实际生活中，或多或少都在「没有付费而『白嫖』这些软件」。这是因为我们使用的这些软件被「破解」了。破解之后，软件的计费功能失效，原本收费的软件通过某种方式变成了可以免费永久使用的软件。大体上，网上流传的破解软件一般有这么两种形式：
 
@@ -386,7 +383,7 @@ C:\Program Files (x86)\<厂商名字>\<软件名字>\
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.7\textwidth]{assets/basic/MS_Store_Content.png}
+  \includegraphics[width=.8\textwidth]{assets/basic/MS_Store_Content.png}
   \caption{Microsoft Store 里的软件}
   \label{fig:MS_Store_Content}
 \end{figure}
@@ -403,7 +400,7 @@ C:\Program Files (x86)\<厂商名字>\<软件名字>\
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=.65\textwidth]{assets/basic/Fake_OBS_installer.png}
+  \includegraphics[width=.7\textwidth]{assets/basic/Fake_OBS_installer.png}
   \caption{假 OBS 的详细信息}
   \label{fig:Fake_OBS_installer}
 \end{figure}
@@ -420,7 +417,7 @@ C:\Program Files (x86)\<厂商名字>\<软件名字>\
   \end{minipage}
   \begin{minipage}{.55\textwidth}
     \centering
-    \includegraphics[width=.95\textwidth]{assets/basic/Fake_OBS_install.png}
+    \includegraphics[width=.99\textwidth]{assets/basic/Fake_OBS_install.png}
     \caption{假的 OBS 安装进度条}
     \label{fig:Fake_OBS_install}
   \end{minipage} 
